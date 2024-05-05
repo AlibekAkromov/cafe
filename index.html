@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            fontFamily: {
+              font: [`Poppins`],
+            },
+            backgroundImage: {
+              hero_img: "url('/images/hero.png')",
+              img_hero: "url('/images/hero2.webp')",
+              hero_img2: "url('/images/hero3.webp')",
+              img_hero2: "url('/images/hero4.webp')",
+              footer: "url('/images/footer.png')",
+            },
+          },
+        },
+        darkMode: "class",
+      };
+    </script>
+  </head>
+
+  <body class="dark:bg-slate-800">
+    <header class="fixed top-0 inset-x-0 bg-orange-950 bg-opacity-70 py-3">
+      <div class="flex justify-between items-center px-10 mt-6">
+        <div>
+          <img
+            src="https://preview.colorlib.com/theme/coffee/img/logo.png.webp"
+            alt=""
+          />
+        </div>
+        <div class="flex gap-5">
+          <div>
+            <div class="mt-1">
+              <button
+                id="theme-toggle"
+                type="button"
+                class="text-red-500 p-2.5"
+              >
+                <svg
+                  id="theme-toggle-dark-icon"
+                  class="w-5 h-5 hidden"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"
+                  ></path>
+                </svg>
+                <svg
+                  id="theme-toggle-light-icon"
+                  class="w-5 h-5 hidden"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div>
+            <div class="flex flex-col gap-3">
+              <div class="flex gap-5">
+                <p class="text-white font-font">Mon-Fri: 8am to 2pm</p>
+                <p class="text-white font-font">Sat-Sun: 11am to 4pm</p>
+                <p class="text-white font-font">(012) 6985 236 7512</p>
+              </div>
+            </div>
+            <div class="flex gap-5">
+              <p class="text-white font-font">HOME</p>
+              <p class="text-white font-font">ABOUT</p>
+              <p class="text-white font-font">COFFEE</p>
+              <p class="text-white font-font">REVIEW</p>
+              <p class="text-white font-font">BLOG</p>
+              <select
+                name=""
+                id=""
+                class="rounded bg-transparent text-white font-font"
+              >
+                <option value="" class="text-black font-font">PAGES</option>
+                <option value="" class="text-black font-font">Generic</option>
+                <option value="" class="text-black font-font">Elements</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section>
+        <div class="bg-hero_img bg-cover bg-repeat-y h-[700px]">
+          <div class="flex flex-col gap-8 px-10">
+            <div class="mt-28">
+              <h1 class="text-white font-semibold text-sm font-font">
+                NOW YOU CAN FEEL THE ENERGY
+              </h1>
+            </div>
+            <div>
+              <h1 class="text-white text-7xl font-bold w-[650px] font- font">
+                Start your day with a black Coffee
+              </h1>
+            </div>
+            <div>
+              <button class="bg-white py-2 px-11 rounded-full font-font">
+                BY NOW
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div
+          class="flex justify-center items-center w-full gap-40 dark:bg-slate-800"
+        >
+          <div class="bg-img_hero w-[500px] h-[350px] rounded-lg">
+            <div class="flex justify-center items-center">
+              <a href="https://www.youtube.com/watch?v=ARA0AxrnHdM">
+                <img
+                  class="mt-[150px] font-font"
+                  src="https://preview.colorlib.com/theme/coffee/img/play-icon.png.webp"
+                  alt=""
+                />
+              </a>
+            </div>
+          </div>
+          <div class="flex flex-col gap-4">
+            <p class="text-[#b68834] font-mono text-sm font-font">
+              LIVE COFFEE MAKING PROCESS.
+            </p>
+            <h1 class="text-3xl font-bold font-font dark:text-white">
+              We Telecast our Coffee Making Live
+            </h1>
+            <p class="font-font dark:text-white">
+              We are here to listen from you deliver exellence
+            </p>
+            <p class="text-neutral-500 w-[450px] font-font dark:text-white">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+              eiusmod temp or incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim.
+            </p>
+            <img
+              src="https://preview.colorlib.com/theme/coffee/img/signature.png.webp"
+              alt=""
+              width="150"
+            />
+          </div>
+        </div>
+      </section>
+      <section
+        class="bg-hero_img2 dark:bg-none dark:bg-slate-800 h-[820px] mt-24"
+      >
+        <div class="flex flex-col justify-center items-center py-16">
+          <h1 class="text-4xl font-semibold font-font dark:text-white">
+            What kind of Coffee we serve for you
+          </h1>
+          <p class="text-neutral-500 font-font">
+            Who are in extremely love with eco friendly system.
+          </p>
+        </div>
+        <div class="mt-10">
+          <div class="flex flex-col gap-10">
+            <div class="flex justify-center items-center gap-32">
+              <div
+                class="bg-white w-[340px] h-36 rounded-xl flex flex-col gap-4"
+              >
+                <div class="flex justify-center items-center gap-36 mt-2">
+                  <h1 class="text-xl font-semibold font-font">Cappuccino</h1>
+                  <h1 class="text-[#b68834] font-semibold text-lg font-font">
+                    $49
+                  </h1>
+                </div>
+                <div class="flex justify-center items-center">
+                  <p class="text-neutral-500 w-72 font-font">
+                    Usage of the Internet is becoming more common due to rapid
+                    advance.
+                  </p>
+                </div>
+              </div>
+              <div
+                class="bg-white w-[340px] h-36 rounded-xl flex flex-col gap-4"
+              >
+                <div class="flex justify-center items-center gap-36 mt-2">
+                  <h1 class="text-xl font-semibold font-font">Americano</h1>
+                  <h1 class="text-[#b68834] font-semibold text-lg font-font">
+                    $49
+                  </h1>
+                </div>
+                <div class="flex justify-center items-center">
+                  <p class="text-neutral-500 w-72 font-font">
+                    Usage of the Internet is becoming more common due to rapid
+                    advance.
+                  </p>
+                </div>
+              </div>
+              <div
+                class="bg-white w-[340px] h-36 rounded-xl flex flex-col gap-4"
+              >
+                <div class="flex justify-center items-center gap-36 mt-2">
+                  <h1 class="text-xl font-semibold font-font">Espresso</h1>
+                  <h1 class="text-[#b68834] font-semibold text-lg font-font">
+                    $49
+                  </h1>
+                </div>
+                <div class="flex justify-center items-center">
+                  <p class="text-neutral-500 w-72 font-font">
+                    Usage of the Internet is becoming more common due to rapid
+                    advance.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="flex justify-center items-center gap-32">
+              <div
+                class="bg-white w-[340px] h-36 rounded-xl flex flex-col gap-4"
+              >
+                <div class="flex justify-center items-center gap-36 mt-2">
+                  <h1 class="text-xl font-semibold font-font">Macchiato</h1>
+                  <h1 class="text-[#b68834] font-semibold text-lg font-font">
+                    $49
+                  </h1>
+                </div>
+                <div class="flex justify-center items-center">
+                  <p class="text-neutral-500 w-72 font-font">
+                    Usage of the Internet is becoming more common due to rapid
+                    advance.
+                  </p>
+                </div>
+              </div>
+              <div
+                class="bg-white w-[340px] h-36 rounded-xl flex flex-col gap-4"
+              >
+                <div class="flex justify-center items-center gap-36 mt-2">
+                  <h1 class="text-xl font-semibold font-font">Mocha</h1>
+                  <h1
+                    class="text-[#b68834] font-semibold text-lg font-font"
+                  ></h1>
+                </div>
+                <div class="flex justify-center items-center">
+                  <p class="text-neutral-500 w-72 font-font">
+                    Usage of the Internet is becoming more common due to rapid
+                    advance.
+                  </p>
+                </div>
+              </div>
+              <div
+                class="bg-white w-[340px] h-36 rounded-xl flex flex-col gap-4"
+              >
+                <div class="flex justify-center items-center gap-36 mt-2">
+                  <h1 class="text-xl font-semibold font-font">Coffee Latte</h1>
+                  <h1 class="text-[#b68834] font-semibold text-lg font-font">
+                    $49
+                  </h1>
+                </div>
+                <div class="flex justify-center items-center">
+                  <p class="text-neutral-500 w-72 font-font">
+                    Usage of the Internet is becoming more common due to rapid
+                    advance.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="flex justify-center items-center gap-32">
+              <div
+                class="bg-white w-[340px] h-36 rounded-xl flex flex-col gap-4"
+              >
+                <div class="flex justify-center items-center gap-36 mt-2">
+                  <h1 class="text-xl font-semibold font-font">Piccolo Latte</h1>
+                  <h1 class="text-[#b68834] font-semibold text-lg font-font">
+                    $49
+                  </h1>
+                </div>
+                <div class="flex justify-center items-center">
+                  <p class="text-neutral-500 w-72 font-font">
+                    Usage of the Internet is becoming more common due to rapid
+                    advance.
+                  </p>
+                </div>
+              </div>
+              <div
+                class="bg-white w-[340px] h-36 rounded-xl flex flex-col gap-4"
+              >
+                <div class="flex justify-center items-center gap-36 mt-2">
+                  <h1 class="text-xl font-semibold font-font">Ristretto</h1>
+                  <h1 class="text-[#b68834] font-semibold text-lg font-font">
+                    $49
+                  </h1>
+                </div>
+                <div class="flex justify-center items-center">
+                  <p class="text-neutral-500 w-72 font-font">
+                    Usage of the Internet is becoming more common due to rapid
+                    advance.
+                  </p>
+                </div>
+              </div>
+              <div
+                class="bg-white w-[340px] h-36 rounded-xl flex flex-col gap-4"
+              >
+                <div class="flex justify-center items-center gap-36 mt-2">
+                  <h1 class="text-xl font-semibold font-font">Affogato</h1>
+                  <h1 class="text-[#b68834] font-semibold text-lg font-font">
+                    $49
+                  </h1>
+                </div>
+                <div class="flex justify-center items-center">
+                  <p class="text-neutral-500 w-72 font-font">
+                    Usage of the Internet is becoming more common due to rapid
+                    advance.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="mt-20 dark:bg-slate-800">
+          <div class="flex flex-col justify-center items-center gap-2">
+            <h1 class="text-3xl font-semibold font-font dark:text-white">
+              What kind of Coffee we serve for you
+            </h1>
+            <p class="font-font text-neutral-500 dark:text-white">
+              Who are in extremely love with eco friendly system.
+            </p>
+          </div>
+          <div class="mt-5 flex justify-center items-center gap-10">
+            <div class="flex flex-col justify-center gap-10">
+              <a
+                href="https://preview.colorlib.com/theme/coffee/img/g1.jpg.webp"
+              >
+                <img
+                  src="https://preview.colorlib.com/theme/coffee/img/g1.jpg.webp"
+                  alt=""
+                />
+              </a>
+              <div class="">
+                <a
+                  href="https://preview.colorlib.com/theme/coffee/img/g2.jpg.webp"
+                >
+                  <img
+                    src="https://preview.colorlib.com/theme/coffee/img/g2.jpg.webp"
+                    alt=""
+                  />
+                </a>
+              </div>
+            </div>
+            <div class="flex flex-col justify-center items-center gap-10">
+              <div>
+                <a
+                  href="https://preview.colorlib.com/theme/coffee/img/g3.jpg.webp"
+                >
+                  <img
+                    src="https://preview.colorlib.com/theme/coffee/img/g3.jpg.webp"
+                    alt=""
+                  />
+                </a>
+              </div>
+              <div class="flex gap-10">
+                <a
+                  href="https://preview.colorlib.com/theme/coffee/img/g4.jpg.webp"
+                >
+                  <img
+                    src="https://preview.colorlib.com/theme/coffee/img/g4.jpg.webp"
+                    alt=""
+                  />
+                </a>
+                <a
+                  href="https://preview.colorlib.com/theme/coffee/img/g5.jpg.webp"
+                >
+                  <img
+                    src="https://preview.colorlib.com/theme/coffee/img/g5.jpg.webp"
+                    alt=""
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        class="flex flex-col bg-[#b68834] mt-20 w-full pb-30 justify-center items-center pb-24"
+      >
+        <div class="container">
+          <div class="flex flex-col justify-center items-center gap-2">
+            <h1 class="text-white text-4xl font-font font-semibold mt-20">
+              What kind of Coffee we serve for you
+            </h1>
+            <p class="text-white font-font">
+              Who are in extremely love with eco friendly system.
+            </p>
+          </div>
+          <div class="flex justify-around items-center mt-20">
+            <div class="flex flex-col gap-5 mt-5">
+              <div>
+                <img
+                  src="https://preview.colorlib.com/theme/coffee/img/r1.png.webp"
+                  alt=""
+                />
+              </div>
+              <div class="flex gap-2">
+                <h1 class="text-white font-font font-semibold">lorem ipusm</h1>
+                <img
+                  src="https://s3-alpha-sig.figma.com/img/b2f5/84f8/63d7a3bd3ef26254dd4f1fd9a84a5b69?Expires=1714953600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=C2zlbMSDUADofwFcnaBkC6kmBkUSeRW2N0~~XG13-KGP2yMZANFRGgosYUC9O2GnmGpyVpGjDnU25ENcOJbKx-mKjFmlq~5ziMPP59QBqAaZXE3L8FiqxKqKPEPAODW5ud~qu7gCiNdv0Icny4OfBPaGQ8WqQAQUqqZjBQmRrdclrjvS65Rko9fPxROMmLzVmOQYPiuDWSEPZCv~qZlQc9MSoPjJe~8MfzBZBlKEfUO9LHsHZEd2rFlel1~LwA35rUspEv2bX63JG~6UiveyRKoO28~3Prc4dm~IcjpsynF7O2WIy1AVedIkQKLQ43p3JuhBnp-RxGr~nHRJ1T8K5Q__"
+                  alt=""
+                />
+              </div>
+              <div>
+                <p class="text-white w-[550px] font-font">
+                  Accessories Here you can find the best computer accessory for
+                  your laptop, monitor, printer, scanner, speaker. Here you can
+                  find the best computer accessory for your laptop, monitor,
+                  printer, scanner, speaker.
+                </p>
+              </div>
+            </div>
+            <div class="flex flex-col gap-5 mt-5">
+              <div>
+                <img
+                  src="https://preview.colorlib.com/theme/coffee/img/r2.png.webp"
+                  alt=""
+                />
+              </div>
+              <div class="flex gap-2">
+                <h1 class="text-white font-font font-semibold">lorem ipusm</h1>
+                <img
+                  src="https://s3-alpha-sig.figma.com/img/5fb6/3af1/b70c2d9a55fe609ddffe1874bf913caa?Expires=1714953600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=oA2DcPfsu62BUOm7zfCXqzZ15alTMb8ZpJUcfQX9G7XdP5XhTDpj0ax7rlVx~0~tp~Gbvw8iqOH0hOhiJ0U1r9vra1~9mTtVtounGIpFDBJ8MIgv3Z7UKVgwyZ1adJe9oJHXnQ3qKyf3FDnK3HmaqWNZo7DblQlLLC9jl5-DHycqgfGiWBbZPohvLkDoTllwPy2IlvUuE-lqUzg7eOt81DNTVd3L3mYCXt-rTy2Gg~pOUsW64zlOyHNYd3FTvdP4SW-jaD6czA~1sRJjzOTyuE3dRvQaCwzFyoDM~SAa1tneYnSaGGPBVgOi-WsPJQhonYliOgNszTfsKet6CIb02Q__"
+                  alt=""
+                />
+              </div>
+              <div>
+                <p class="text-white w-[550px] font-font">
+                  Accessories Here you can find the best computer accessory for
+                  your laptop, monitor, printer, scanner, speaker. Here you can
+                  find the best computer accessory for your laptop, monitor,
+                  printer, scanner, speaker.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="flex justify-around items-center mt-20">
+            <div class="flex flex-col gap-2">
+              <h1
+                class="text-white text-7xl font-font font-thin count"
+                data-target="2536"
+              >
+                0
+              </h1>
+              <h1 class="text-white font-font">Happy Client</h1>
+            </div>
+            <div class="flex flex-col gap-2">
+              <h1
+                class="text-white text-7xl font-font font-thin count"
+                data-target="7562"
+              >
+                0
+              </h1>
+              <h1 class="text-white font-font">Total Projects</h1>
+            </div>
+            <div class="flex flex-col gap-2">
+              <h1
+                class="text-white text-7xl font-font font-thin count"
+                data-target="2013"
+              >
+                0
+              </h1>
+              <h1 class="text-white font-font">Cups Coffee</h1>
+            </div>
+            <div class="flex flex-col gap-2">
+              <h1
+                class="text-white text-7xl font-font font-thin count"
+                data-target="10536"
+              >
+                0
+              </h1>
+              <h1 class="text-white font-font">Total Submitted</h1>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="pb-24">
+        <div>
+          <div class="flex flex-col justify-center items-center gap-2">
+            <h1 class="text-4xl font-font font-semibold mt-20 dark:text-white">
+              What kind of Coffee we serve for you
+            </h1>
+            <p class="font-font dark:text-white">
+              Who are in extremely love with eco friendly system.
+            </p>
+          </div>
+          <div class="flex justify-center items-center gap-10 mt-10">
+            <div>
+              <div>
+                <img
+                  src="https://preview.colorlib.com/theme/coffee/img/b1.jpg.webp"
+                  alt=""
+                  class="rounded-2xl"
+                />
+              </div>
+              <div class="flex flex-col mt-5 gap-5">
+                <div>
+                  <button
+                    class="bg-white border-[1px] border-neutral-500 px-6 py-1 rounded-3xl font-font hover:bg-[#b68834] hover:text-white hover:duration-500 dark:text-white dark:bg-slate-800 dark:border-white dark:hover:bg-[#b68834] dark:hover:text-white dark:hover:duration-500 dark:hover:border-neutral-500"
+                  >
+                    Travel
+                  </button>
+                  <button
+                    class="bg-white border-[1px] border-neutral-500 px-7 py-1 rounded-3xl font-font hover:bg-[#b68834] hover:text-white hover:duration-500 dark:text-white dark:bg-slate-800 dark:border-white dark:hover:bg-[#b68834] dark:hover:text-white dark:hover:duration-500 dark:hover:border-neutral-500"
+                  >
+                    Life Style
+                  </button>
+                </div>
+                <div class="flex flex-col gap-3">
+                  <h1 class="font-font text-lg font-semibold dark:text-white">
+                    Portable latest Fashion for young women
+                  </h1>
+                  <p
+                    class="text-neutral-500 font-font w-[600px] dark:text-white"
+                  >
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                    sed do eiusmod tempor incididunt ut labore et dolore.
+                  </p>
+                </div>
+                <div>
+                  <h1 class="font-font dark:text-white">31st January, 2018</h1>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div>
+                <img
+                  src="https://preview.colorlib.com/theme/coffee/img/b2.jpg.webp"
+                  alt=""
+                  class="rounded-2xl"
+                />
+              </div>
+              <div class="flex flex-col mt-5 gap-5">
+                <div>
+                  <button
+                    class="bg-white border-[1px] border-neutral-500 hover:bg-[#b68834] hover:text-white hover:duration-500 px-6 py-1 rounded-3xl font-font dark:text-white dark:bg-slate-800 dark:border-white dark:hover:bg-[#b68834] dark:hover:text-white dark:hover:duration-500 dark:hover:border-neutral-500"
+                  >
+                    Travel
+                  </button>
+                  <button
+                    class="bg-white border-[1px] border-neutral-500 px-7 py-1 rounded-3xl font-font hover:bg-[#b68834] hover:text-white hover:duration-500 dark:text-white dark:bg-slate-800 dark:border-white dark:hover:bg-[#b68834] dark:hover:text-white dark:hover:duration-500 dark:hover:border-neutral-500"
+                  >
+                    Life Style
+                  </button>
+                </div>
+                <div class="flex flex-col gap-3">
+                  <h1 class="font-font text-lg font-semibold dark:text-white">
+                    Portable latest Fashion for young women
+                  </h1>
+                  <p
+                    class="text-neutral-500 font-font w-[600px] dark:text-white"
+                  >
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                    sed do eiusmod tempor incididunt ut labore et dolore.
+                  </p>
+                </div>
+                <div>
+                  <h1 class="font-font dark:text-white">31st January, 2018</h1>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer
+      class="bg-footer bg-cover dark:bg-slate-800 pb-14 pt-48 text-white"
+    >
+      <div>
+        <div class="flex justify-around">
+          <div class="flex flex-col gap-5">
+            <h1 class="font-font font-semibold">About Us</h1>
+            <p class="font-font w-[550px]">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+              eiusmod tempor incididunt ut labore dolore magna aliqua.
+            </p>
+            <!-- <p>Copyright ©2024 All rights reserved | This template is made with
+                    <div class="flex flex-col gap-1">
+                        <div class="flex gap-3">
+                            <img src="images/hero5.png" alt="" width="20">
+                            by
+                            <a href="" class="text-[#b68834]">Colorlib</a>
+                        </div>
+                    </div>
+                </p> -->
+
+            <div class="flex flex-col gap-1">
+              <p>
+                Copyright ©2024 All rights reserved | This template is made with
+              </p>
+              <span class="flex gap-3"
+                ><img src="./images/hero5.png" alt="heart" />by
+                <a
+                  href="https://colorlib.com/"
+                  target="_blank"
+                  class="text-[#b68834]"
+                  >Colorib</a
+                ></span
+              >
+            </div>
+          </div>
+          <div class="flex flex-col gap-5">
+            <div>
+              <h1 class="font-font font-semibold">Newsletter</h1>
+            </div>
+            <div class="flex flex-col gap-0">
+              <p>Stay update with our latest</p>
+              <div class="flex">
+                <input
+                  class="text-neutral-500 font-font py-2 px-7"
+                  type="email"
+                  name=""
+                  id=""
+                  placeholder="Enter Email"
+                />
+                <button
+                  class="text-white bg-[#b68834] py-2 px-3 font-font font-semibold"
+                >
+                  —>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="flex flex-col gap-5">
+              <div class="flex flex-col gap-5">
+                <h1>Follow Us</h1>
+                <p>Let us be social</p>
+              </div>
+              <div class="flex gap-3">
+                <a href="https://ru-ru.facebook.com/">
+                  <img
+                    src="https://s3-alpha-sig.figma.com/img/f622/61cd/cde20ce4df9afd1061f8a5b7814b3351?Expires=1715558400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=kGcZsxGWHjp-erCHu6pJDJxl8DouFFPrTjzO8PzsUaNnyaPZCcMKnEAAuHbJlCayfiPdN0GWjDSJtbqDKAX8MngAzznvZD94U~DryMuREVMF~cDPPsXzJndesnr5UJZEaU~B~JpkC4LCbpDUmc4PsFDtdWiQpq72Z2oX~tkBjibHtgrLlMbbHErdzY5SjGV1IamchR2cnqi6uZ-jH2bR~AxwtiYXLv9Be7PPNfdoB86XdxZcljnYurAwE9Dt~2jtTKMsHFES-VV8aqk9IiI-DGZf-jNaTOA2X6tkLdBq0dn1MROnkv6KCB8QzrSPD5jOwQbjtpC0eOtmXQTANO-NSA__"
+                    alt=""
+                    width="30"
+                  />
+                </a>
+                <a href="https://twitter.com/">
+                  <img
+                    src="https://s3-alpha-sig.figma.com/img/33db/57e1/a2a2772ed5a1e79279d42c356ce825bb?Expires=1715558400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=GMNEqe8TibpJhwmYICXWAYXdTYXzADy1AUeTqtsHnyWIhoLBNQ-y3vgn4M~lE3ce~-DXTHPZwynUGq96Q~6VKzO3XRJyQaI7oFX9ve0DoB3Mg6363UKSaR~869yN9t6Ejfhn6daE0Jmyj4y-9XVPWyzHpgdVx1hVNsiesGwHWDy1IwyzFBvfH5caWYJASjqR0oBf73jtHOlGkuNolullFGZRC63YGSEe7gI0Y5pHmP9SWJEvz6ReWHKL8kmzeXie3dnqqJHGK1MskUBR4aWk9wOr-poKlCEph3aYTprwTqkMCSUaLEsUVixQR8yRgrI178dMvYyvk8OobzXBHagKyQ__"
+                    alt=""
+                    width="30"
+                  />
+                </a>
+                <a href="https://www.google.co.uz/">
+                  <img
+                    src="https://s3-alpha-sig.figma.com/img/57a6/5b78/f9af685cfb62198166d9dec0bd145713?Expires=1715558400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=kq07uTphENnRPc9NZHqyGphOPzn580Nk786xkmKs6Ht4wPuz74GrKm9Iw0w6kOWKYKSRxcAl4XI-KehweauSJ7D4X0JF1qMMRwlVWInk-5J0Os1b5Jg28f9bUoDtQsIheIfiGZ8k6ChwmgtmWAJlrPn7MLo1Y82ohdRnj0WjjrMlczNY8NFD0hgXeaEwWoy6i3AxjqIms0cX7uZc6TWzvliUwtFrfTlQ0s5ngK90sUn10VODI2IBdnMo2qZbe8PsUTfvJKPkF2BgxkNk-JUcBD6CUKqfShk5YpwHSMb1afs02u6HIsNRxmTdnrQpqx~W0nIHfb3JjJcEo0KuaiGZQw__"
+                    alt=""
+                    width="30"
+                  />
+                </a>
+                <a href="https://www.google.co.uz/">
+                  <h1 class="font-font text-xl text-white font-semibold">Bē</h1>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="./counterup.js"></script>
+    <script>
+      // iconlar chaqirilvoti
+      var themeToggleDarkIcon = document.getElementById(
+        "theme-toggle-dark-icon"
+      );
+      var themeToggleLightIcon = document.getElementById(
+        "theme-toggle-light-icon"
+      );
+
+      // localstorage ni o'zgartirish layt yoki dark?
+      if (
+        localStorage.getItem("color-theme") === "dark" ||
+        (!("color-theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        themeToggleLightIcon.classList.remove("hidden");
+      } else {
+        themeToggleDarkIcon.classList.remove("hidden");
+      }
+
+      //iconlar o'zgarisi
+
+      var themeToggleBtn = document.getElementById("theme-toggle");
+
+      themeToggleBtn.addEventListener("click", function () {
+        themeToggleDarkIcon.classList.toggle("hidden");
+        themeToggleLightIcon.classList.toggle("hidden");
+
+        // agar localstorage qanaqa busa shunaqa dark yoki layt buladi
+        if (localStorage.getItem("color-theme")) {
+          if (localStorage.getItem("color-theme") === "light") {
+            document.documentElement.classList.add("dark");
+            localStorage.setItem("color-theme", "dark");
+          } else {
+            document.documentElement.classList.remove("dark");
+            localStorage.setItem("color-theme", "light");
+          }
+
+          // class yozib dark: diyib nimadir busin diyilsa shunaqa saytda buladi
+        } else {
+          if (document.documentElement.classList.contains("dark")) {
+            document.documentElement.classList.remove("dark");
+            localStorage.setItem("color-theme", "light");
+          } else {
+            document.documentElement.classList.add("dark");
+            localStorage.setItem("color-theme", "dark");
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
