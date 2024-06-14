@@ -1,13 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Document</title>
+  <title>Coffee</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <link
     href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
     rel="stylesheet" />
@@ -34,15 +36,15 @@
 </head>
 
 <body class="dark:bg-slate-800">
-  <header class="fixed top-0 inset-x-0 bg-orange-950 bg-opacity-70 py-3">
+  <header class="fixed top-0 inset-x-0 bg-orange-950 bg-opacity-70 py-3 z-10" data-aos="fade-down">
     <div class="flex justify-between items-center px-10 mt-6">
       <div>
         <img src="https://preview.colorlib.com/theme/coffee/img/logo.png.webp" alt="" />
       </div>
-      <div class="flex gap-5">
+      <div class="hidden gap-5 lg:flex">
         <div>
           <div class="mt-1">
-            <button id="theme-toggle" type="button" class="text-red-500 p-2.5">
+            <button id="theme-toggle" type="button" class="text-gray-600 p-2.5 dark:text-orange-500">
               <svg id="theme-toggle-dark-icon" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 0 20 20"
                 xmlns="http://www.w3.org/2000/svg">
                 <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
@@ -63,22 +65,36 @@
                 to 2pm</p>
               <p class="text-white font-font hover:text-[#b68834] hover:duration-500 hover:cursor-pointer">Sat-Sun: 11am
                 to 4pm</p>
-              <p class="text-white font-font hover:text-[#b68834] hover:duration-500 hover:cursor-pointer">(012) 6985
-                236 7512</p>
+              <a href="tel:+(012) 6985 236 7512"
+                class="text-white font-font hover:text-[#b68834] hover:duration-500 hover:cursor-pointer">(012) 6985
+                236 7512</a>
             </div>
           </div>
           <div class="flex gap-5">
-            <p class="text-white font-font hover:text-[#b68834] hover:duration-500 hover:cursor-pointer">HOME</p>
-            <p class="text-white font-font hover:text-[#b68834] hover:duration-500 hover:cursor-pointer">ABOUT</p>
-            <p class="text-white font-font hover:text-[#b68834] hover:duration-500 hover:cursor-pointer">COFFEE</p>
-            <p class="text-white font-font hover:text-[#b68834] hover:duration-500 hover:cursor-pointer">REVIEW</p>
-            <p class="text-white font-font hover:text-[#b68834] hover:duration-500 hover:cursor-pointer">BLOG</p>
-            <select name="" id=""
-              class="rounded bg-transparent text-white font-font hover:text-[#b68834] hover:duration-500 hover:cursor-pointer">
-              <option value="" class="text-black font-font">PAGES</option>
-              <option value="" class="text-black font-font">Generic</option>
-              <option value="" class="text-black font-font">Elements</option>
-            </select>
+            <a href="/index.html"
+              class="text-white font-font hover:text-[#b68834] hover:duration-500 hover:cursor-pointer">HOME</a>
+            <a href="#about"
+              class="text-white font-font hover:text-[#b68834] hover:duration-500 hover:cursor-pointer">ABOUT</a>
+            <a href="#coffee"
+              class="text-white font-font hover:text-[#b68834] hover:duration-500 hover:cursor-pointer">COFFEE</a>
+            <a href="#review"
+              class="text-white font-font hover:text-[#b68834] hover:duration-500 hover:cursor-pointer">REVIEW</a>
+            <a href="#blog"
+              class="text-white font-font hover:text-[#b68834] hover:duration-500 hover:cursor-pointer">BLOG</a>
+            <div class="relative" id="div1">
+              <span
+                class="rounded bg-transparent w-[95px] text-white font-font hover:text-[#b68834] outline-none hover:duration-500 hover:cursor-pointer">
+                PAGES
+              </span>
+              <div class="absolute flex-col gap-5 top-10 bg-white p-3 hidden" id="div">
+                <span
+                  class="rounded bg-transparent w-[95px] text-black font-font hover:text-[#b68834] outline-none hover:duration-500 hover:cursor-pointer"><a
+                    href="./generic.html">Generic</a></span>
+                <span
+                  class="rounded bg-transparent w-[95px] text-black font-font hover:text-[#b68834] outline-none hover:duration-500 hover:cursor-pointer"><a
+                    href="./elements.html  ">Elements</a></span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -87,7 +103,7 @@
   <main>
     <section>
       <div class="bg-hero_img bg-cover bg-repeat-y h-[700px]">
-        <div class="flex flex-col gap-8 px-10">
+        <div class="flex flex-col gap-8 px-10" data-aos="fade-right">
           <div class="mt-28">
             <h1 class="text-white font-semibold text-sm font-font">
               NOW YOU CAN FEEL THE ENERGY
@@ -108,8 +124,9 @@
       </div>
     </section>
     <section>
-      <div class="flex justify-center items-center w-full gap-40 dark:bg-slate-800">
-        <div class="bg-img_hero w-[500px] h-[350px] rounded-lg">
+      <div id="about"
+        class="flex flex-col justify-center items-center w-full gap-10 dark:bg-slate-800 lg:flex-row lg:gap-40">
+        <div class="bg-img_hero w-[500px] h-[350px] rounded-lg" data-aos="fade-right">
           <div class="flex justify-center items-center">
             <a href="https://www.youtube.com/watch?v=ARA0AxrnHdM">
               <img class="mt-[150px] font-font" src="https://preview.colorlib.com/theme/coffee/img/play-icon.png.webp"
@@ -117,7 +134,7 @@
             </a>
           </div>
         </div>
-        <div class="flex flex-col gap-4">
+        <div class="flex flex-col gap-4" data-aos="fade-left">
           <p class="text-[#b68834] font-mono text-sm font-font">
             LIVE COFFEE MAKING PROCESS.
           </p>
@@ -136,8 +153,8 @@
         </div>
       </div>
     </section>
-    <section class="bg-hero_img2 dark:bg-none dark:bg-slate-800 h-[820px] mt-24">
-      <div class="flex flex-col justify-center items-center py-16">
+    <section id="coffee" class="bg-hero_img2 dark:bg-none dark:bg-slate-800 h-[820px] mt-24">
+      <div class="flex flex-col justify-center items-center py-16" data-aos="fade-down">
         <h1 class="text-4xl font-semibold font-font dark:text-white">
           What kind of Coffee we serve for you
         </h1>
@@ -145,10 +162,10 @@
           Who are in extremely love with eco friendly system.
         </p>
       </div>
-      <div class="mt-10">
+      <div class="mt-10" data-aos="fade-up">
         <div class="flex flex-col gap-10">
           <div class="flex justify-center items-center gap-32">
-            <div class="bg-white w-[340px] h-36 rounded-xl flex flex-col gap-4">
+            <div class="bg-white w-[340px] h-36 rounded-xl flex flex-col gap-4 shadow-[#ffefd5] opacity-90 shadow-2xl">
               <div class="flex justify-center items-center gap-36 mt-2">
                 <h1 class="text-xl font-semibold font-font">Cappuccino</h1>
                 <h1 class="text-[#b68834] font-semibold text-lg font-font">
@@ -162,7 +179,7 @@
                 </p>
               </div>
             </div>
-            <div class="bg-white w-[340px] h-36 rounded-xl flex flex-col gap-4">
+            <div class="bg-white w-[340px] h-36 rounded-xl flex flex-col gap-4 shadow-[#ffefd5] opacity-90 shadow-2xl">
               <div class="flex justify-center items-center gap-36 mt-2">
                 <h1 class="text-xl font-semibold font-font">Americano</h1>
                 <h1 class="text-[#b68834] font-semibold text-lg font-font">
@@ -176,7 +193,7 @@
                 </p>
               </div>
             </div>
-            <div class="bg-white w-[340px] h-36 rounded-xl flex flex-col gap-4">
+            <div class="bg-white w-[340px] h-36 rounded-xl flex flex-col gap-4 shadow-[#ffefd5] opacity-90 shadow-2xl">
               <div class="flex justify-center items-center gap-36 mt-2">
                 <h1 class="text-xl font-semibold font-font">Espresso</h1>
                 <h1 class="text-[#b68834] font-semibold text-lg font-font">
@@ -192,7 +209,7 @@
             </div>
           </div>
           <div class="flex justify-center items-center gap-32">
-            <div class="bg-white w-[340px] h-36 rounded-xl flex flex-col gap-4">
+            <div class="bg-white w-[340px] h-36 rounded-xl flex flex-col gap-4 shadow-[#ffefd5] opacity-90 shadow-2xl">
               <div class="flex justify-center items-center gap-36 mt-2">
                 <h1 class="text-xl font-semibold font-font">Macchiato</h1>
                 <h1 class="text-[#b68834] font-semibold text-lg font-font">
@@ -206,7 +223,7 @@
                 </p>
               </div>
             </div>
-            <div class="bg-white w-[340px] h-36 rounded-xl flex flex-col gap-4">
+            <div class="bg-white w-[340px] h-36 rounded-xl flex flex-col gap-4 shadow-[#ffefd5] opacity-90 shadow-2xl">
               <div class="flex justify-center items-center gap-36 mt-2">
                 <h1 class="text-xl font-semibold font-font">Mocha</h1>
                 <h1 class="text-[#b68834] font-semibold text-lg font-font">$49</h1>
@@ -218,7 +235,7 @@
                 </p>
               </div>
             </div>
-            <div class="bg-white w-[340px] h-36 rounded-xl flex flex-col gap-4">
+            <div class="bg-white w-[340px] h-36 rounded-xl flex flex-col gap-4 shadow-[#ffefd5] opacity-90 shadow-2xl">
               <div class="flex justify-center items-center gap-36 mt-2">
                 <h1 class="text-xl font-semibold font-font">Coffee Latte</h1>
                 <h1 class="text-[#b68834] font-semibold text-lg font-font">
@@ -234,7 +251,7 @@
             </div>
           </div>
           <div class="flex justify-center items-center gap-32">
-            <div class="bg-white w-[340px] h-36 rounded-xl flex flex-col gap-4">
+            <div class="bg-white w-[340px] h-36 rounded-xl flex flex-col gap-4 shadow-[#ffefd5] opacity-90 shadow-2xl">
               <div class="flex justify-center items-center gap-36 mt-2">
                 <h1 class="text-xl font-semibold font-font">Piccolo Latte</h1>
                 <h1 class="text-[#b68834] font-semibold text-lg font-font">
@@ -248,7 +265,7 @@
                 </p>
               </div>
             </div>
-            <div class="bg-white w-[340px] h-36 rounded-xl flex flex-col gap-4">
+            <div class="bg-white w-[340px] h-36 rounded-xl flex flex-col gap-4 shadow-[#ffefd5] opacity-90 shadow-2xl">
               <div class="flex justify-center items-center gap-36 mt-2">
                 <h1 class="text-xl font-semibold font-font">Ristretto</h1>
                 <h1 class="text-[#b68834] font-semibold text-lg font-font">
@@ -262,7 +279,7 @@
                 </p>
               </div>
             </div>
-            <div class="bg-white w-[340px] h-36 rounded-xl flex flex-col gap-4">
+            <div class="bg-white w-[340px] h-36 rounded-xl flex flex-col gap-4 shadow-[#ffefd5] opacity-90 shadow-2xl">
               <div class="flex justify-center items-center gap-36 mt-2">
                 <h1 class="text-xl font-semibold font-font">Affogato</h1>
                 <h1 class="text-[#b68834] font-semibold text-lg font-font">
@@ -282,7 +299,7 @@
     </section>
     <section>
       <div class="mt-20 dark:bg-slate-800">
-        <div class="flex flex-col justify-center items-center gap-2">
+        <div class="flex flex-col justify-center items-center gap-2" data-aos="fade-down">
           <h1 class="text-3xl font-semibold font-font dark:text-white">
             What kind of Coffee we serve for you
           </h1>
@@ -290,38 +307,28 @@
             Who are in extremely love with eco friendly system.
           </p>
         </div>
-        <div class="mt-5 flex justify-center items-center gap-10">
+        <div class="mt-5 flex justify-center items-center gap-10" data-aos="fade-up">
           <div class="flex flex-col justify-center gap-10">
-            <a href="https://preview.colorlib.com/theme/coffee/img/g1.jpg.webp">
-              <img src="https://preview.colorlib.com/theme/coffee/img/g1.jpg.webp" alt="" />
-            </a>
+            <img src="https://preview.colorlib.com/theme/coffee/img/g1.jpg.webp" alt="" />
             <div class="">
-              <a href="https://preview.colorlib.com/theme/coffee/img/g2.jpg.webp">
-                <img src="https://preview.colorlib.com/theme/coffee/img/g2.jpg.webp" alt="" />
-              </a>
+              <img src="https://preview.colorlib.com/theme/coffee/img/g2.jpg.webp" alt="" />
             </div>
           </div>
           <div class="flex flex-col justify-center items-center gap-10">
             <div>
-              <a href="https://preview.colorlib.com/theme/coffee/img/g3.jpg.webp">
-                <img src="https://preview.colorlib.com/theme/coffee/img/g3.jpg.webp" alt="" />
-              </a>
+              <img src="https://preview.colorlib.com/theme/coffee/img/g3.jpg.webp" alt="" />
             </div>
             <div class="flex gap-10">
-              <a href="https://preview.colorlib.com/theme/coffee/img/g4.jpg.webp">
-                <img src="https://preview.colorlib.com/theme/coffee/img/g4.jpg.webp" alt="" />
-              </a>
-              <a href="https://preview.colorlib.com/theme/coffee/img/g5.jpg.webp">
-                <img src="https://preview.colorlib.com/theme/coffee/img/g5.jpg.webp" alt="" />
-              </a>
+              <img src="https://preview.colorlib.com/theme/coffee/img/g4.jpg.webp" alt="" />
+              <img src="https://preview.colorlib.com/theme/coffee/img/g5.jpg.webp" alt="" />
             </div>
           </div>
         </div>
       </div>
     </section>
-    <section class="flex flex-col bg-[#b68834] mt-20 w-full pb-30 justify-center items-center pb-24">
+    <section id="review" class="flex flex-col bg-[#b68834] mt-20 w-full pb-30 justify-center items-center pb-24">
       <div class="container">
-        <div class="flex flex-col justify-center items-center gap-2">
+        <div class="flex flex-col justify-center items-center gap-2" data-aos="fade-down">
           <h1 class="text-white text-4xl font-font font-semibold mt-20">
             What kind of Coffee we serve for you
           </h1>
@@ -330,7 +337,7 @@
           </p>
         </div>
         <div class="flex justify-around items-center mt-20">
-          <div class="flex flex-col gap-5 mt-5">
+          <div class="flex flex-col gap-5 mt-5" data-aos="fade-right">
             <div>
               <img src="https://preview.colorlib.com/theme/coffee/img/r1.png.webp" alt="" />
             </div>
@@ -349,7 +356,7 @@
               </p>
             </div>
           </div>
-          <div class="flex flex-col gap-5 mt-5">
+          <div class="flex flex-col gap-5 mt-5" data-aos="fade-left">
             <div>
               <img src="https://preview.colorlib.com/theme/coffee/img/r2.png.webp" alt="" />
             </div>
@@ -369,7 +376,7 @@
             </div>
           </div>
         </div>
-        <div class="flex justify-around items-center mt-20">
+        <div class="flex justify-around items-center mt-20" data-aos="fade-up">
           <div class="flex flex-col gap-2">
             <h1 class="text-white text-7xl font-font font-thin count" data-target="2536">
               0
@@ -397,9 +404,9 @@
         </div>
       </div>
     </section>
-    <section class="pb-24">
+    <section id="blog" class="pb-24">
       <div>
-        <div class="flex flex-col justify-center items-center gap-2">
+        <div class="flex flex-col justify-center items-center gap-2" data-aos="fade-down">
           <h1 class="text-4xl font-font font-semibold mt-20 dark:text-white">
             What kind of Coffee we serve for you
           </h1>
@@ -408,7 +415,7 @@
           </p>
         </div>
         <div class="flex justify-center items-center gap-10 mt-10">
-          <div>
+          <div data-aos="fade-right">
             <div>
               <img src="https://preview.colorlib.com/theme/coffee/img/b1.jpg.webp" alt="" class="rounded-2xl" />
             </div>
@@ -437,7 +444,7 @@
               </div>
             </div>
           </div>
-          <div>
+          <div data-aos="fade-left">
             <div>
               <img src="https://preview.colorlib.com/theme/coffee/img/b2.jpg.webp" alt="" class="rounded-2xl" />
             </div>
@@ -471,7 +478,7 @@
     </section>
   </main>
   <footer class="bg-footer bg-cover dark:bg-slate-800 pb-14 pt-48 text-white">
-    <div>
+    <div data-aos="fade-up">
       <div class="flex justify-around">
         <div class="flex flex-col gap-5">
           <h1 class="font-font font-semibold">About Us</h1>
@@ -484,28 +491,39 @@
             <p>
               Copyright ©2024 All rights reserved | This template is made with
             </p>
-            <span class="flex gap-3"><img src="./images/hero5.png" alt="heart" />by
-              <a href="https://colorlib.com/" target="_blank" class="text-[#b68834]">Colorib</a></span>
+            <span class="flex"><img src="./images/hero5.png" alt="heart" />by
+              <a href="https://colorlib.com/" target="_blank" class="text-[#b68834] ml-1">Colorib</a></span>
           </div>
         </div>
         <div class="flex flex-col gap-5">
           <div>
             <h1 class="font-font font-semibold">Newsletter</h1>
           </div>
-          <div class="flex flex-col gap-0">
+          <div class="flex flex-col gap-3">
             <p>Stay update with our latest</p>
-            <div class="flex">
-              <input class="text-neutral-500 font-font py-2 px-7" type="email" name="" id=""
-                placeholder="Enter Email" />
-              <button
-                class="flex items-center bg-blue-500 text-white gap-1 px-4 py-2 cursor-pointer font-semibold tracking-widest hover:bg-blue-400 duration-300 hover:gap-2">
-                <svg class="w-5 h-5" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" fill="none"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5"
-                    stroke-linejoin="round" stroke-linecap="round"></path>
-                </svg>
-              </button>
+            <div class="relative rounded-md overflow-hidden bg-white shadow-xl w-75 text-black">
+              <input type="email" name="text" placeholder="Enter Email"
+                class="input bg-transparent outline-none border-none pl-6 pr-10 py-2 w-full font-sans text-lg font-semibold" />
+              <div class="absolute right-2 top-0.5">
+                <button
+                  class="w-10 h-10 rounded-full bg-violet-500 group shadow-xl flex items-center justify-center relative overflow-hidden">
+                  <svg width="50" height="50" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"
+                    class="relative z-10">
+                    <path d="M63.6689 29.0491L34.6198 63.6685L0.00043872 34.6194L29.0496 1.67708e-05L63.6689 29.0491Z"
+                      fill="white" fill-opacity="0.01"></path>
+                    <path d="M42.8496 18.7067L21.0628 44.6712" stroke="white" stroke-width="3.76603"
+                      stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M26.9329 20.0992L42.85 18.7067L44.2426 34.6238" stroke="white" stroke-width="3.76603"
+                      stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg>
+                  <div
+                    class="w-full h-full rotate-45 absolute left-[32%] top-[32%] bg-black group-hover:-left-[100%] group-hover:-top-[100%] duration-1000">
+                  </div>
+                  <div
+                    class="w-full h-full -rotate-45 absolute -left-[32%] -top-[32%] group-hover:left-[100%] group-hover:top-[100%] bg-black duration-1000">
+                  </div>
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -517,22 +535,53 @@
             </div>
             <div class="flex gap-3">
               <a href="https://ru-ru.facebook.com/">
-                <img
-                  src="https://s3-alpha-sig.figma.com/img/f622/61cd/cde20ce4df9afd1061f8a5b7814b3351?Expires=1715558400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=kGcZsxGWHjp-erCHu6pJDJxl8DouFFPrTjzO8PzsUaNnyaPZCcMKnEAAuHbJlCayfiPdN0GWjDSJtbqDKAX8MngAzznvZD94U~DryMuREVMF~cDPPsXzJndesnr5UJZEaU~B~JpkC4LCbpDUmc4PsFDtdWiQpq72Z2oX~tkBjibHtgrLlMbbHErdzY5SjGV1IamchR2cnqi6uZ-jH2bR~AxwtiYXLv9Be7PPNfdoB86XdxZcljnYurAwE9Dt~2jtTKMsHFES-VV8aqk9IiI-DGZf-jNaTOA2X6tkLdBq0dn1MROnkv6KCB8QzrSPD5jOwQbjtpC0eOtmXQTANO-NSA__"
-                  alt="" width="30" class="hover:text-blue-500" />
+                <svg fill="#ffff" width="18px" height="20px" viewBox="0 0 32.00 32.00"
+                  xmlns="http://www.w3.org/2000/svg" stroke="#ffff">
+                  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                  <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC"
+                    stroke-width="0.32"></g>
+                  <g id="SVGRepo_iconCarrier">
+                    <path
+                      d="M21.95 5.005l-3.306-.004c-3.206 0-5.277 2.124-5.277 5.415v2.495H10.05v4.515h3.317l-.004 9.575h4.641l.004-9.575h3.806l-.003-4.514h-3.803v-2.117c0-1.018.241-1.533 1.566-1.533l2.366-.001.01-4.256z">
+                    </path>
+                  </g>
+                </svg>
               </a>
               <a href="https://twitter.com/">
-                <img
-                  src="https://s3-alpha-sig.figma.com/img/33db/57e1/a2a2772ed5a1e79279d42c356ce825bb?Expires=1715558400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=GMNEqe8TibpJhwmYICXWAYXdTYXzADy1AUeTqtsHnyWIhoLBNQ-y3vgn4M~lE3ce~-DXTHPZwynUGq96Q~6VKzO3XRJyQaI7oFX9ve0DoB3Mg6363UKSaR~869yN9t6Ejfhn6daE0Jmyj4y-9XVPWyzHpgdVx1hVNsiesGwHWDy1IwyzFBvfH5caWYJASjqR0oBf73jtHOlGkuNolullFGZRC63YGSEe7gI0Y5pHmP9SWJEvz6ReWHKL8kmzeXie3dnqqJHGK1MskUBR4aWk9wOr-poKlCEph3aYTprwTqkMCSUaLEsUVixQR8yRgrI178dMvYyvk8OobzXBHagKyQ__"
-                  alt="" width="30" class="hover:text-blue-500" />
+                <svg width="20px" height="18px" viewBox="0 -2 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink" fill="#ffffff">
+                  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                  <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                  <g id="SVGRepo_iconCarrier">
+                    <title>twitter [#ffffff154]</title>
+                    <desc>Created with Sketch.</desc>
+                    <defs> </defs>
+                    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                      <g id="Dribbble-Light-Preview" transform="translate(-60.000000, -7521.000000)" fill="#ffffff">
+                        <g id="icons" transform="translate(56.000000, 160.000000)">
+                          <path
+                            d="M10.29,7377 C17.837,7377 21.965,7370.84365 21.965,7365.50546 C21.965,7365.33021 21.965,7365.15595 21.953,7364.98267 C22.756,7364.41163 23.449,7363.70276 24,7362.8915 C23.252,7363.21837 22.457,7363.433 21.644,7363.52751 C22.5,7363.02244 23.141,7362.2289 23.448,7361.2926 C22.642,7361.76321 21.761,7362.095 20.842,7362.27321 C19.288,7360.64674 16.689,7360.56798 15.036,7362.09796 C13.971,7363.08447 13.518,7364.55538 13.849,7365.95835 C10.55,7365.79492 7.476,7364.261 5.392,7361.73762 C4.303,7363.58363 4.86,7365.94457 6.663,7367.12996 C6.01,7367.11125 5.371,7366.93797 4.8,7366.62489 L4.8,7366.67608 C4.801,7368.5989 6.178,7370.2549 8.092,7370.63591 C7.488,7370.79836 6.854,7370.82199 6.24,7370.70483 C6.777,7372.35099 8.318,7373.47829 10.073,7373.51078 C8.62,7374.63513 6.825,7375.24554 4.977,7375.24358 C4.651,7375.24259 4.325,7375.22388 4,7375.18549 C5.877,7376.37088 8.06,7377 10.29,7376.99705"
+                            id="twitter-[#ffffff154]"> </path>
+                        </g>
+                      </g>
+                    </g>
+                  </g>
+                </svg>
               </a>
               <a href="https://www.google.co.uz/">
-                <img
-                  src="https://s3-alpha-sig.figma.com/img/57a6/5b78/f9af685cfb62198166d9dec0bd145713?Expires=1715558400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=kq07uTphENnRPc9NZHqyGphOPzn580Nk786xkmKs6Ht4wPuz74GrKm9Iw0w6kOWKYKSRxcAl4XI-KehweauSJ7D4X0JF1qMMRwlVWInk-5J0Os1b5Jg28f9bUoDtQsIheIfiGZ8k6ChwmgtmWAJlrPn7MLo1Y82ohdRnj0WjjrMlczNY8NFD0hgXeaEwWoy6i3AxjqIms0cX7uZc6TWzvliUwtFrfTlQ0s5ngK90sUn10VODI2IBdnMo2qZbe8PsUTfvJKPkF2BgxkNk-JUcBD6CUKqfShk5YpwHSMb1afs02u6HIsNRxmTdnrQpqx~W0nIHfb3JjJcEo0KuaiGZQw__"
-                  alt="" width="30" class="hover:text-blue-500" />
+                <svg fill="#ffffff" width="20px" height="18px" viewBox="0 0 24 24" id="Layer_1" data-name="Layer 1"
+                  xmlns="http://www.w3.org/2000/svg" stroke="#ffffff">
+                  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                  <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                  <g id="SVGRepo_iconCarrier">
+                    <path
+                      d="M12,0A11.916,11.916,0,0,0,6,1.621a.976.976,0,0,0-.131.08A11.975,11.975,0,1,0,12,0Zm9.022,16.285A16.256,16.256,0,0,1,9.8,15.69a9.961,9.961,0,0,1,2.369-2.55,11.972,11.972,0,0,0,4.448.873,12.071,12.071,0,0,0,5.348-1.25A9.906,9.906,0,0,1,21.022,16.285Zm.853-5.782a9.988,9.988,0,0,1-2.938,1.231A18.2,18.2,0,0,0,15.868,2.78,10.017,10.017,0,0,1,21.875,10.5ZM12.749,2.038a16.227,16.227,0,0,1,4.2,9.949,9.969,9.969,0,0,1-4-.69A12.031,12.031,0,0,0,8.5,2.646,9.922,9.922,0,0,1,12,2C12.253,2,12.5,2.019,12.749,2.038ZM6.487,3.665A10.018,10.018,0,0,1,8.942,5.931a18.253,18.253,0,0,0-6.708,8.2A9.957,9.957,0,0,1,6.487,3.665ZM3.356,17.005A16.261,16.261,0,0,1,9.976,7.65a9.954,9.954,0,0,1,.993,3.891,12.033,12.033,0,0,0-4.715,8.63A10.057,10.057,0,0,1,3.356,17.005ZM12,22a9.948,9.948,0,0,1-3.772-.744A9.983,9.983,0,0,1,8.9,17.481,17.9,17.9,0,0,0,19.375,18.73,9.963,9.963,0,0,1,12,22Z">
+                    </path>
+                  </g>
+                </svg>
               </a>
               <a href="https://www.google.co.uz/">
-                <h1 class="font-font text-xl text-white font-semibold hover:text-blue-500 hover:duration-500">Bē</h1>
+                <h1 class="font-font text-base text-white font-semibold hover:text-blue-500 hover:duration-500">Bē</h1>
               </a>
             </div>
           </div>
@@ -589,6 +638,10 @@
           localStorage.setItem("color-theme", "dark");
         }
       }
+    });
+    AOS.init({
+      duration: 1300,
+      once: true,
     });
   </script>
 </body>

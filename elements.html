@@ -1,0 +1,1064 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet" />
+  <style>
+    table,
+    th,
+    td {
+      border-bottom: 1px solid black;
+      border-collapse: collapse;
+    }
+
+    th,
+    td {
+      padding: 20px;
+    }
+
+    th {
+      text-align: left;
+    }
+  </style>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          fontFamily: {
+            font: [`Poppins`],
+          },
+          backgroundImage: {
+            hero_img: "url('/images/hero.png')",
+            img_hero: "url('/images/hero2.webp')",
+            hero_img2: "url('/images/hero3.webp')",
+            img_hero2: "url('/images/hero4.webp')",
+            footer: "url('/images/footer.png')",
+          },
+        },
+      },
+      darkMode: "class",
+    };
+  </script>
+</head>
+
+<body>
+  <header class="fixed top-0 inset-x-0 bg-orange-950 bg-opacity-70 py-3 z-10" data-aos="fade-down">
+    <div class="flex justify-between items-center px-10 mt-6">
+      <div>
+        <img src="https://preview.colorlib.com/theme/coffee/img/logo.png.webp" alt="" />
+      </div>
+      <div class="hidden gap-5 lg:flex">
+        <div>
+          <div class="mt-1">
+            <button id="theme-toggle" type="button" class="text-red-500 p-2.5">
+              <svg id="theme-toggle-dark-icon" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg">
+                <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+              </svg>
+              <svg id="theme-toggle-light-icon" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                  fill-rule="evenodd" clip-rule="evenodd"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div>
+          <div class="flex flex-col gap-3">
+            <div class="flex gap-5">
+              <p class="text-white font-font hover:text-[#b68834] hover:duration-500 hover:cursor-pointer">Mon-Fri: 8am
+                to 2pm</p>
+              <p class="text-white font-font hover:text-[#b68834] hover:duration-500 hover:cursor-pointer">Sat-Sun: 11am
+                to 4pm</p>
+              <p class="text-white font-font hover:text-[#b68834] hover:duration-500 hover:cursor-pointer">(012) 6985
+                236 7512</p>
+            </div>
+          </div>
+          <div class="flex gap-5">
+            <a href="/index.html"
+              class="text-white font-font hover:text-[#b68834] hover:duration-500 hover:cursor-pointer">HOME</a>
+            <a href="#about"
+              class="text-white font-font hover:text-[#b68834] hover:duration-500 hover:cursor-pointer">ABOUT</a>
+            <a href="#coffee"
+              class="text-white font-font hover:text-[#b68834] hover:duration-500 hover:cursor-pointer">COFFEE</a>
+            <a href="#review"
+              class="text-white font-font hover:text-[#b68834] hover:duration-500 hover:cursor-pointer">REVIEW</a>
+            <a href="#blog"
+              class="text-white font-font hover:text-[#b68834] hover:duration-500 hover:cursor-pointer">BLOG</a>
+            <div class="relative" id="div1">
+              <span
+                class="rounded bg-transparent w-[95px] text-white font-font hover:text-[#b68834] outline-none hover:duration-500 hover:cursor-pointer">
+                PAGES
+              </span>
+              <div class="absolute flex-col gap-5 top-10 bg-white p-3 hidden" id="div">
+                <span
+                  class="rounded bg-transparent w-[95px] text-black font-font hover:text-[#b68834] outline-none hover:duration-500 hover:cursor-pointer"><a
+                    href="./generic.html">Generic</a></span>
+                <span
+                  class="rounded bg-transparent w-[95px] text-black font-font hover:text-[#b68834] outline-none hover:duration-500 hover:cursor-pointer"><a
+                    href="./elements.html  ">Elements</a></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <section class="bg-[#b68834] w-full h-[600px]">
+    <div class="flex justify-center items-center">
+      <div class="flex flex-col gap-5 mt-52">
+        <div class="ml-28">
+          <h1 class="text-white text-3xl font-bold font-font">The Elements Page</h1>
+        </div>
+        <div>
+          <p class="text-center text-white w-[520px] font-font">It won’t be a bigger problem to find one video game
+            lover in your neighbor. Since the introduction of Virtual Game.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="ml-20 mt-20">
+      <div>
+        <h1 class="text-2xl font-font font-semibold">Text Sample</h1>
+      </div>
+      <div class="mt-5">
+        <div class="flex flex-col">
+          <div class="flex gap-1">
+            <p class="font-font text-neutral-500">Every avid independent filmmaker has</p>
+            <p class="text-[#b68834] font-semibold font-font">Bold</p>
+            <p class="font-font text-neutral-500">about making that</p>
+            <i class="text-neutral-500 font-font">italic</i>
+            <p class="font-font text-neutral-500">interest documentary, or short film to show off their creative
+              prowess. Many have great</p>
+          </div>
+          <div class="flex gap-1">
+            <p class="font-font text-neutral-500">ideas and want to "wow" the</p>
+            <sup class="text-[#b68834] text-xs font-font">superscript</sup>
+            <p class="font-font text-neutral-500"> scene, or video renters with their big project. But once you have
+              the<sub class="text-[#b68834] font-font">subscript</sub> “in the can” (no easy feat), how do you move</p>
+          </div>
+          <div class="flex gap-1">
+            <p class="font-font text-neutral-500">from a</p>
+            <del class="text-[#b68834] font-font">strike</del>
+            <p class="font-font text-neutral-500">through of master DVDs with the <u
+                class="text-[#b68834] font-font">"Underline"</u>marked hand-written title inside a secondhand CD case,
+              to a pile of cardboard boxes full of shiny new,</p>
+          </div>
+          <div class="flex gap-1">
+            <p class="font-font text-neutral-500">retail-ready DVDs, with UPC barcodes and polywrap sitting on your
+              doorstep? You need to create eye-popping artwork and have your project replicated. Using</p>
+          </div>
+          <div class="flex gap-1">
+            <p class="font-font text-neutral-500">a reputable full service DVD Replication company like PacificDisc,
+              Inc. to partner with is certainly a helpful option to ensure a professional end result, but to help</p>
+          </div>
+          <div class="flex gap-1">
+            <p class="font-font text-neutral-500">with your DVD replication project, here are 4 easy steps to follow for
+              good DVD replication results:</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <hr class="mt-32">
+  <section>
+    <div class="flex flex-col gap-10 ml-20 mt-20">
+      <div>
+        <h1 class="text-2xl font-semibold font-font">Sample Button</h1>
+      </div>
+      <div class="flex flex-col gap-14">
+        <div class="flex flex-col gap-5">
+          <div class="flex gap-5">
+            <button
+              class="bg-[#f9f9ff] w-[120px] h-[45px] font-font hover:bg-white hover:border hover:border-[#f9f9ff] hover:duration-500">Default</button>
+            <button
+              class="bg-[#b68834] w-[120px] h-[45px] font-font text-white hover:bg-white hover:text-[#b68834] hover:border hover:border-[#b68834] hover:duration-500">Primary</button>
+            <button
+              class="bg-[#4cd3e3] w-[120px] h-[45px] font-font text-white hover:bg-white hover:text-[#4cd3e3] hover:border hover:border-[#4cd3e3] hover:duration-500">Success</button>
+            <button
+              class="bg-[#38a4ff] w-[100px] h-[45px] font-font text-white hover:bg-white hover:text-[#38a4ff] hover:border hover:border-[#38a4ff] hover:duration-500">info</button>
+            <button
+              class="bg-[#f4e700] w-[120px] h-[45px] font-font text-white hover:bg-white hover:text-[#f4e700] hover:border hover:border-[#f4e700] hover:duration-500">Warning</button>
+            <button
+              class="bg-[#f44a40] w-[120px] h-[45px] font-font text-white hover:bg-white hover:text-[#f44a40] hover:border hover:border-[#f44a40] hover:duration-500">Danger</button>
+            <button
+              class="bg-[#f9f9ff] w-[120px] h-[45px] font-font hover:bg-white hover:border hover:border-[#f9f9ff] hover:duration-500"><u>Link</u></button>
+            <button class="bg-[#f9f9ff] w-[120px] h-[45px] font-font text-[#007bff] cursor-not-allowed">Disable</button>
+          </div>
+          <div class="flex gap-5">
+            <button
+              class="bg-white text-[#38a4ff] w-[120px] h-[45px] border border-[#f9f9ff] hover:duration-500 hover:bg-[#f9f9ff] hover:text-black">Default</button>
+            <button
+              class="w-[120px] h-[45px] font-font bg-white text-[#b68834] border border-[#b68834] hover:duration-500 hover:bg-[#b68834] hover:text-white">Primary</button>
+            <button
+              class="w-[120px] h-[45px] font-font bg-white text-[#4cd3e3] border border-[#4cd3e3] hover:duration-500 hover:bg-[#4cd3e3] hover:text-white">Success</button>
+            <button
+              class="w-[100px] h-[45px] font-font bg-white text-[#38a4ff] border border-[#38a4ff] hover:duration-500 hover:bg-[#38a4ff] hover:text-white">info</button>
+            <button
+              class="w-[120px] h-[45px] font-font bg-white text-[#f4e700] border border-[#f4e700] hover:duration-500 hover:bg-[#f4e700] hover:text-white">Warning</button>
+            <button
+              class="w-[120px] h-[45px] font-font bg-white text-[#f44a40] border border-[#f44a40] hover:duration-500 hover:bg-[#f44a40] hover:text-white">Danger</button>
+            <button
+              class="bg-white border border-[#f9f9ff] w-[120px] h-[45px] font-font hover:duration-500 hover:bg-[#f9f9ff] hover:text-black"><u>Link</u></button>
+            <button class="bg-[#f9f9ff] w-[120px] h-[45px] font-font text-[#007bff] cursor-not-allowed">Disable</button>
+          </div>
+        </div>
+        <div class="flex flex-col gap-5">
+          <div class="flex gap-5">
+            <button
+              class="rounded-md bg-[#f9f9ff] w-[120px] h-[45px] font-font hover:bg-white hover:border hover:border-[#f9f9ff] hover:duration-500">Default</button>
+            <button
+              class="rounded-md bg-[#b68834] w-[120px] h-[45px] font-font text-white hover:bg-white hover:text-[#b68834] hover:border hover:border-[#b68834] hover:duration-500">Primary</button>
+            <button
+              class="rounded-md bg-[#4cd3e3] w-[120px] h-[45px] font-font text-white hover:bg-white hover:text-[#4cd3e3] hover:border hover:border-[#4cd3e3] hover:duration-500">Success</button>
+            <button
+              class="rounded-md bg-[#38a4ff] w-[100px] h-[45px] font-font text-white hover:bg-white hover:text-[#38a4ff] hover:border hover:border-[#38a4ff] hover:duration-500">info</button>
+            <button
+              class="rounded-md bg-[#f4e700] w-[120px] h-[45px] font-font text-white hover:bg-white hover:text-[#f4e700] hover:border hover:border-[#f4e700] hover:duration-500">Warning</button>
+            <button
+              class="rounded-md bg-[#f44a40] w-[120px] h-[45px] font-font text-white hover:bg-white hover:text-[#f44a40] hover:border hover:border-[#f44a40] hover:duration-500">Danger</button>
+            <button
+              class="rounded-md bg-[#f9f9ff] w-[120px] h-[45px] font-font hover:bg-white hover:border hover:border-[#f9f9ff] hover:duration-500"><u>Link</u></button>
+            <button
+              class="rounded-md bg-[#f9f9ff] w-[120px] h-[45px] font-font text-[#007bff] cursor-not-allowed">Disable</button>
+          </div>
+          <div class="flex gap-5">
+            <button
+              class="rounded-md bg-white text-[#38a4ff] w-[120px] h-[45px] border border-[#f9f9ff] hover:duration-500 hover:bg-[#f9f9ff] hover:text-black">Default</button>
+            <button
+              class="rounded-md w-[120px] h-[45px] font-font bg-white text-[#b68834] border border-[#b68834] hover:duration-500 hover:bg-[#b68834] hover:text-white">Primary</button>
+            <button
+              class="rounded-md w-[120px] h-[45px] font-font bg-white text-[#4cd3e3] border border-[#4cd3e3] hover:duration-500 hover:bg-[#4cd3e3] hover:text-white">Success</button>
+            <button
+              class="rounded-md w-[100px] h-[45px] font-font bg-white text-[#38a4ff] border border-[#38a4ff] hover:duration-500 hover:bg-[#38a4ff] hover:text-white">info</button>
+            <button
+              class="rounded-md w-[120px] h-[45px] font-font bg-white text-[#f4e700] border border-[#f4e700] hover:duration-500 hover:bg-[#f4e700] hover:text-white">Warning</button>
+            <button
+              class="rounded-md w-[120px] h-[45px] font-font bg-white text-[#f44a40] border border-[#f44a40] hover:duration-500 hover:bg-[#f44a40] hover:text-white">Danger</button>
+            <button
+              class="rounded-md bg-white border border-[#f9f9ff] w-[120px] h-[45px] font-font hover:duration-500 hover:bg-[#f9f9ff] hover:text-black"><u>Link</u></button>
+            <button
+              class="rounded-md bg-[#f9f9ff] w-[120px] h-[45px] font-font text-[#007bff] cursor-not-allowed">Disable</button>
+          </div>
+        </div>
+        <div class="flex flex-col gap-5">
+          <div class="flex gap-5">
+            <button
+              class="rounded-full bg-[#f9f9ff] w-[120px] h-[45px] font-font hover:bg-white hover:border hover:border-[#f9f9ff] hover:duration-500">Default</button>
+            <button
+              class="rounded-full bg-[#b68834] w-[120px] h-[45px] font-font text-white hover:bg-white hover:text-[#b68834] hover:border hover:border-[#b68834] hover:duration-500">Primary</button>
+            <button
+              class="rounded-full bg-[#4cd3e3] w-[120px] h-[45px] font-font text-white hover:bg-white hover:text-[#4cd3e3] hover:border hover:border-[#4cd3e3] hover:duration-500">Success</button>
+            <button
+              class="rounded-full bg-[#38a4ff] w-[100px] h-[45px] font-font text-white hover:bg-white hover:text-[#38a4ff] hover:border hover:border-[#38a4ff] hover:duration-500">info</button>
+            <button
+              class="rounded-full bg-[#f4e700] w-[120px] h-[45px] font-font text-white hover:bg-white hover:text-[#f4e700] hover:border hover:border-[#f4e700] hover:duration-500">Warning</button>
+            <button
+              class="rounded-full bg-[#f44a40] w-[120px] h-[45px] font-font text-white hover:bg-white hover:text-[#f44a40] hover:border hover:border-[#f44a40] hover:duration-500">Danger</button>
+            <button
+              class="rounded-full bg-[#f9f9ff] w-[120px] h-[45px] font-font hover:bg-white hover:border hover:border-[#f9f9ff] hover:duration-500"><u>Link</u></button>
+            <button
+              class="rounded-full bg-[#f9f9ff] w-[120px] h-[45px] font-font text-[#007bff] cursor-not-allowed">Disable</button>
+          </div>
+          <div class="flex gap-5">
+            <button
+              class="rounded-full bg-white text-[#38a4ff] w-[120px] h-[45px] border border-[#f9f9ff] hover:duration-500 hover:bg-[#f9f9ff] hover:text-black">Default</button>
+            <button
+              class="rounded-full w-[120px] h-[45px] font-font bg-white text-[#b68834] border border-[#b68834] hover:duration-500 hover:bg-[#b68834] hover:text-white">Primary</button>
+            <button
+              class="rounded-full w-[120px] h-[45px] font-font bg-white text-[#4cd3e3] border border-[#4cd3e3] hover:duration-500 hover:bg-[#4cd3e3] hover:text-white">Success</button>
+            <button
+              class="rounded-full w-[100px] h-[45px] font-font bg-white text-[#38a4ff] border border-[#38a4ff] hover:duration-500 hover:bg-[#38a4ff] hover:text-white">info</button>
+            <button
+              class="rounded-full w-[120px] h-[45px] font-font bg-white text-[#f4e700] border border-[#f4e700] hover:duration-500 hover:bg-[#f4e700] hover:text-white">Warning</button>
+            <button
+              class="rounded-full w-[120px] h-[45px] font-font bg-white text-[#f44a40] border border-[#f44a40] hover:duration-500 hover:bg-[#f44a40] hover:text-white">Danger</button>
+            <button
+              class="rounded-full bg-white border border-[#f9f9ff] w-[120px] h-[45px] font-font hover:duration-500 hover:bg-[#f9f9ff] hover:text-black"><u>Link</u></button>
+            <button
+              class="rounded-full bg-[#f9f9ff] w-[120px] h-[45px] font-font text-[#007bff] cursor-not-allowed">Disable</button>
+          </div>
+        </div>
+        <div class="flex flex-col gap-5">
+          <div class="flex gap-5">
+            <button
+              class="rounded-full bg-[#f9f9ff] w-[120px] h-[45px] font-font hover:bg-white hover:border hover:border-[#f9f9ff] hover:duration-500">Default</button>
+            <button
+              class="rounded-full bg-[#b68834] w-[120px] h-[45px] font-font text-white hover:bg-white hover:text-[#b68834] hover:border hover:border-[#b68834] hover:duration-500">Primary</button>
+            <button
+              class="rounded-full bg-[#4cd3e3] w-[120px] h-[45px] font-font text-white hover:bg-white hover:text-[#4cd3e3] hover:border hover:border-[#4cd3e3] hover:duration-500">Success</button>
+            <button
+              class="rounded-full bg-[#38a4ff] w-[100px] h-[45px] font-font text-white hover:bg-white hover:text-[#38a4ff] hover:border hover:border-[#38a4ff] hover:duration-500">info</button>
+            <button
+              class="rounded-full bg-[#f4e700] w-[120px] h-[45px] font-font text-white hover:bg-white hover:text-[#f4e700] hover:border hover:border-[#f4e700] hover:duration-500">Warning</button>
+            <button
+              class="rounded-full bg-[#f44a40] w-[120px] h-[45px] font-font text-white hover:bg-white hover:text-[#f44a40] hover:border hover:border-[#f44a40] hover:duration-500">Danger</button>
+          </div>
+          <div class="flex gap-5">
+            <button
+              class="rounded-full bg-white text-[#38a4ff] w-[120px] h-[45px] border border-[#f9f9ff] hover:duration-500 hover:bg-[#f9f9ff] hover:text-black">Default</button>
+            <button
+              class="rounded-full w-[120px] h-[45px] font-font bg-white text-[#b68834] border border-[#b68834] hover:duration-500 hover:bg-[#b68834] hover:text-white">Primary</button>
+            <button
+              class="rounded-full w-[120px] h-[45px] font-font bg-white text-[#4cd3e3] border border-[#4cd3e3] hover:duration-500 hover:bg-[#4cd3e3] hover:text-white">Success</button>
+            <button
+              class="rounded-full w-[100px] h-[45px] font-font bg-white text-[#38a4ff] border border-[#38a4ff] hover:duration-500 hover:bg-[#38a4ff] hover:text-white">info</button>
+            <button
+              class="rounded-full w-[120px] h-[45px] font-font bg-white text-[#f4e700] border border-[#f4e700] hover:duration-500 hover:bg-[#f4e700] hover:text-white">Warning</button>
+            <button
+              class="rounded-full w-[120px] h-[45px] font-font bg-white text-[#f44a40] border border-[#f44a40] hover:duration-500 hover:bg-[#f44a40] hover:text-white">Danger</button>
+          </div>
+        </div>
+        <div class="flex flex-col gap-5">
+          <div class="flex gap-4 items-center">
+            <button
+              class="text-white bg-[#b68834] h-[60px] w-[200px] font-font hover:bg-white hover:text-[#b68834] hover:border hover:border-[#b68834] hover:duration-500">Extra
+              Large</button>
+            <button
+              class="text-white bg-[#4cd3e3] h-[53px] w-[100px] font-font hover:bg-white hover:text-[#4cd3e3] hover:border hover:border-[#4cd3e3] hover:duration-500">Large</button>
+            <button
+              class="text-white bg-[#b68834] h-[47px] w-[100px] font-font hover:bg-white hover:text-[#b68834] hover:border hover:border-[#b68834] hover:duration-500">Default</button>
+            <button
+              class="text-white bg-[#4cd3e3] h-[37px] w-[150px] font-font hover:bg-white hover:text-[#4cd3e3] hover:border hover:border-[#4cd3e3] hover:duration-500">Medium</button>
+            <button
+              class="text-white bg-[#b68834] h-[30px] w-[120px] font-font hover:bg-white hover:text-[#b68834] hover:border hover:border-[#b68834] hover:duration-500">Small</button>
+          </div>
+          <div class="flex gap-4 items-center">
+            <button
+              class="h-[60px] w-[200px] font-font bg-white text-[#b68834] border border-[#b68834] hover:duration-500 hover:bg-[#b68834] hover:text-white">Extra
+              Large</button>
+            <button
+              class="h-[53px] w-[100px] font-font bg-white text-[#4cd3e3] border border-[#4cd3e3] hover:duration-500 hover:bg-[#4cd3e3] hover:text-white">Large</button>
+            <button
+              class="h-[47px] w-[100px] font-font bg-white text-[#b68834] border border-[#b68834] hover:duration-500 hover:bg-[#b68834] hover:text-white">Default</button>
+            <button
+              class="h-[37px] w-[150px] font-font bg-white text-[#4cd3e3] border border-[#4cd3e3] hover:duration-500 hover:bg-[#4cd3e3] hover:text-white">Medium</button>
+            <button
+              class="h-[30px] w-[120px] font-font bg-white text-[#b68834] border border-[#b68834] hover:duration-500 hover:bg-[#b68834] hover:text-white">Small</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <hr class="mt-20">
+  <section>
+    <div class="flex flex-col gap-6 mt-20">
+      <div class="ml-28">
+        <h1 class="font-font font-semibold text-2xl">Left Aligned</h1>
+      </div>
+      <div class="flex justify-center gap-10 items-center">
+        <div>
+          <img src="https://preview.colorlib.com/theme/coffee/img/elements/d.jpg" alt="">
+        </div>
+        <div>
+          <p class="font-font text-neutral-500">Recently, the US Federal government banned online casinos from operating
+            in America by making it illegal to transfer<br> money to them through any US bank or payment system. As a
+            result of this law, most of the popular online casino<br> networks such as Party Gaming and PlayTech left
+            the United States. Overnight, online casino players found themselves<br> being chased by the Federal
+            government. But, after a fortnight, the online casino industry came up with a solution and<br> new online
+            casinos started taking root. These began to operate under a different business umbrella, and by doing
+            that,<br> rendered the transfer of money to and from them legal. A major part of this was enlisting
+            electronic banking systems<br> that would accept this new clarification and start doing business with me.
+            Listed in this article are the electronic<br> banking systems that accept players from the United States
+            that wish to play in online casinos.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <hr class="mt-20">
+  <section>
+    <div class="flex flex-col gap-6 mt-20">
+      <div class="flex justify-center gap-10 items-center">
+        <div class="flex flex-col gap-5">
+          <p class="font-font text-neutral-500 text-center">Over time, even the most sophisticated, memory packed
+            computer can begin to run slow if we don’t do something to<br> prevent it. The reason why has less to do
+            with how computers are made and how they age and more to do with the<br> way we use them. You see, all of
+            the daily tasks that we do on our PC from running programs to downloading and<br> deleting software can make
+            our computer sluggish. To keep this from happening, you need to understand the reasons<br> why your PC is
+            getting slower and do something to keep your PC running at its best. You can do this through regular<br>
+            maintenance and PC performance optimization programs</p>
+          <p class="font-font text-neutral-500 text-center flex">Before we discuss all of the things that could be
+            affecting your PC’s performance, let’s talk a little about what<br>symptoms</p>
+        </div>
+        <div class="flex flex-col gap-6">
+          <div>
+            <h1 class="font-font font-semibold text-2xl">Left Aligned</h1>
+          </div>
+          <img src="https://preview.colorlib.com/theme/coffee/img/elements/d.jpg" alt="">
+        </div>
+      </div>
+    </div>
+  </section>
+  <hr class="mt-20">
+  <section>
+    <div class="flex flex-col gap-5 mt-20">
+      <div class="ml-[120px]">
+        <h1 class="font-font text-2xl font-semibold">Definition</h1>
+      </div>
+      <div class="flex justify-center gap-16 items-center">
+        <div class="flex flex-col gap-3">
+          <h1 class="font-font text-lg font-semibold">Definition 01</h1>
+          <p class="font-font text-neutral-500">Recently, the US Federal government banned<br> online casinos from
+            operating in America by<br> making it illegal to transfer money to them<br> through any US bank or payment
+            system. As a<br> result of this law, most of the popular online<br> casino networks</p>
+        </div>
+        <div class="flex flex-col gap-3">
+          <h1 class="font-font text-lg font-semibold">Definition 02</h1>
+          <p class="font-font text-neutral-500">Recently, the US Federal government banned<br> online casinos from
+            operating in America by<br> making it illegal to transfer money to them<br> through any US bank or payment
+            system. As a<br> result of this law, most of the popular online<br> casino networks</p>
+        </div>
+        <div class="flex flex-col gap-3">
+          <h1 class="font-font text-lg font-semibold">Definition 03</h1>
+          <p class="font-font text-neutral-500">Recently, the US Federal government banned<br> online casinos from
+            operating in America by<br> making it illegal to transfer money to them<br> through any US bank or payment
+            system. As a<br> result of this law, most of the popular online<br> casino networks</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <hr class="mt-20">
+  <section>
+    <div class="ml-20 mt-20 flex flex-col gap-8">
+      <div>
+        <h1 class="font-font text-2xl font-semibold">Block Quotes</h1>
+      </div>
+      <div class="bg-[#f9f9ff] w-[1250px] h-[200px] flex justify-center items-center border-l-2 border-[#b68834]">
+        <p class="font-font text-neutral-500">“Recently, the US Federal government banned online casinos from operating
+          in America by making it illegal to transfer money to them through any<br> US bank or payment system. As a
+          result of this law, most of the popular online casino networks such as Party Gaming and PlayTech left the
+          United<br> States. Overnight, online casino players found themselves being chased by the Federal government.
+          But, after a fortnight, the online casino industry<br> came up with a solution and new online casinos started
+          taking root. These began to operate under a different business umbrella, and by doing that,<br> rendered the
+          transfer of money to and from them legal. A major part of this was enlisting electronic banking systems that
+          would accept this new<br> clarification and start doing business with me. Listed in this article are the
+          electronic banking”</p>
+      </div>
+    </div>
+  </section>
+  <hr class="mt-20">
+  <section>
+    <div class="flex flex-col gap-8 mt-20">
+      <div class="ml-36">
+        <h1 class="font-font text-2xl font-semibold">Table</h1>
+      </div>
+      <div class="flex justify-center items-center">
+        <table style="width:80%" class="font-font bg-[#f9f9ff]">
+          <tr>
+            <th>#</th>
+            <th>COUNTRIES</th>
+            <th>VISITS</th>
+            <th>PERCENTAGES</th>
+          </tr>
+          <tr class="text-neutral-500">
+            <td>01</td>
+            <td class="flex gap-3">
+              <img src="https://preview.colorlib.com/theme/coffee/img/elements/f1.jpg.webp" alt="">
+              Canada
+            </td>
+            <td>645032</td>
+            <td>
+              <div class="bg-[#6382e6] h-[5px] w-80"></div>
+            </td>
+          </tr>
+          <tr class="text-neutral-500">
+            <td>02</td>
+            <td class="flex gap-3">
+              <img src="https://preview.colorlib.com/theme/coffee/img/elements/f2.jpg.webp" alt="">
+              United States
+            </td>
+            <td>275012</td>
+            <td>
+              <div class="bg-[#e66686] h-[5px] w-28"></div>
+            </td>
+          </tr>
+          <tr class="text-neutral-500">
+            <td>03</td>
+            <td class="flex gap-3">
+              <img src="https://preview.colorlib.com/theme/coffee/img/elements/f3.jpg.webp" alt="">
+              United Kingdom
+            </td>
+            <td>320190</td>
+            <td>
+              <div class="bg-[#F09359] h-[5px] w-52"></div>
+            </td>
+          </tr>
+          <tr class="text-neutral-500">
+            <td>04</td>
+            <td class="flex gap-3">
+              <img src="https://preview.colorlib.com/theme/coffee/img/elements/f4.jpg.webp" alt="">
+              Germany
+            </td>
+            <td>3400157</td>
+            <td>
+              <div class="bg-[#73FBAF] h-[5px] w-60"></div>
+            </td>
+          </tr>
+          <tr class="text-neutral-500">
+            <td>05</td>
+            <td class="flex gap-3">
+              <img src="https://preview.colorlib.com/theme/coffee/img/elements/f5.jpg.webp" alt="">
+              Australia
+            </td>
+            <td>301187</td>
+            <td>
+              <div class="bg-gray-500 h-[5px] w-40"></div>
+            </td>
+          </tr>
+          <tr class="text-neutral-500">
+            <td>06</td>
+            <td class="flex gap-3">
+              <img src="https://preview.colorlib.com/theme/coffee/img/elements/f6.jpg.webp" alt="">
+              China
+            </td>
+            <td>632200</td>
+            <td>
+              <div class="bg-yellow-300 h-[5px] w-72"></div>
+            </td>
+          </tr>
+          <tr class="text-neutral-500">
+            <td>07</td>
+            <td class="flex gap-3">
+              <img src="https://preview.colorlib.com/theme/coffee/img/elements/f7.jpg.webp" alt="">
+              Bangladesh
+            </td>
+            <td>230429</td>
+            <td>
+              <div class="bg-[#A367E7] h-[5px] w-24"></div>
+            </td>
+          </tr>
+          <tr class="text-neutral-500">
+            <td>08</td>
+            <td class="flex gap-3">
+              <img src="https://preview.colorlib.com/theme/coffee/img/elements/f8.jpg.webp" alt="">
+              Belgium
+            </td>
+            <td>341375</td>
+            <td>
+              <div class="bg-orange-800 h-[5px] w-60"></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </section>
+  <hr class="mt-20">
+  <section>
+    <div class="flex flex-col gap-5 mt-20">
+      <div class="ml-14">
+        <h1 class="font-font text-2xl font-semibold">Image Gallery</h1>
+      </div>
+      <div class="flex flex-col justify-center items-center gap-5">
+        <div class="flex gap-5">
+          <img src="./images/g1.jpg" alt="">
+          <img src="./images/g2.jpg" alt="">
+          <img src="./images/g3.jpg" alt="">
+        </div>
+        <div class="flex gap-5">
+          <img src="./images/g4.jpg" alt="">
+          <img src="./images/g5.jpg" alt="">
+        </div>
+        <div class="flex gap-5">
+          <img src="./images/g6.jpg" alt="">
+          <img src="./images/g7.jpg" alt="">
+          <img src="./images/g8.jpg" alt="">
+        </div>
+      </div>
+    </div>
+  </section>
+  <hr class="mt-20">
+  <section>
+    <div class="flex justify-center gap-[110px] items-center mt-20">
+      <div class="flex flex-col gap-5">
+        <div>
+          <h1 class="font-font text-2xl font-semibold">Image Gallery</h1>
+        </div>
+        <div>
+          <h1 class="font-font text-neutral-500 text-4xl font-semibold">This is header 01</h1>
+          <h1 class="font-font text-neutral-500 text-3xl font-semibold">This is header 02</h1>
+          <h1 class="font-font text-neutral-500 text-2xl font-semibold">This is header 03</h1>
+          <h1 class="font-font text-neutral-500 text-xl font-semibold">This is header 04</h1>
+          <h1 class="font-font text-neutral-500 text-lg font-semibold">This is header 05</h1>
+          <h1 class="font-font text-neutral-500 text-sm font-semibold">This is header 06</h1>
+        </div>
+      </div>
+      <div class="flex flex-col gap-5">
+        <div>
+          <h1 class="font-font text-2xl font-semibold ml-12">Unordered List</h1>
+        </div>
+        <div class="flex flex-col">
+          <div class="flex justify-center items-center gap-4 mr-[245px]">
+            <div>
+              <img src="./images/g9.jpg" alt="">
+            </div>
+            <div>
+              <p class="font-font text-neutral-500">Fta Keys</p>
+            </div>
+          </div>
+          <div class="flex justify-center items-center gap-4">
+            <div>
+              <img src="./images/g9.jpg" alt="">
+            </div>
+            <div>
+              <p class="font-font text-neutral-500">For Women Only Your Computer Usage</p>
+            </div>
+          </div>
+          <div class="flex justify-center items-center gap-4 ml-6">
+            <div>
+              <img src="./images/g9.jpg" alt="">
+            </div>
+            <div>
+              <p class="font-font text-neutral-500">Facts Why Inkjet Printing Is Very Appealing</p>
+            </div>
+          </div>
+          <div class="flex justify-center items-center gap-4 ml-10">
+            <div>
+              <img src="./images/g9.jpg" alt="">
+            </div>
+            <div>
+              <p class="font-font text-neutral-500">Addiction When Gambling Becomes</p>
+            </div>
+          </div>
+          <div class="flex justify-center items-center gap-4 ml-11">
+            <div>
+              <img src="./images/g9.jpg" alt="">
+            </div>
+            <div>
+              <p class="font-font text-neutral-500">Protective Preventative Maintenance</p>
+            </div>
+          </div>
+          <div class="flex justify-center items-center gap-4 ml-11">
+            <div>
+              <img src="./images/g9.jpg" alt="">
+            </div>
+            <div>
+              <p class="font-font text-neutral-500">Dealing With Technical Support 10 Useful Tips</p>
+            </div>
+          </div>
+          <div class="flex justify-center items-center gap-4 ml-4">
+            <div>
+              <img src="./images/g9.jpg" alt="">
+            </div>
+            <div>
+              <p class="font-font text-neutral-500">Make Myspace Your Best Designed Space</p>
+            </div>
+          </div>
+          <div class="flex justify-center items-center gap-4 ml-3">
+            <div>
+              <img src="./images/g9.jpg" alt="">
+            </div>
+            <div>
+              <p class="font-font text-neutral-500">Cleaning And Organizing Your Computer</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="flex flex-col gap-5">
+        <div>
+          <h1 class="font-font text-2xl font-semibold ml-10">Ordered List</h1>
+        </div>
+        <div class="flex flex-col">
+          <div class="flex justify-center items-center gap-1 mr-[245px]">
+            <div>
+              <p class="text-[#b68834] font-font">01.</p>
+            </div>
+            <div>
+              <p class="font-font text-neutral-500">Fta Keys</p>
+            </div>
+          </div>
+          <div class="flex justify-center items-center gap-1">
+            <div>
+              <p class="text-[#b68834] font-font">02.</p>
+            </div>
+            <div>
+              <p class="font-font text-neutral-500">For Women Only Your Computer Usage</p>
+            </div>
+          </div>
+          <div class="flex justify-center items-center gap-1 ml-6">
+            <div>
+              <p class="text-[#b68834] font-font">03.</p>
+            </div>
+            <div>
+              <p class="font-font text-neutral-500">Facts Why Inkjet Printing Is Very Appealing</p>
+            </div>
+          </div>
+          <div class="flex justify-center items-center gap-1 ml-10">
+            <div>
+              <p class="text-[#b68834] font-font">a.</p>
+            </div>
+            <div>
+              <p class="font-font text-neutral-500">Addiction When Gambling Becomes</p>
+            </div>
+          </div>
+          <div class="flex justify-center items-center gap-1 ml-28">
+            <div>
+              <p class="text-[#b68834] font-font">i.</p>
+            </div>
+            <div>
+              <p class="font-font text-neutral-500">Protective Preventative Maintenance</p>
+            </div>
+          </div>
+          <div class="flex justify-center items-center gap-1 ml-11">
+            <div>
+              <p class="text-[#b68834] font-font">04.</p>
+            </div>
+            <div>
+              <p class="font-font text-neutral-500">Dealing With Technical Support 10 Useful Tips</p>
+            </div>
+          </div>
+          <div class="flex justify-center items-center gap-1 ml-4">
+            <div>
+              <p class="text-[#b68834] font-font">05.</p>
+            </div>
+            <div>
+              <p class="font-font text-neutral-500">Make Myspace Your Best Designed Space</p>
+            </div>
+          </div>
+          <div class="flex justify-center items-center gap-1 ml-3">
+            <div>
+              <p class="text-[#b68834] font-font">06.</p>
+            </div>
+            <div>
+              <p class="font-font text-neutral-500">Cleaning And Organizing Your Computer</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="flex justify-center gap-10 items-center mt-10">
+      <div class="flex flex-col gap-8">
+        <div class="ml-14">
+          <h1 class="font-font text-2xl font-semibold">Form Element</h1>
+        </div>
+        <div class="flex flex-col gap-3 ml-14">
+          <input type="text" name="" id="" placeholder="First Name"
+            class="text-neutral-500 font-font bg-[#f9f9ff] py-2 w-[700px] px-7">
+          <input type="text" name="" id="" placeholder="Last Name"
+            class="text-neutral-500 font-font bg-[#f9f9ff] py-2 w-[700px] px-7">
+          <input type="text" name="" id="" placeholder="Last Name"
+            class="text-neutral-500 font-font bg-[#f9f9ff] py-2 w-[700px] px-7">
+          <input type="text" name="" id="" placeholder="Email address"
+            class="text-neutral-500 font-font bg-[#f9f9ff] py-2 w-[700px] px-7">
+          <input type="text" name="" id="" placeholder="Address"
+            class="text-neutral-500 font-font bg-[#f9f9ff] py-2 w-[700px] px-7">
+          <select name="" id="" class="bg-[#f9f9ff] py-2 w-[700px] px-7 text-neutral-400 font-font">
+            <option selected class="text-neutral-500 font-font bg-[#f9f9ff]">City</option>
+            <option value="" class="text-neutral-500 font-font bg-[#f9f9ff]">Dhaka</option>
+            <option value="" class="text-neutral-500 font-font bg-[#f9f9ff]">Dilli</option>
+            <option value="" class="text-neutral-500 font-font bg-[#f9f9ff]">Newyork</option>
+            <option value="" class="text-neutral-500 font-font bg-[#f9f9ff]">Islamabad</option>
+          </select>
+          <select name="" id="" class="bg-[#f9f9ff] py-2 w-[700px] px-7 text-neutral-400 font-font">
+            <option selected class="text-neutral-500 font-font bg-[#f9f9ff]">Country</option>
+            <option value="" class="text-neutral-500 font-font bg-[#f9f9ff]">Bangladesh</option>
+            <option value="" class="text-neutral-500 font-font bg-[#f9f9ff]">India</option>
+            <option value="" class="text-neutral-500 font-font bg-[#f9f9ff]">England</option>
+            <option value="" class="text-neutral-500 font-font bg-[#f9f9ff]">Srilanka</option>
+          </select>
+          <input type="text" name="" id="" placeholder="Message"
+            class="text-neutral-500 font-font bg-[#f9f9ff] py-10 w-[700px] px-7">
+          <input type="text" name="" id="" placeholder="Primary color"
+            class="text-neutral-500 font-font bg-[#f9f9ff] py-2 w-[700px] px-7">
+          <input type="text" name="" id="" placeholder="Accent color"
+            class="text-neutral-500 font-font bg-[#f9f9ff] py-2 w-[700px] px-7">
+          <input type="text" name="" id="" placeholder="Secondary color"
+            class="text-neutral-500 font-font bg-[#f9f9ff] py-2 w-[700px] px-7">
+        </div>
+      </div>
+      <div class="flex flex-col gap-10">
+        <div class="flex flex-col gap-3">
+          <div>
+            <h1 class="font-font text-2xl font-semibold">Switches</h1>
+          </div>
+          <div>
+            <div class="flex flex-col gap-1">
+              <div class="flex gap-[90px]">
+                <div>
+                  <p class="text-neutral-500 font-font">01. Sample Switch</p>
+                </div>
+                <div>
+                  <label
+                    class="relative block aspect-[2/0.75] w-16 h-6 rounded-full bg-gradient-to-br bg-[#f9f9ff] shadow-2xltransition-all duration-300">
+                    <input class="peer/input hidden" type="checkbox">
+                    <div
+                      class="bg-white absolute left-[3%] top-1/2 aspect-square h-[90%] -translate-y-1/2 rotate-180 rounded-full bg-gradient-to-t transition-all duration-500 peer-checked/input:left-[63%] peer-checked/input:-rotate-6">
+                    </div>
+                  </label>
+                </div>
+              </div>
+              <div class="flex gap-10">
+                <div>
+                  <p class="text-neutral-500 font-font">02. Primary Color Switch</p>
+                </div>
+                <div>
+                  <label
+                    class="relative block aspect-[2/0.75] w-16 h-6 rounded-full bg-gradient-to-br bg-[#f9f9ff] shadow-2xl transition-all duration-300">
+                    <input class="peer/input hidden" type="checkbox">
+                    <div
+                      class="bg-white absolute left-[3%] top-1/2 aspect-square h-[90%] -translate-y-1/2 rotate-180 rounded-full bg-gradient-to-t transition-all duration-500 peer-checked/input:left-[63%] peer-checked/input:-rotate-6">
+                    </div>
+                  </label>
+                </div>
+              </div>
+              <div class="flex gap-9">
+                <div>
+                  <p class="text-neutral-500 font-font">03. Confirm Color Switch</p>
+                </div>
+                <div>
+                  <label
+                    class="relative block aspect-[2/0.75] w-16 h-6 rounded-full bg-gradient-to-br bg-[#f9f9ff] shadow-2xltransition-all duration-300">
+                    <input class="peer/input hidden" type="checkbox">
+                    <div
+                      class="bg-white absolute left-[3%] top-1/2 aspect-square h-[90%] -translate-y-1/2 rotate-180 rounded-full bg-gradient-to-t transition-all duration-500 peer-checked/input:left-[63%] peer-checked/input:-rotate-6">
+                    </div>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-col gap-3">
+          <div>
+            <h1 class="font-font text-2xl font-semibold">Selectboxes</h1>
+          </div>
+          <div>
+            <select name="" id="" class="bg-[#f9f9ff] py-2 w-[170px] px-7 text-neutral-500 font-font">
+              <option selected class="text-neutral-500 font-font bg-[#f9f9ff]">English</option>
+              <option value="" class="text-neutral-500 font-font bg-[#f9f9ff]">Spanish</option>
+              <option value="" class="text-neutral-500 font-font bg-[#f9f9ff]">Arabic</option>
+              <option value="" class="text-neutral-500 font-font bg-[#f9f9ff]">Portuguise</option>
+              <option value="" class="text-neutral-500 font-font bg-[#f9f9ff]">Bengali</option>
+            </select>
+          </div>
+        </div>
+        <div class="flex flex-col gap-3">
+          <div>
+            <h1 class="font-font text-2xl font-semibold">Checkboxes</h1>
+          </div>
+          <div>
+            <div class="flex flex-col gap-1">
+              <div class="flex gap-[150px]">
+                <div>
+                  <p class="text-neutral-500 font-font">01. Sample Switch</p>
+                </div>
+                <div>
+                  <input type="checkbox" class="ui-checkbox">
+                </div>
+              </div>
+              <div class="flex gap-[99px]">
+                <div>
+                  <p class="text-neutral-500 font-font">02. Primary Color Switch</p>
+                </div>
+                <div>
+                  <input type="checkbox" class="ui-checkbox">
+                </div>
+              </div>
+              <div class="flex gap-[69px]">
+                <div>
+                  <p class="text-neutral-500 font-font">03. Confirm Color Checkbox</p>
+                </div>
+                <div>
+                  <input type="checkbox" class="ui-checkbox">
+                </div>
+              </div>
+              <div class="flex gap-[110px]">
+                <div>
+                  <p class="text-neutral-500 font-font">04. Disabled Checkbox</p>
+                </div>
+                <div>
+                  <input type="checkbox" class="ui-checkbox">
+                </div>
+              </div>
+              <div class="flex gap-14">
+                <div>
+                  <p class="text-neutral-500 font-font">05. Disabled Checkbox active</p>
+                </div>
+                <div>
+                  <input type="checkbox" class="ui-checkbox">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-col gap-3">
+          <div>
+            <h1 class="font-font text-2xl font-semibold">Checkboxes</h1>
+          </div>
+          <div>
+            <div class="flex flex-col gap-1">
+              <div class="flex gap-[124px]">
+                <div>
+                  <p class="text-neutral-500 font-font">01. Sample radio</p>
+                </div>
+                <div>
+                  <input type="radio" class="ui-checkbox">
+                </div>
+              </div>
+              <div class="flex gap-[73px]">
+                <div>
+                  <p class="text-neutral-500 font-font">02. Primary Color radio</p>
+                </div>
+                <div>
+                  <input type="radio" class="ui-checkbox">
+                </div>
+              </div>
+              <div class="flex gap-[69px]">
+                <div>
+                  <p class="text-neutral-500 font-font">03. Confirm Color radio</p>
+                </div>
+                <div>
+                  <input type="radio" class="ui-checkbox">
+                </div>
+              </div>
+              <div class="flex gap-[110px]">
+                <div>
+                  <p class="text-neutral-500 font-font">04. Disabled radio</p>
+                </div>
+                <div>
+                  <input type="radio" class="ui-checkbox">
+                </div>
+              </div>
+              <div class="flex gap-14">
+                <div>
+                  <p class="text-neutral-500 font-font">05. Disabled radio active</p>
+                </div>
+                <div>
+                  <input type="radio" class="ui-checkbox">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer class="bg-footer bg-cover mt-16 dark:bg-slate-800 pb-14 pt-48 text-white">
+    <div data-aos="fade-up">
+      <div class="flex justify-around">
+        <div class="flex flex-col gap-5">
+          <h1 class="font-font font-semibold">About Us</h1>
+          <p class="font-font w-[550px]">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+            eiusmod tempor incididunt ut labore dolore magna aliqua.
+          </p>
+
+          <div class="flex flex-col gap-1">
+            <p>
+              Copyright ©2024 All rights reserved | This template is made with
+            </p>
+            <span class="flex"><img src="./images/hero5.png" alt="heart" />by
+              <a href="https://colorlib.com/" target="_blank" class="text-[#b68834] ml-1">Colorib</a></span>
+          </div>
+        </div>
+        <div class="flex flex-col gap-5">
+          <div>
+            <h1 class="font-font font-semibold">Newsletter</h1>
+          </div>
+          <div class="flex flex-col gap-3">
+            <p>Stay update with our latest</p>
+            <div class="relative rounded-md overflow-hidden bg-white shadow-xl w-75 text-black">
+              <input type="email" name="text" placeholder="Enter Email"
+                class="input bg-transparent outline-none border-none pl-6 pr-10 py-2 w-full font-sans text-lg font-semibold" />
+              <div class="absolute right-2 top-0.5">
+                <button
+                  class="w-10 h-10 rounded-full bg-violet-500 group shadow-xl flex items-center justify-center relative overflow-hidden">
+                  <svg width="50" height="50" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"
+                    class="relative z-10">
+                    <path d="M63.6689 29.0491L34.6198 63.6685L0.00043872 34.6194L29.0496 1.67708e-05L63.6689 29.0491Z"
+                      fill="white" fill-opacity="0.01"></path>
+                    <path d="M42.8496 18.7067L21.0628 44.6712" stroke="white" stroke-width="3.76603"
+                      stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M26.9329 20.0992L42.85 18.7067L44.2426 34.6238" stroke="white" stroke-width="3.76603"
+                      stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg>
+                  <div
+                    class="w-full h-full rotate-45 absolute left-[32%] top-[32%] bg-black group-hover:-left-[100%] group-hover:-top-[100%] duration-1000">
+                  </div>
+                  <div
+                    class="w-full h-full -rotate-45 absolute -left-[32%] -top-[32%] group-hover:left-[100%] group-hover:top-[100%] bg-black duration-1000">
+                  </div>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="flex flex-col gap-5">
+            <div class="flex flex-col gap-5">
+              <h1>Follow Us</h1>
+              <p>Let us be social</p>
+            </div>
+            <div class="flex gap-3">
+              <a href="https://ru-ru.facebook.com/">
+                <svg fill="#ffff" width="18px" height="20px" viewBox="0 0 32.00 32.00"
+                  xmlns="http://www.w3.org/2000/svg" stroke="#ffff">
+                  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                  <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC"
+                    stroke-width="0.32"></g>
+                  <g id="SVGRepo_iconCarrier">
+                    <path
+                      d="M21.95 5.005l-3.306-.004c-3.206 0-5.277 2.124-5.277 5.415v2.495H10.05v4.515h3.317l-.004 9.575h4.641l.004-9.575h3.806l-.003-4.514h-3.803v-2.117c0-1.018.241-1.533 1.566-1.533l2.366-.001.01-4.256z">
+                    </path>
+                  </g>
+                </svg>
+              </a>
+              <a href="https://twitter.com/">
+                <svg width="20px" height="18px" viewBox="0 -2 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink" fill="#ffffff">
+                  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                  <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                  <g id="SVGRepo_iconCarrier">
+                    <title>twitter [#ffffff154]</title>
+                    <desc>Created with Sketch.</desc>
+                    <defs> </defs>
+                    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                      <g id="Dribbble-Light-Preview" transform="translate(-60.000000, -7521.000000)" fill="#ffffff">
+                        <g id="icons" transform="translate(56.000000, 160.000000)">
+                          <path
+                            d="M10.29,7377 C17.837,7377 21.965,7370.84365 21.965,7365.50546 C21.965,7365.33021 21.965,7365.15595 21.953,7364.98267 C22.756,7364.41163 23.449,7363.70276 24,7362.8915 C23.252,7363.21837 22.457,7363.433 21.644,7363.52751 C22.5,7363.02244 23.141,7362.2289 23.448,7361.2926 C22.642,7361.76321 21.761,7362.095 20.842,7362.27321 C19.288,7360.64674 16.689,7360.56798 15.036,7362.09796 C13.971,7363.08447 13.518,7364.55538 13.849,7365.95835 C10.55,7365.79492 7.476,7364.261 5.392,7361.73762 C4.303,7363.58363 4.86,7365.94457 6.663,7367.12996 C6.01,7367.11125 5.371,7366.93797 4.8,7366.62489 L4.8,7366.67608 C4.801,7368.5989 6.178,7370.2549 8.092,7370.63591 C7.488,7370.79836 6.854,7370.82199 6.24,7370.70483 C6.777,7372.35099 8.318,7373.47829 10.073,7373.51078 C8.62,7374.63513 6.825,7375.24554 4.977,7375.24358 C4.651,7375.24259 4.325,7375.22388 4,7375.18549 C5.877,7376.37088 8.06,7377 10.29,7376.99705"
+                            id="twitter-[#ffffff154]"> </path>
+                        </g>
+                      </g>
+                    </g>
+                  </g>
+                </svg>
+              </a>
+              <a href="https://www.google.co.uz/">
+                <svg fill="#ffffff" width="20px" height="18px" viewBox="0 0 24 24" id="Layer_1" data-name="Layer 1"
+                  xmlns="http://www.w3.org/2000/svg" stroke="#ffffff">
+                  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                  <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                  <g id="SVGRepo_iconCarrier">
+                    <path
+                      d="M12,0A11.916,11.916,0,0,0,6,1.621a.976.976,0,0,0-.131.08A11.975,11.975,0,1,0,12,0Zm9.022,16.285A16.256,16.256,0,0,1,9.8,15.69a9.961,9.961,0,0,1,2.369-2.55,11.972,11.972,0,0,0,4.448.873,12.071,12.071,0,0,0,5.348-1.25A9.906,9.906,0,0,1,21.022,16.285Zm.853-5.782a9.988,9.988,0,0,1-2.938,1.231A18.2,18.2,0,0,0,15.868,2.78,10.017,10.017,0,0,1,21.875,10.5ZM12.749,2.038a16.227,16.227,0,0,1,4.2,9.949,9.969,9.969,0,0,1-4-.69A12.031,12.031,0,0,0,8.5,2.646,9.922,9.922,0,0,1,12,2C12.253,2,12.5,2.019,12.749,2.038ZM6.487,3.665A10.018,10.018,0,0,1,8.942,5.931a18.253,18.253,0,0,0-6.708,8.2A9.957,9.957,0,0,1,6.487,3.665ZM3.356,17.005A16.261,16.261,0,0,1,9.976,7.65a9.954,9.954,0,0,1,.993,3.891,12.033,12.033,0,0,0-4.715,8.63A10.057,10.057,0,0,1,3.356,17.005ZM12,22a9.948,9.948,0,0,1-3.772-.744A9.983,9.983,0,0,1,8.9,17.481,17.9,17.9,0,0,0,19.375,18.73,9.963,9.963,0,0,1,12,22Z">
+                    </path>
+                  </g>
+                </svg>
+              </a>
+              <a href="https://www.google.co.uz/">
+                <h1 class="font-font text-base text-white font-semibold hover:text-blue-500 hover:duration-500">Bē</h1>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="./counterup.js"></script>
+</body>
+
+</html>

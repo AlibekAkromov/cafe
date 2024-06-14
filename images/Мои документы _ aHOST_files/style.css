@@ -1,0 +1,352 @@
+#contract-panel,
+#agreement-panel,
+#invoice-panel {
+    width:100%;
+}
+.container-panel{
+    max-width:800px ;
+    min-height:340px;
+}
+.contract-page,
+.agreement-page,
+.invoice-page {
+    background-color: #EEEEEE;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -o-border-radius: 5px;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 10px;
+}
+.panel-loader {
+    background:url(images/loader.gif) no-repeat 50% 50%;
+    width:100%;
+    height:300px;
+    z-index:9999;
+}
+#contract-panel h2,
+#agreement-panel h2,
+#invoice-panel h2{
+    margin:0 0 10px 0;
+}
+#contract-panel table,
+#agreement-panel table,
+#invoice-panel table {
+    border: 4px solid #FFFFFF;
+    width: 100%;
+    text-align:center;
+}
+#contract-panel table td,
+#agreement-panel table td,
+#invoice-panel table td {
+    background-color: #FFFFFF;
+    border-bottom: 1px dashed #CCCCCC;
+    font-size: 13px;
+    padding:10px;
+}
+#contract-panel table th,
+#agreement-panel table th,
+#invoice-panel table th {
+    padding:10px;
+    text-align:center;
+}
+.download-link,
+.edit-link,
+.delete-link,
+.signature-link{
+    text-indent:-9999px;
+    width:24px;
+    height:24px;
+    display:block;
+    margin:0 auto;
+}
+.download-link {
+    background:url(images/download.png) no-repeat 0 0;
+}
+.edit-link {
+    background:url(images/edit.png) no-repeat 0 0;
+}
+.close-link {
+    background:url(images/close.png) no-repeat 0 0;
+}
+.delete-link {
+    background:url(images/delete.png) no-repeat 0 0;
+}
+.signature-link{
+    background: url(images/signature.png) no-repeat 0 0;
+}
+.documentForm table {
+    margin-bottom:20px;
+}
+.documentForm td{
+    padding:5px;
+}
+.documentForm input[type=text], .documentForm select {
+    padding:5px;
+    border-radius:3px;
+    outline:0 none;
+    border:1px solid #ccc;
+}
+
+/* blue */
+.icheckbox_square-blue,
+.iradio_square-blue {
+    display: inline-block;
+    *display: inline;
+    vertical-align: middle;
+    margin: 0;
+    padding: 0;
+    width: 22px;
+    height: 22px;
+    background: url(/modules/addons/contracts/assets/icheck/blue.png) no-repeat;
+    border: none;
+    cursor: pointer;
+}
+
+.icheckbox_square-blue {
+    background-position: 0 0;
+}
+.icheckbox_square-blue.hover {
+    background-position: -24px 0;
+}
+.icheckbox_square-blue.checked {
+    background-position: -48px 0;
+}
+.icheckbox_square-blue.disabled {
+    background-position: -72px 0;
+    cursor: default;
+}
+.icheckbox_square-blue.checked.disabled {
+    background-position: -96px 0;
+}
+
+.iradio_square-blue {
+    background-position: -120px 0;
+}
+.iradio_square-blue.hover {
+    background-position: -144px 0;
+}
+.iradio_square-blue.checked {
+    background-position: -168px 0;
+}
+.iradio_square-blue.disabled {
+    background-position: -192px 0;
+    cursor: default;
+}
+.iradio_square-blue.checked.disabled {
+    background-position: -216px 0;
+}
+
+/* HiDPI support */
+@media (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi) {
+    .icheckbox_square-blue,
+    .iradio_square-blue {
+        background-image: url(/modules/addons/contracts/assets/icheck/blue@2x.png);
+        background-size: 240px 24px;
+    }
+}
+.select-wrapper {
+    margin: auto;
+    max-width: 600px;
+    width: calc(100% - 40px);
+}
+
+.select-pure__select {
+    align-items: center;
+    background: #f9f9f8;
+    border-radius: 4px;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+    box-sizing: border-box;
+    color: #363b3e;
+    cursor: pointer;
+    display: flex;
+    font-size: 16px;
+    font-weight: 500;
+    justify-content: left;
+    min-height: 44px;
+    padding: 5px 10px;
+    position: relative;
+    transition: 0.2s;
+    width: 100%;
+}
+
+.select-pure__options {
+    border-radius: 4px;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+    box-sizing: border-box;
+    color: #363b3e;
+    display: none;
+    left: 0;
+    max-height: 221px;
+    overflow-y: scroll;
+    position: absolute;
+    top: 50px;
+    width: 100%;
+    z-index: 5;
+}
+
+.select-pure__select--opened .select-pure__options {
+    display: block;
+}
+
+.select-pure__option {
+    background: #fff;
+    border-bottom: 1px solid #e4e4e4;
+    box-sizing: border-box;
+    height: 44px;
+    line-height: 25px;
+    padding: 10px;
+}
+
+.select-pure__option--selected {
+    color: #e4e4e4;
+    cursor: initial;
+    pointer-events: none;
+}
+
+.select-pure__option--hidden {
+    display: none;
+}
+
+.select-pure__selected-label {
+    background: #5e6264;
+    border-radius: 4px;
+    color: #fff;
+    cursor: initial;
+    display: inline-block;
+    margin: 5px 10px 5px 0;
+    padding: 3px 7px;
+}
+
+.select-pure__selected-label:last-of-type {
+    margin-right: 0;
+}
+
+.select-pure__selected-label i {
+    cursor: pointer;
+    display: inline-block;
+    margin-left: 7px;
+}
+
+.select-pure__selected-label i:hover {
+    color: #e4e4e4;
+}
+
+.select-pure__autocomplete {
+    background: #f9f9f8;
+    border-bottom: 1px solid #e4e4e4;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    box-sizing: border-box;
+    font-size: 16px;
+    outline: none;
+    padding: 10px;
+    width: 100%;
+}
+.select-pure__placeholder--hidden{
+    display: none;
+}
+.signature-pad--container {
+    background: #fff;
+    max-width: 600px;
+    min-height: 340px;
+}
+.signature-pad--header {
+    padding-bottom: 5px;
+    font-size: 13px;
+}
+.signature-pad {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    width: 100%;
+    height: 300px;
+    max-width: 600px;
+    font-size: 10px;
+}
+
+.signature-pad::before,
+.signature-pad::after {
+    position: absolute;
+    z-index: -1;
+    content: "";
+    width: 40%;
+    height: 10px;
+    bottom: 10px;
+    background: transparent;
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.4);
+}
+
+.signature-pad::before {
+    left: 20px;
+    -webkit-transform: skew(-3deg) rotate(-3deg);
+    transform: skew(-3deg) rotate(-3deg);
+}
+
+.signature-pad::after {
+    right: 20px;
+    -webkit-transform: skew(3deg) rotate(3deg);
+    transform: skew(3deg) rotate(3deg);
+}
+
+.signature-pad--body {
+    position: relative;
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    border: 1px solid #f4f4f4;
+}
+
+.signature-pad--body .signature-canvas {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.02) inset;
+}
+
+.signature-pad--footer {
+    color: #C3C3C3;
+    text-align: center;
+    font-size: 1.2em;
+    margin-top: 8px;
+}
+
+.signature-pad--actions {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    margin-top: 8px;
+}
+.signature-pad--step2 .random-word {
+    text-align: center;
+    font-size: 64px;
+    padding:20px 0;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+.upload-confirm-photo {
+    background: #cbe0ff;
+    padding:10px;
+    margin-top: 15px;
+    width: 100%;
+}
+#photo-confirm-area .signature-pad--actions{
+    padding-top:15px;
+}
+.loading {
+    text-align: center;
+    font-size: 28px;
+}

@@ -1,0 +1,256 @@
+function initSignaturePad(step1Wrapper, step2Wrapper, container, type = 'visual') {
+    if (step1Wrapper != null) {
+        var clearButton = step1Wrapper.querySelector("[data-action=clear]");
+        var step2Button = step1Wrapper.querySelector("[data-action=step2]");
+        var accept, form, signature;
+        if (type === 'myid') {
+            form = document.querySelector('#photo-confirm-area-myid');
+        } else {
+            form = document.querySelector('#photo-confirm-area-graph');
+        }
+        if (form.querySelector('input[name=accept]')){
+            accept = form.querySelector('input[name=accept]').value;
+        }else {
+            accept = '0';
+        }
+        if (step2Wrapper) {
+            var confirmButton = step2Wrapper.querySelector("[data-action=confirm]")
+            var step1Button = step2Wrapper.querySelector("[data-action=step1]");
+            $(confirmButton).attr('disabled', 'disabled');
+            step1Button.addEventListener("click", function (event) {
+                jQuery('.signature-pad--step2', container).hide();
+                jQuery('.signature-pad--step1', container).show();
+                resizeCanvas();
+            });
+        } else {
+            $(step2Button).attr('disabled', 'disabled');
+        }
+        var contract = document.getElementById('document').contentWindow.document;
+        var canvas = step1Wrapper.querySelector("canvas");
+        var signaturePad = new SignaturePad(canvas, {
+            backgroundColor: 'rgb(255, 255, 255)',
+            penColor: 'rgb(39, 64, 139)',
+            onEnd: function (e) {
+                if (accept === '1') {
+                    signature = contract.getElementById('accept_sign');
+                } else {
+                    signature = contract.getElementById('customer_signature');
+                }
+                if (!step2Wrapper) {
+                    $(step2Button).removeAttr('disabled');
+                }
+                signature.innerHTML = '<img style="height: auto; width: 100%; position: absolute;  bottom: 0; left: 0; right: 0;"  src="' + signaturePad.toDataURL('image/svg+xml') + '" >';
+            }
+        });
+        let data = signaturePad.toDataURL('image/svg+xml');
+        if (!signaturePad.isEmpty()) {
+            if (accept === '1') {
+                signature = contract.getElementById('accept_sign');
+            } else {
+                signature = contract.getElementById('customer_signature');
+            }
+            signature.innerHTML = '<img style="height: auto; width: 100%; position: absolute;  bottom: 0; left: 0; right: 0;"  src="' + data + '" >'
+        }
+
+        function resizeCanvas() {
+            let ratio = Math.max(window.devicePixelRatio || 1, 1);
+            canvas.width = canvas.offsetWidth * ratio;
+            canvas.height = canvas.offsetHeight * ratio;
+            canvas.getContext("2d").scale(ratio, ratio);
+            signaturePad.clear();
+        }
+
+        window.onresize = resizeCanvas;
+        resizeCanvas();
+        jQuery('.nav-tabs a[aria-controls=spc]', container).on('shown.bs.tab', function () {
+            resizeCanvas();
+        });
+
+        clearButton.addEventListener("click", function (event) {
+            signaturePad.clear();
+            if (accept === '1') {
+                signature = contract.getElementById('accept_sign');
+            } else {
+                signature = contract.getElementById('customer_signature');
+            }
+            signature.innerHTML = ' ';
+            if (!step2Wrapper) {
+                $(step2Button).attr('disabled', 'disabled');
+            }
+        });
+
+        step2Button.addEventListener("click", function (event) {
+            var contract = document.getElementById('document').contentWindow.document;
+            if (accept === '1') {
+                signature = contract.getElementById('accept_sign');
+            } else {
+                signature = contract.getElementById('customer_signature');
+            }
+            var img = signature.getElementsByTagName('img');
+            if (img.length === 0) {
+                alert("Пожалуйста сначала подпишитесь");
+            } else {
+                if (!img[0].src) {
+                    alert("Пожалуйста сначала подпишитесь");
+                } else {
+                    if (type === 'myid') {
+                        $(this).attr('disabled', 'disabled');
+                        $(clearButton).attr('disabled', 'disabled');
+                        let form = $('#photo-confirm-area-myid');
+                        let document_type = $('input[name=document_type]', form).val();
+                        let document_id = $('input[name=document_id]', form).val();
+                        let accept = $('input[name=accept]', form).val();
+                        let data = {
+                            document: document_id,
+                            document_type: document_type,
+                            signature: img[0].src,
+                        };
+                        if (accept === '1') {
+                            data['accept'] = '1';
+                        }
+                        $.ajax({
+                            method: 'post',
+                            url: '/index.php?m=contracts&action=' + document_type + '/saveSign',
+                            data: data,
+                        }).done(function (response, status, xhr) {
+                            if (response.success) {
+                                location.href = response.data.link;
+                            } else {
+                                $(this).removeAttr('disabled');
+                                $(clearButton).removeAttr('disabled');
+                                signaturePad.clear();
+                                img[0].src = '';
+                            }
+                        });
+                    } else {
+                        jQuery('.signature-pad--step1', container).hide();
+                        jQuery('.signature-pad--step2', container).show();
+                        startup();
+                    }
+                }
+            }
+        });
+        if (confirmButton != null) {
+            confirmButton.addEventListener("click", function (event) {
+                let form = jQuery(this).closest('form')[0];
+                var contract = document.getElementById('document').contentWindow.document;
+                if (accept === '1') {
+                    signature = contract.getElementById('accept_sign');
+                } else {
+                    signature = contract.getElementById('customer_signature');
+                }
+                var img = signature.getElementsByTagName('img');
+                let data = img[0].src;
+                let canvas = $('.signature-pad--step2 #canvas', container);
+                let image = canvas[0].toDataURL('image/png');
+                let formData = new FormData(form);
+                let documentId = formData.get('document_id');
+                let documentType = formData.get('document_type');
+                let url = `index.php?m=contracts&action=${documentType}/sign`;
+                $(this).attr('disabled', 'disabled');
+                formData.delete('document_id');
+                formData.delete('document_type');
+                formData.append(documentType + 'Id', documentId);
+                formData.append('signature', data);
+                formData.append('image', image);
+                jQuery.ajax({
+                    method: "POST",
+                    enctype: 'multipart/form-data',
+                    url: url,
+                    data: formData,
+                    cache: false,
+                    contentType: false,
+                    processData: false
+                }).done(function (result) {
+                    if (result.success) {
+                        location.href = 'index.php?m=contracts';
+                    } else {
+                        $('#errorMessage', form).html('');
+                        $('#errorMessage', form).html(result.message);
+                        $('#error', form).show();
+                        $(this).removeAttr('disabled');
+                    }
+                });
+            });
+        }
+    }
+}
+
+function signInit() {
+    var container = document.getElementsByClassName('graph-container');
+    var step1Wrapper = container[0].querySelector("#signature-pad-graph");
+    var step2Wrapper = container[0].querySelector("#photo-confirm-area-graph");
+    var step3Wrapper = container[0].querySelector("#passport-confirm-area-graph");
+    initSignaturePad(step1Wrapper, step2Wrapper, step3Wrapper, container, 'visual',);
+}
+
+
+function myIdInit() {
+    var container = document.getElementsByClassName('myid-container');
+    var step1Wrapper = container[0].querySelector("#signature-pad-myid");
+    initSignaturePad(step1Wrapper, null, container, 'myid');
+}
+
+$(document).ready(function () {
+    $('.upload-confirm-passport input').on('change', function () {
+        let form = $('#passport-confirm-area-graph');
+        let file = this.files[0];
+        if (typeof file === 'undefined') {
+            $('[data-action=confirm]', form).attr('disabled', 'disabled');
+        } else {
+            $('[data-action=confirm]', form).removeAttr('disabled');
+        }
+    });
+    $('.upload-confirm-photo input').on('change', function () {
+        let form = $('#photo-confirm-area-graph');
+        let file = this.files[0];
+        let error = $('#error', form[0]);
+        let errorMessage = $('#errorMessage', form[0]);
+        let canvas = $('.signature-pad--step2 #canvas').get(0);
+        let confirmButton = $('[data-action=confirm]', form);
+        let fileReader = new FileReader();
+        fileReader.readAsDataURL(file);
+        fileReader.onloadend = function () {
+            let accept = $('input[name=accept]', form).val()
+            let document_type = $('input[name=document_type]', form).val();
+            let data = {
+                image: fileReader.result,
+                document_type: document_type,
+                document: $('input[name=document_id]', form).val()
+            };
+            if (accept) {
+                data['accept'] = '1';
+            }
+            $.ajax({
+                method: 'POST',
+                cache: false,
+                url: `index.php?m=contracts&action=${document_type}/getImage`,
+                data: data,
+            }).done(function (data) {
+                if (data.success) {
+                    $('#result').show();
+                    $('#retakephoto').attr('disabled', 'disabled').hide();
+                    var img = new window.Image();
+                    img.addEventListener("load", function () {
+                        canvas.width = img.width;
+                        canvas.height = img.height;
+                        canvas.style.maxWidth = $('.signature-pad--step2 .signature-pad--body').width() + 'px';
+                        canvas.getContext("2d").drawImage(img, 0, 0);
+                        $('.signature-pad--step2 #canvas').show();
+                    });
+                    img.setAttribute("src", data.data);
+                    confirmButton.removeAttr('disabled');
+                } else {
+                    errorMessage.html(data.message);
+                    error.show();
+                }
+            });
+        }
+    });
+    $('.alert .close[data-dismiss=alert]').on('click', function (event) {
+        event.preventDefault();
+        $(this).parent().hide();
+    });
+})
+
+

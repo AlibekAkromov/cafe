@@ -1,0 +1,717 @@
+let EIMZO_MAJOR = 3;
+let EIMZO_MINOR = 37;
+
+
+let errorCAPIWS = LANG.eimzo.messages.capwis;
+let errorBrowserWS = LANG.eimzo.messages.browesr_ws;
+let errorUpdateApp = LANG.eimzo.messages.update_app;
+let errorWrongPassword = LANG.eimzo.messages.password_wrong;
+let existKeys = false;
+let idcardPluggin = false;
+let printDocument = () => {
+    let contractFrame = document.getElementById('document').contentWindow;
+    contractFrame.focus();
+    contractFrame.print();
+    return false;
+};
+
+String.prototype.replaceArray = function (find, replace) {
+    var replaceString = this;
+    for (var i = 0; i < find.length; i++) {
+        replaceString = replaceString.replace(find[i], replace[i]);
+    }
+    return replaceString;
+};
+
+let AppLoad = function () {
+    EIMZOClient.API_KEYS = [
+        'localhost', '96D0C1491615C82B9A54D9989779DF825B690748224C2B04F500F370D51827CE2644D8D4A82C18184D73AB8530BB8ED537269603F61DB0D03D2104ABF789970B',
+        '127.0.0.1', 'A7BCFA5D490B351BE0754130DF03A068F855DB4333D43921125B9CF2670EF6A40370C646B90401955E1F7BC9CDBF59CE0B2C5467D820BE189C845D0B79CFC96F',
+        'clients.ahost.uz', '62D08580BD0B41DA1AF9D55F8BF69FB327B94F3E3476F2C8E214EB103A3EC6294C37480C37D5630EFAB07DA5668BCF4945F516129416C7FAC5531CB33FB2628A'
+    ];
+    uiLoading();
+
+    EIMZOClient.checkVersion(function (major, minor) {
+        let newVersion = EIMZO_MAJOR * 100 + EIMZO_MINOR;
+        let installedVersion = parseInt(major) * 100 + parseInt(minor);
+        if (installedVersion < newVersion) {
+            uiUpdateApp();
+        } else {
+            EIMZOClient.installApiKeys(function () {
+                uiLoadKeys();
+                if (!idcardPluggin) {
+                    EIMZOClient.idCardIsPLuggedIn(function (yes) {
+                        if (yes) {
+                            idcardPluggin = true;
+                            if (existKeys === true) {
+                                $('.eimzo-idcard').show();
+                                $('input[name=idcard]').removeAttr('disabled');
+                            } else {
+                                $('.eimzo-idcard').hide();
+                            }
+                        } else {
+                            $('.eimzo-idcard').hide();
+                            $('input[name=idcard]').attr('disabled');
+                        }
+                    }, function (e, r) {
+                        $('.eimzo-idcard').hide();
+                        $('input[name=idcard]').attr('disabled');
+                    });
+                }
+            }, function (e, r) {
+                if (!idcardPluggin) {
+                    EIMZOClient.idCardIsPLuggedIn(function (yes) {
+                        if (yes) {
+                            idcardPluggin = true;
+                            if (existKeys === true) {
+                                $('.eimzo-idcard').show();
+                                $('input[name=idcard]').removeAttr('disabled');
+                            } else {
+                                $('.eimzo-button').hide();
+                                $('.eimzo-idcard').hide();
+                            }
+                        } else {
+                            $('.eimzo-idcard').hide();
+                            $('input[name=idcard]').attr('disabled');
+                            $('.eimzoSign').hide();
+                            $('.keyNotFound').show();
+                        }
+                    }, function (e, r) {
+                        $('.eimzo-idcard').hide();
+                        $('input[name=idcard]').attr('disabled');
+                    });
+                } else {
+                    $('.eimzoSign').hide();
+                    $('.keyNotFound').show();
+                }
+            });
+        }
+    }, function (e, r) {
+        $('.eimzoSign').hide();
+        $('.eimzoNotInstalled').show();
+    });
+}
+
+let uiShowMessage = function (message) {
+    alert(message);
+}
+
+let uiLoading = function () {
+    let l = document.getElementById('message');
+    l.innerHTML = 'Загрузка ...';
+    l.style.color = 'red';
+}
+
+let uiNotLoaded = function (e) {
+    let l = document.getElementById('message');
+    l.innerHTML = '';
+    if (e) {
+        wsError(e);
+    } else {
+        uiShowMessage(errorBrowserWS);
+    }
+}
+
+let uiUpdateApp = function () {
+    let l = document.getElementById('message');
+    l.innerHTML = errorUpdateApp;
+}
+
+let uiLoadKeys = function () {
+    uiClearCombo();
+    EIMZOClient.listAllUserKeys(function (o, i) {
+        let itemId = "itm-" + o.serialNumber + "-" + i;
+        return itemId;
+    }, function (itemId, v) {
+        let item = uiCreateItem(itemId, v);
+        if (item) {
+            return item;
+        }
+    }, function (items, firstId) {
+        var id;
+        items.forEach(function (item) {
+            if (item) {
+                if (item.element.length > 0) {
+                    id = item.id;
+                }
+                existKeys = true;
+            }
+        });
+        if (existKeys) {
+            $('.keyNotFound').hide();
+            $('.eimzoSign').show();
+            uiFillCombo(items);
+            uiLoaded();
+            uiComboSelect(id);
+        } else {
+            if ($('input[name=idcard]')) {
+                EIMZOClient.idCardIsPLuggedIn(function (yes) {
+                    if (yes) {
+                        idcardPluggin = true;
+                        $('.keyNotFound').hide();
+                        if (existKeys === true) {
+                            $('.eimzo-idcard').show();
+                            $('input[name=idcard]').removeAttr('disabled');
+                        } else {
+                            $('input[name=idcard]').attr('checked', 'checked').prop('checked', true).attr('disabled', 'disabled');
+                            $('.eimzo-idcard').hide();
+                            $('.eimzo-button').hide();
+                        }
+                        $('#message').html('').hide();
+                        $('.eimzoSign').show();
+                    } else {
+                        $('.eimzo-idcard').hide();
+                        $('input[name=idcard]').attr('disabled');
+                        $('.eimzoSign').hide();
+                        $('.keyNotFound').show();
+                    }
+                }, function (e, r) {
+                    $('.eimzo-idcard').hide();
+                    $('input[name=idcard]').attr('disabled');
+                    $('.eimzoSign').hide();
+                    $('.keyNotFound').show();
+                });
+            } else {
+                $('.eimzoSign').hide();
+                $('.keyNotFound').show();
+            }
+        }
+    }, function (e, r) {
+        $('.eimzoSign').hide();
+        $('.keyNotFound').show();
+        // uiShowMessage(errorCAPIWS);
+    });
+}
+
+let uiComboSelect = function (itm) {
+    if (itm) {
+        let id = $('#' + itm);
+        $('.key .dropdown-item').removeClass('selected');
+        $('.key .dropdown-item[data-certid=' + itm + ']').addClass('selected');
+        let vo = JSON.parse(id.text());
+        getKeyId(itm, vo, function (keyId) {
+
+        })
+        $(".keySelect").html(vo.TIN + " - " + vo.CN);
+        $(".keySelect").attr('data-item', itm);
+    }
+}
+
+let cbChanged = function (c) {
+    $('.keySelect').removeAttr('data-item');
+    $('.keySelect').html('');
+}
+
+let uiClearCombo = function () {
+    $('.key').html('');
+
+}
+
+let uiFillCombo = function (items) {
+    let combo = $('.key');
+    for (var itm in items) {
+        if (items[itm]) {
+            combo.append(items[itm].element);
+        }
+    }
+}
+
+let uiLoaded = function () {
+    let l = document.getElementById('message');
+    l.innerHTML = '';
+}
+
+let uiCreateItem = function (itmkey, vo) {
+    var now = new Date();
+    vo.expired = dates.compare(now, vo.validTo) > 0;
+    var itm = '', validCert = true;
+    let alias = {};
+    for (let item of vo.alias.matchAll(/(\w+|(?:\d+\.?){7})=((?:\w+(?:\s|\.|-|@?)?)+|\d+),?/mug)) {
+        alias[item[1]] = item[2];
+    }
+    var userTin = window.sessionStorage.getItem('userTin') !== null ? window.sessionStorage.getItem('userTin') : '';
+    var adminPage = window.sessionStorage.getItem('adminPage');
+    if (adminPage === null || adminPage === false) {
+        if (userTin.length === 9) {
+            validCert = vo.TIN === userTin;
+        } else {
+            validCert = alias["1.2.860.3.16.1.2"] === userTin;
+        }
+    }
+    if (validCert) {
+        itm = "<li><a class=\"dropdown-item\" href=\"javascript:void(0);\" data-certid='" + itmkey + "' ";
+        if (!vo.expired) {
+            itm += "onclick=\"uiComboSelect('" + itmkey + "')\"";
+        } else {
+            itm += "style='color: gray'";
+        }
+        itm += "\>";
+        itm += "<ul class=\"list-unstyled\">";
+        itm += "<li>" + LANG.eimzo.template.cert_number.replaceArray([':number'], [vo.serialNumber.toLowerCase()]) + "</li>";
+
+        itm += "<li>" + LANG.eimzo.template.tax.replaceArray([':tin'], [vo.TIN + (isLegalEntity(vo.TIN) ? "" : "/" + alias["1.2.860.3.16.1.2"])]);
+        if (isLegalEntity(vo.TIN)) {
+            itm += " <span class=\"badge\"> " + LANG.eimzo.template.legal + "</span>";
+        } else {
+            itm += " <span class=\"badge\"> " + LANG.eimzo.template.physical + "</span>";
+        }
+        itm += "</li>"
+        itm += "<li>" + LANG.eimzo.template.fullname.replaceArray([':fullname'], [vo.CN]) + "</li>";
+        if (vo.O !== "") {
+            itm += "<li>" + LANG.eimzo.template.company.replaceArray([':company'], [vo.O]) + "</li>";
+        }
+        if (vo.expired) {
+            itm += "<li>" + LANG.eimzo.template.cert_exec.replaceArray([':date_start', ':date_end', ':expired', ':color'],
+                [vo.validFrom.ddmmyyyy(), vo.validTo.ddmmyyyy(), LANG.eimzo.template.cert_expired, '#BB1100']) + "</li>";
+        } else {
+            itm += "<li>" + LANG.eimzo.template.cert_exec.replaceArray([':date_start', ':date_end', ':expired', ':color'],
+                    [vo.validFrom.ddmmyyyy(), vo.validTo.ddmmyyyy(), '', '']) +
+                "</li>";
+        }
+        itm += "<div id='" +
+            itmkey +
+            "' class='hidden-value' style='display: none'>" +
+            JSON.stringify(vo) +
+            "</div>";
+        itm += "</ul></a></li>";
+        return {element: itm, id: itmkey};
+    } else {
+        return null;
+    }
+}
+
+let isLegalEntity = function (tin) {
+    return (tin.charAt(0) === '2' || tin.charAt(0) === '3');
+};
+
+let wsError = function (e) {
+    if (e) {
+        uiShowMessage(errorCAPIWS + " : " + e);
+    } else {
+        uiShowMessage(errorBrowserWS);
+    }
+}
+
+let rejectDocument = function (pkcs7, form) {
+    let documentType = $('input[name=document_type]', form).val();
+    let documentId = $('input[name=document_id]', form).val();
+    let link = $('input[name=link]', form).val();
+    let error = $('#error', form);
+    let errorMessage = $('#errorMessage', form);
+    errorMessage.html('');
+    error.hide();
+    let type = $('input[name=type]', form).val();
+    let url = link === 'admin' ? `addonmodules.php?module=contracts&action=${documentType}/reject` : `index.php?m=contracts&action=${documentType}/reject`;
+    let user = $('input[name=user_id]', form).val();
+    let data = {
+        pkcs7: pkcs7,
+        user: user,
+        type: type,
+        comment: $('textarea[name=notes]').val(),
+    }
+    if (documentId) {
+        data[documentType + 'Id'] = documentId;
+    }
+    $.ajax({
+        method: 'POST',
+        url: url,
+        data: data,
+    }).done(function (data) {
+        if (!data.success) {
+            errorMessage.html(data.message);
+            error.show();
+        } else {
+            location.reload();
+        }
+    });
+}
+let cancelDocument = function (pkcs7, form) {
+    let documentType = $('input[name=document_type]', form).val();
+    let documentId = $('input[name=document_id]', form).val();
+    let accept = $('input[name=accept]', form).val();
+    let error = $('#error', form);
+    let errorMessage = $('#errorMessage', form);
+    errorMessage.html('');
+    error.hide();
+    let type = $('input[name=type]', form).val();
+    let url = `index.php?m=contracts&action=${documentType}/cancel`;
+    let user = $('input[name=user_id]', form).val();
+    let data = {
+        pkcs7: pkcs7,
+        user: user,
+        type: type
+    }
+    if (accept === "1") {
+        data['accept'] = "1";
+    }
+    if (documentId) {
+        data[documentType + 'Id'] = documentId;
+    }
+    $.ajax({
+        method: 'POST',
+        url: url,
+        data: data,
+    }).done(function (data) {
+        if (!data.success) {
+            errorMessage.html(data.message);
+            error.show();
+        } else {
+            location.reload();
+        }
+    });
+}
+
+let sendToServerDocument = function (pkcs7, form) {
+    let link = $('input[name=link]', form).val();
+    let documentType = $('input[name=document_type]', form).val();
+    let documentId = $('input[name=document_id]', form).val();
+    let error = $('#error', form);
+    let btn = $('button[type=submit]', form);
+    if (error.length === 0) {
+        error = $('#error')
+    }
+    error.html('');
+    error.hide();
+    let type = $('input[name=type]', form).val();
+    let url = link === 'admin' ? `addonmodules.php?module=contracts&action=${documentType}/sign` : `index.php?m=contracts&action=${documentType}/sign`;
+    let accept = $('input[name=accept]', form).val();
+    let user = $('input[name=user_id]', form).val();
+    let data = {
+        pkcs7: pkcs7,
+        user: user,
+        type: type
+    }
+    if (accept === '1') {
+        data['accept'] = '1';
+    }
+    let comment = $('textarea[name=comment]').val();
+    if (comment) {
+        data.comment = comment;
+    }
+    if (documentId) {
+        data[documentType + 'Id'] = documentId;
+    }
+    $.ajax({
+        method: 'POST',
+        url: url,
+        data: data,
+    }).done(function (data) {
+        if (!data.success) {
+            btn.removeAttr('disabled');
+            error.html(data.message);
+            error.show();
+        } else {
+            location.reload();
+        }
+    });
+}
+
+let getTimeStamp = (signature_hex, success, fail) => {
+    let link = $('input[name=link]').val();
+    let url = link === 'admin' ? 'addonmodules.php?module=contracts&action=contract/gettimestamp' : 'index.php?m=contracts&action=contract/gettimestamp';
+    $.ajax({
+        method: 'POST',
+        url: url,
+        data: {
+            signature_hex: signature_hex,
+        }
+    }).done(function (response) {
+        if (response.success) {
+            success(response.timestamp_token);
+        } else {
+            fail(response.message);
+        }
+    }).fail(function () {
+        fail('Ошибка подключение');
+    })
+}
+
+let cancelPkcsDocument = function (event) {
+    event.preventDefault();
+    let idcard;
+    if (existKeys === false) {
+        idcard = true;
+    } else {
+        if (idcardPluggin === false) {
+            idcard = false;
+        } else {
+            idcard = $('input[name=idcard]').is(':checked')
+        }
+    }
+    let form = event.target;
+    let id, vo, itm;
+    if (idcard) {
+        itm = null
+        vo = null;
+    } else {
+        itm = $('.keySelect').data('item')
+        id = $('#' + itm);
+        vo = JSON.parse(id.text());
+    }
+    let data = $('input[name=document]', form).val();
+    getKeyId(itm, vo, function (keyId) {
+        EIMZOClient.createPkcs7(keyId, data, getTimeStamp, function (pkcs7, signature_hex, signer_serial_number) {
+            cancelDocument(pkcs7, form);
+        }, failFunction);
+    });
+    // }
+}
+
+
+let rejectPkcsDocument = function (event) {
+    event.preventDefault();
+    let idcard;
+    if (existKeys === false) {
+        idcard = true;
+    } else {
+        if (idcardPluggin === false) {
+            idcard = false;
+        } else {
+            idcard = $('input[name=idcard]').is(':checked')
+        }
+    }
+    let form = event.target;
+    let id, vo, itm;
+    if (idcard) {
+        itm = null;
+        vo = null;
+    } else {
+        itm = $('.keySelect').data('item');
+        id = $('#' + itm);
+        vo = JSON.parse(id.text());
+    }
+    let document_type = $('input[name=document_type]', form).val().charAt(0).toUpperCase() + $('input[name=document_type]', form).val().slice(1);
+    let document = JSON.parse($('input[name=document]', form).val());
+    let dataDoc = {[document_type]: document, Notes: $('textarea[name=notes]').val()}
+    let data = JSON.stringify(dataDoc);
+    getKeyId(itm, vo, function (keyId) {
+        EIMZOClient.createPkcs7(keyId, data, getTimeStamp, function (pkcs7, signature_hex, signer_serial_number) {
+            rejectDocument(pkcs7, form);
+        }, failFunction);
+    });
+}
+
+let createPkcsDocument = function (event) {
+    event.preventDefault();
+    let idcard;
+    if (existKeys === false) {
+        idcard = true;
+    } else {
+        if (idcardPluggin === false) {
+            idcard = false;
+        } else {
+            idcard = $('input[name=idcard]').is(':checked')
+        }
+    }
+    let btn = $('button[type=submit]', event.target);
+    btn.attr('disabled', 'disabled');
+    let form = event.target;
+    let id, vo, itm;
+    if (idcard) {
+        itm = null;
+        vo = null;
+    } else {
+        itm = $('.keySelect').data('item');
+        id = $('#' + itm);
+        vo = JSON.parse(id.text());
+    }
+    let data = $('input[name=document]', form).val();
+    getKeyId(itm, vo, function (keyId) {
+        EIMZOClient.createPkcs7(keyId, data, getTimeStamp, function (pkcs7, signature_hex, signer_serial_number) {
+            sendToServerDocument(pkcs7, form);
+        }, function (e, r) {
+            btn.removeAttr('disabled');
+            failFunction(e, r);
+        });
+    });
+};
+
+let createPkcsFacturaAll = (facturaJson, element, next) => {
+    let idcard;
+    if (existKeys === false) {
+        idcard = true;
+    } else {
+        if (idcardPluggin === false) {
+            idcard = false;
+        } else {
+            idcard = $('input[name=idcard]').is(':checked')
+        }
+    }
+    let user = $(element).data('user');
+    let progressBar = $('.faktura-progress-' + $(element).val() + ' progress');
+    let fakturaLog = $('.faktura-progress-' + $(element).val() + ' .faktura-message');
+    let fakturaStatus = $('.faktura-status-' + $(element).val());
+    let fakturaCheckbox = $('.faktura-checkbox-' + $(element).val());
+    let id, vo, itm;
+    if (idcard) {
+        itm = null;
+        vo = null;
+    } else {
+        itm = $('.keySelect').data('item');
+        id = $('#' + itm);
+        vo = JSON.parse(id.text());
+    }
+    getKeyId(itm, vo, function (keyId) {
+        EIMZOClient.createPkcs7(keyId, JSON.stringify(facturaJson), getTimeStamp, function (pkcs7) {
+            $.ajax({
+                method: "POST",
+                url: 'addonmodules.php?module=contracts&action=faktura/sign',
+                data: {
+                    pkcs7: pkcs7,
+                    user: user,
+                }
+            }).done(function (response) {
+                if (response.success) {
+                    progressBar.val('5');
+                    fakturaLog.html('Счет фактура подписана и отправлена');
+                    fakturaStatus.html(`Отправлен`);
+                    fakturaCheckbox.attr('disabled', 'disabled').prop('checked', false).hide();
+                    next();
+                } else {
+                    progressBar.addClass('danger')
+                    fakturaLog.html(response.message);
+                    next();
+                }
+            });
+        }, failFunction);
+    });
+}
+
+function signAdminFactura(checkedArray) {
+    if (checkedArray.length !== 0) {
+        let element = checkedArray.shift();
+        let tr = $(element).closest('tr');
+        let updateFacture = $('input[name=\'facturaUpdate[]\']', tr[0]);
+        let fakturaLog = $('.faktura-progress-' + $(element).val() + ' .faktura-message');
+        let progressBar = $('.faktura-progress-' + $(element).val() + ' progress');
+        $.ajax({
+            method: "POST",
+            url: 'addonmodules.php?module=contracts&action=faktura/create',
+            data: {
+                factura_id: $(element).val(),
+                update: updateFacture.is(":checked"),
+            }
+        }).done(function (json) {
+            if (json.success) {
+                progressBar.val('3');
+                fakturaLog.html('Получение JSON документа');
+                let jsonFactura = json.factura;
+                createPkcsFacturaAll(jsonFactura, element, function () {
+                    signAdminFactura(checkedArray);
+                });
+            } else {
+                fakturaLog.html(`Получение не удалось причина: ${json.message}`);
+                signAdminFactura(checkedArray);
+            }
+        });
+    }
+}
+
+function sendEdoFactura(checkedArray) {
+    if (checkedArray.length !== 0) {
+        let element = checkedArray.shift();
+        let fakturaLog = $('.faktura-progress-' + $(element).val() + ' .faktura-message');
+        $.ajax({
+            method: "POST",
+            url: 'addonmodules.php?module=contracts&action=faktura/create',
+            data: {
+                factura_id: $(element).val(),
+            }
+        }).done(function (json) {
+            if (json.success) {
+                fakturaLog.html('Отправка прошла успешно');
+                sendEdoFactura(checkedArray);
+            } else {
+                fakturaLog.html(`Отправка не удалось причина: ${json.message}`);
+                sendEdoFactura(checkedArray);
+            }
+        });
+    }
+}
+
+let appendPkcsDocument = (event) => {
+    event.preventDefault();
+    let itm = $('.keySelect').data('item');
+    if (itm) {
+        let btn = $('button[type=submit]', event.target);
+        btn.attr('disabled', 'disabled');
+        let id = $('#' + itm);
+        let vo = JSON.parse(id.text());
+        let form = event.target;
+        let pkcs7 = $('input[name=pkcs7]', form).val();
+        getKeyId(itm, vo, function (keyId) {
+            EIMZOClient.appendPkcs7(keyId, pkcs7, getTimeStamp, function (pkcs7, signature_hex, signer_serial_number) {
+                sendToServerDocument(pkcs7, form);
+            }, function (e, r) {
+                btn.removeAttr('disabled');
+                failFunction(e, r);
+            });
+        });
+    }
+};
+
+let failFunction = function (e, r) {
+    let keyId = $('.keySelect').data('item');
+    // let button = $('.')
+    if (r) {
+        if (r.indexOf("BadPaddingException") != -1) {
+            uiShowMessage(errorWrongPassword);
+        } else {
+            sessionStorage.removeItem(keyId);
+            uiShowMessage(r);
+        }
+    } else {
+        sessionStorage.removeItem(keyId);
+        uiShowMessage(errorBrowserWS);
+    }
+    if (e) {
+        sessionStorage.removeItem(keyId);
+        wsError(e);
+    }
+}
+let idcardToggle = function (event) {
+    let element = $(event.target);
+    if (element.is(':checked')) {
+        $('.eimzo-button').hide();
+        $('#message').html('').hide();
+    } else {
+        $('.eimzo-button').show();
+        $('#message').show();
+    }
+}
+
+let getKeyId = function (id, vo, success) {
+    let idcard;
+    if (existKeys === false) {
+        idcard = true;
+    } else {
+        if (idcardPluggin === false) {
+            idcard = false;
+        } else {
+            idcard = $('input[name=idcard]').is(':checked')
+        }
+    }
+    if (idcard) {
+        EIMZOClient.idCardIsPLuggedIn(function (yes) {
+            if (yes) {
+                idcardPluggin = true;
+                success('idcard');
+            }
+        }, failFunction)
+    } else {
+        if (sessionStorage.getItem(id) === null) {
+            if (vo) {
+                EIMZOClient.loadKey(vo, (keyId) => {
+                    sessionStorage.setItem(id, keyId);
+                    success(keyId);
+                }, failFunction);
+            }
+        } else {
+            success(sessionStorage.getItem(id));
+        }
+    }
+}
+
+if (document.getElementsByClassName('keySelect').length > 0) {
+    window.onload = AppLoad;
+}
