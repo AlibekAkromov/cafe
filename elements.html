@@ -1,13 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+<head>  
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="./input.css">
+  
 
   <link
     href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
@@ -16,7 +21,7 @@
     table,
     th,
     td {
-      border-bottom: 1px solid black;
+      border-bottom: 1px solid white;
       border-collapse: collapse;
     }
 
@@ -51,7 +56,7 @@
   </script>
 </head>
 
-<body>
+<body class="dark:bg-slate-800">
   <header class="fixed top-0 inset-x-0 bg-orange-950 bg-opacity-70 py-3 z-10" data-aos="fade-down">
     <div class="flex justify-between items-center px-10 mt-6">
       <div>
@@ -115,13 +120,14 @@
       </div>
     </div>
   </header>
+  
   <section class="bg-[#b68834] w-full h-[600px]">
     <div class="flex justify-center items-center">
       <div class="flex flex-col gap-5 mt-52">
-        <div class="ml-28">
+        <div class="ml-28" data-aos="fade-down">
           <h1 class="text-white text-3xl font-bold font-font">The Elements Page</h1>
         </div>
-        <div>
+        <div data-aos="fade-up">
           <p class="text-center text-white w-[520px] font-font">It won’t be a bigger problem to find one video game
             lover in your neighbor. Since the introduction of Virtual Game.</p>
         </div>
@@ -130,42 +136,47 @@
   </section>
   <section>
     <div class="ml-20 mt-20">
-      <div>
-        <h1 class="text-2xl font-font font-semibold">Text Sample</h1>
+      <div data-aos="fade-down">
+        <h1 class="text-black text-2xl font-font font-semibold dark:text-white">Text Sample</h1>
       </div>
-      <div class="mt-5">
+      <div class="mt-5" data-aos="fade-up">
         <div class="flex flex-col">
           <div class="flex gap-1">
-            <p class="font-font text-neutral-500">Every avid independent filmmaker has</p>
+            <p class="font-font text-neutral-500 dark:text-white">Every avid independent filmmaker has</p>
             <p class="text-[#b68834] font-semibold font-font">Bold</p>
-            <p class="font-font text-neutral-500">about making that</p>
-            <i class="text-neutral-500 font-font">italic</i>
-            <p class="font-font text-neutral-500">interest documentary, or short film to show off their creative
+            <p class="font-font text-neutral-500 dark:text-white">about making that</p>
+            <i class="text-neutral-500 font-font dark:text-white">italic</i>
+            <p class="font-font text-neutral-500 dark:text-white">interest documentary, or short film to show off their
+              creative
               prowess. Many have great</p>
           </div>
           <div class="flex gap-1">
-            <p class="font-font text-neutral-500">ideas and want to "wow" the</p>
+            <p class="font-font text-neutral-500 dark:text-white">ideas and want to "wow" the</p>
             <sup class="text-[#b68834] text-xs font-font">superscript</sup>
-            <p class="font-font text-neutral-500"> scene, or video renters with their big project. But once you have
+            <p class="font-font text-neutral-500 dark:text-white"> scene, or video renters with their big project. But
+              once you have
               the<sub class="text-[#b68834] font-font">subscript</sub> “in the can” (no easy feat), how do you move</p>
           </div>
           <div class="flex gap-1">
-            <p class="font-font text-neutral-500">from a</p>
+            <p class="font-font text-neutral-500 dark:text-white">from a</p>
             <del class="text-[#b68834] font-font">strike</del>
-            <p class="font-font text-neutral-500">through of master DVDs with the <u
+            <p class="font-font text-neutral-500 dark:text-white">through of master DVDs with the <u
                 class="text-[#b68834] font-font">"Underline"</u>marked hand-written title inside a secondhand CD case,
               to a pile of cardboard boxes full of shiny new,</p>
           </div>
           <div class="flex gap-1">
-            <p class="font-font text-neutral-500">retail-ready DVDs, with UPC barcodes and polywrap sitting on your
+            <p class="font-font text-neutral-500 dark:text-white">retail-ready DVDs, with UPC barcodes and polywrap
+              sitting on your
               doorstep? You need to create eye-popping artwork and have your project replicated. Using</p>
           </div>
           <div class="flex gap-1">
-            <p class="font-font text-neutral-500">a reputable full service DVD Replication company like PacificDisc,
+            <p class="font-font text-neutral-500 dark:text-white">a reputable full service DVD Replication company like
+              PacificDisc,
               Inc. to partner with is certainly a helpful option to ensure a professional end result, but to help</p>
           </div>
           <div class="flex gap-1">
-            <p class="font-font text-neutral-500">with your DVD replication project, here are 4 easy steps to follow for
+            <p class="font-font text-neutral-500 dark:text-white">with your DVD replication project, here are 4 easy
+              steps to follow for
               good DVD replication results:</p>
           </div>
         </div>
@@ -175,178 +186,178 @@
   <hr class="mt-32">
   <section>
     <div class="flex flex-col gap-10 ml-20 mt-20">
-      <div>
-        <h1 class="text-2xl font-semibold font-font">Sample Button</h1>
+      <div data-aos="fade-down">
+        <h1 class="text-black text-2xl font-semibold font-font dark:text-white">Sample Button</h1>
       </div>
-      <div class="flex flex-col gap-14">
+      <div class="flex flex-col gap-14" data-aos="fade-up">
         <div class="flex flex-col gap-5">
           <div class="flex gap-5">
             <button
-              class="bg-[#f9f9ff] w-[120px] h-[45px] font-font hover:bg-white hover:border hover:border-[#f9f9ff] hover:duration-500">Default</button>
+              class="bg-[#f9f9ff] w-[120px] h-[45px] font-font hover:bg-white hover:border hover:border-[#f9f9ff] hover:duration-500 dark:bg-slate-900 dark:text-white dark:hover:bg-slate-800">Default</button>
             <button
-              class="bg-[#b68834] w-[120px] h-[45px] font-font text-white hover:bg-white hover:text-[#b68834] hover:border hover:border-[#b68834] hover:duration-500">Primary</button>
+              class="bg-[#b68834] w-[120px] h-[45px] font-font text-white hover:bg-white hover:text-[#b68834] hover:border hover:border-[#b68834] hover:duration-500 dark:hover:bg-slate-800">Primary</button>
             <button
-              class="bg-[#4cd3e3] w-[120px] h-[45px] font-font text-white hover:bg-white hover:text-[#4cd3e3] hover:border hover:border-[#4cd3e3] hover:duration-500">Success</button>
+              class="bg-[#4cd3e3] w-[120px] h-[45px] font-font text-white hover:bg-white hover:text-[#4cd3e3] hover:border hover:border-[#4cd3e3] hover:duration-500 dark:hover:bg-slate-800">Success</button>
             <button
-              class="bg-[#38a4ff] w-[100px] h-[45px] font-font text-white hover:bg-white hover:text-[#38a4ff] hover:border hover:border-[#38a4ff] hover:duration-500">info</button>
+              class="bg-[#38a4ff] w-[100px] h-[45px] font-font text-white hover:bg-white hover:text-[#38a4ff] hover:border hover:border-[#38a4ff] hover:duration-500 dark:hover:bg-slate-800">info</button>
             <button
-              class="bg-[#f4e700] w-[120px] h-[45px] font-font text-white hover:bg-white hover:text-[#f4e700] hover:border hover:border-[#f4e700] hover:duration-500">Warning</button>
+              class="bg-[#f4e700] w-[120px] h-[45px] font-font text-white hover:bg-white hover:text-[#f4e700] hover:border hover:border-[#f4e700] hover:duration-500 dark:hover:bg-slate-800">Warning</button>
             <button
-              class="bg-[#f44a40] w-[120px] h-[45px] font-font text-white hover:bg-white hover:text-[#f44a40] hover:border hover:border-[#f44a40] hover:duration-500">Danger</button>
+              class="bg-[#f44a40] w-[120px] h-[45px] font-font text-white hover:bg-white hover:text-[#f44a40] hover:border hover:border-[#f44a40] hover:duration-500 dark:hover:bg-slate-800">Danger</button>
+            <button class="bg-[#f9f9ff] w-[120px] h-[45px] font-font hover:bg-white hover:border hover:border-[#f9f9ff] hover:duration-500 dark:hover:bg-slate-800 dark:text-white dark:bg-slate-900"><u>Link</u></button>
             <button
-              class="bg-[#f9f9ff] w-[120px] h-[45px] font-font hover:bg-white hover:border hover:border-[#f9f9ff] hover:duration-500"><u>Link</u></button>
-            <button class="bg-[#f9f9ff] w-[120px] h-[45px] font-font text-[#007bff] cursor-not-allowed">Disable</button>
+              class="bg-[#f9f9ff] w-[120px] h-[45px] font-font text-[#007bff] cursor-not-allowed dark:bg-slate-900">Disable</button>
           </div>
           <div class="flex gap-5">
             <button
-              class="bg-white text-[#38a4ff] w-[120px] h-[45px] border border-[#f9f9ff] hover:duration-500 hover:bg-[#f9f9ff] hover:text-black">Default</button>
+              class="bg-white text-[#38a4ff] w-[120px] h-[45px] border border-[#f9f9ff] hover:duration-500 hover:bg-[#f9f9ff] hover:text-black dark:bg-slate-800 dark:hover:text-white dark:hover:bg-slate-900 hover:border-none">Default</button>
             <button
-              class="w-[120px] h-[45px] font-font bg-white text-[#b68834] border border-[#b68834] hover:duration-500 hover:bg-[#b68834] hover:text-white">Primary</button>
+              class="w-[120px] h-[45px] font-font bg-white text-[#b68834] border border-[#b68834] hover:duration-500 hover:bg-[#b68834] hover:text-white dark:bg-slate-800 dark:hover:bg-[#b68834]">Primary</button>
             <button
-              class="w-[120px] h-[45px] font-font bg-white text-[#4cd3e3] border border-[#4cd3e3] hover:duration-500 hover:bg-[#4cd3e3] hover:text-white">Success</button>
+              class="w-[120px] h-[45px] font-font bg-white text-[#4cd3e3] border border-[#4cd3e3] hover:duration-500 hover:bg-[#4cd3e3] hover:text-white dark:bg-slate-800 dark:hover:bg-[#4cd3e3]">Success</button>
             <button
-              class="w-[100px] h-[45px] font-font bg-white text-[#38a4ff] border border-[#38a4ff] hover:duration-500 hover:bg-[#38a4ff] hover:text-white">info</button>
+              class="w-[100px] h-[45px] font-font bg-white text-[#38a4ff] border border-[#38a4ff] hover:duration-500 hover:bg-[#38a4ff] hover:text-white dark:bg-slate-800 dark:hover:bg-[#38a4ff]">info</button>
             <button
-              class="w-[120px] h-[45px] font-font bg-white text-[#f4e700] border border-[#f4e700] hover:duration-500 hover:bg-[#f4e700] hover:text-white">Warning</button>
+              class="w-[120px] h-[45px] font-font bg-white text-[#f4e700] border border-[#f4e700] hover:duration-500 hover:bg-[#f4e700] hover:text-white dark:bg-slate-800 dark:hover:bg-[#f4e700]">Warning</button>
             <button
-              class="w-[120px] h-[45px] font-font bg-white text-[#f44a40] border border-[#f44a40] hover:duration-500 hover:bg-[#f44a40] hover:text-white">Danger</button>
+              class="w-[120px] h-[45px] font-font bg-white text-[#f44a40] border border-[#f44a40] hover:duration-500 hover:bg-[#f44a40] hover:text-white dark:bg-slate-800 dark:hover:bg-[#f44a40]">Danger</button>
             <button
-              class="bg-white border border-[#f9f9ff] w-[120px] h-[45px] font-font hover:duration-500 hover:bg-[#f9f9ff] hover:text-black"><u>Link</u></button>
-            <button class="bg-[#f9f9ff] w-[120px] h-[45px] font-font text-[#007bff] cursor-not-allowed">Disable</button>
+              class="bg-white border border-[#f9f9ff] w-[120px] h-[45px] font-font hover:duration-500 hover:bg-[#f9f9ff] hover:text-black dark:bg-slate-800 dark:text-white dark:hover:bg-slate-900 dark:hover:border-none"><u>Link</u></button>
+            <button class="bg-[#f9f9ff] w-[120px] h-[45px] font-font text-[#007bff] cursor-not-allowed dark:bg-slate-900">Disable</button>
           </div>
         </div>
         <div class="flex flex-col gap-5">
           <div class="flex gap-5">
             <button
-              class="rounded-md bg-[#f9f9ff] w-[120px] h-[45px] font-font hover:bg-white hover:border hover:border-[#f9f9ff] hover:duration-500">Default</button>
+              class="rounded-md bg-[#f9f9ff] w-[120px] h-[45px] font-font hover:bg-white hover:border hover:border-[#f9f9ff] hover:duration-500 dark:bg-slate-900 dark:text-white dark:hover:bg-slate-800">Default</button>
             <button
-              class="rounded-md bg-[#b68834] w-[120px] h-[45px] font-font text-white hover:bg-white hover:text-[#b68834] hover:border hover:border-[#b68834] hover:duration-500">Primary</button>
+              class="rounded-md bg-[#b68834] w-[120px] h-[45px] font-font text-white hover:bg-white hover:text-[#b68834] hover:border hover:border-[#b68834] hover:duration-500 dark:hover:bg-slate-800">Primary</button>
             <button
-              class="rounded-md bg-[#4cd3e3] w-[120px] h-[45px] font-font text-white hover:bg-white hover:text-[#4cd3e3] hover:border hover:border-[#4cd3e3] hover:duration-500">Success</button>
+              class="rounded-md bg-[#4cd3e3] w-[120px] h-[45px] font-font text-white hover:bg-white hover:text-[#4cd3e3] hover:border hover:border-[#4cd3e3] hover:duration-500 dark:hover:bg-slate-800">Success</button>
             <button
-              class="rounded-md bg-[#38a4ff] w-[100px] h-[45px] font-font text-white hover:bg-white hover:text-[#38a4ff] hover:border hover:border-[#38a4ff] hover:duration-500">info</button>
+              class="rounded-md bg-[#38a4ff] w-[100px] h-[45px] font-font text-white hover:bg-white hover:text-[#38a4ff] hover:border hover:border-[#38a4ff] hover:duration-500 dark:hover:bg-slate-800">info</button>
             <button
-              class="rounded-md bg-[#f4e700] w-[120px] h-[45px] font-font text-white hover:bg-white hover:text-[#f4e700] hover:border hover:border-[#f4e700] hover:duration-500">Warning</button>
+              class="rounded-md bg-[#f4e700] w-[120px] h-[45px] font-font text-white hover:bg-white hover:text-[#f4e700] hover:border hover:border-[#f4e700] hover:duration-500 dark:hover:bg-slate-800">Warning</button>
             <button
-              class="rounded-md bg-[#f44a40] w-[120px] h-[45px] font-font text-white hover:bg-white hover:text-[#f44a40] hover:border hover:border-[#f44a40] hover:duration-500">Danger</button>
+              class="rounded-md bg-[#f44a40] w-[120px] h-[45px] font-font text-white hover:bg-white hover:text-[#f44a40] hover:border hover:border-[#f44a40] hover:duration-500 dark:hover:bg-slate-800">Danger</button>
             <button
-              class="rounded-md bg-[#f9f9ff] w-[120px] h-[45px] font-font hover:bg-white hover:border hover:border-[#f9f9ff] hover:duration-500"><u>Link</u></button>
+              class="rounded-md bg-[#f9f9ff] w-[120px] h-[45px] font-font hover:bg-white hover:border hover:border-[#f9f9ff] hover:duration-500 dark:hover:bg-slate-800 dark:text-white dark:bg-slate-900"><u>Link</u></button>
             <button
-              class="rounded-md bg-[#f9f9ff] w-[120px] h-[45px] font-font text-[#007bff] cursor-not-allowed">Disable</button>
+              class="rounded-md bg-[#f9f9ff] w-[120px] h-[45px] font-font text-[#007bff] cursor-not-allowed dark:bg-slate-900">Disable</button>
           </div>
           <div class="flex gap-5">
             <button
-              class="rounded-md bg-white text-[#38a4ff] w-[120px] h-[45px] border border-[#f9f9ff] hover:duration-500 hover:bg-[#f9f9ff] hover:text-black">Default</button>
+              class="rounded-md bg-white text-[#38a4ff] w-[120px] h-[45px] border border-[#f9f9ff] hover:duration-500 hover:bg-[#f9f9ff] hover:text-black dark:bg-slate-800 dark:hover:text-white dark:hover:bg-slate-900 hover:border-none">Default</button>
             <button
-              class="rounded-md w-[120px] h-[45px] font-font bg-white text-[#b68834] border border-[#b68834] hover:duration-500 hover:bg-[#b68834] hover:text-white">Primary</button>
+              class="rounded-md w-[120px] h-[45px] font-font bg-white text-[#b68834] border border-[#b68834] hover:duration-500 hover:bg-[#b68834] hover:text-white dark:bg-slate-800 dark:hover:bg-[#b68834]">Primary</button>
             <button
-              class="rounded-md w-[120px] h-[45px] font-font bg-white text-[#4cd3e3] border border-[#4cd3e3] hover:duration-500 hover:bg-[#4cd3e3] hover:text-white">Success</button>
+              class="rounded-md w-[120px] h-[45px] font-font bg-white text-[#4cd3e3] border border-[#4cd3e3] hover:duration-500 hover:bg-[#4cd3e3] hover:text-white dark:bg-slate-800 dark:hover:bg-[#4cd3e3]">Success</button>
             <button
-              class="rounded-md w-[100px] h-[45px] font-font bg-white text-[#38a4ff] border border-[#38a4ff] hover:duration-500 hover:bg-[#38a4ff] hover:text-white">info</button>
+              class="rounded-md w-[100px] h-[45px] font-font bg-white text-[#38a4ff] border border-[#38a4ff] hover:duration-500 hover:bg-[#38a4ff] hover:text-white dark:bg-slate-800 dark:hover:bg-[#38a4ff]">info</button>
             <button
-              class="rounded-md w-[120px] h-[45px] font-font bg-white text-[#f4e700] border border-[#f4e700] hover:duration-500 hover:bg-[#f4e700] hover:text-white">Warning</button>
+              class="rounded-md w-[120px] h-[45px] font-font bg-white text-[#f4e700] border border-[#f4e700] hover:duration-500 hover:bg-[#f4e700] hover:text-white dark:bg-slate-800 dark:hover:bg-[#f4e700]">Warning</button>
             <button
-              class="rounded-md w-[120px] h-[45px] font-font bg-white text-[#f44a40] border border-[#f44a40] hover:duration-500 hover:bg-[#f44a40] hover:text-white">Danger</button>
+              class="rounded-md w-[120px] h-[45px] font-font bg-white text-[#f44a40] border border-[#f44a40] hover:duration-500 hover:bg-[#f44a40] hover:text-white dark:bg-slate-800 dark:hover:bg-[#f44a40]">Danger</button>
             <button
-              class="rounded-md bg-white border border-[#f9f9ff] w-[120px] h-[45px] font-font hover:duration-500 hover:bg-[#f9f9ff] hover:text-black"><u>Link</u></button>
+              class="rounded-md bg-white border border-[#f9f9ff] w-[120px] h-[45px] font-font hover:duration-500 hover:bg-[#f9f9ff] hover:text-black dark:bg-slate-800 dark:text-white dark:hover:bg-slate-900 dark:hover:border-none"><u>Link</u></button>
             <button
-              class="rounded-md bg-[#f9f9ff] w-[120px] h-[45px] font-font text-[#007bff] cursor-not-allowed">Disable</button>
-          </div>
-        </div>
-        <div class="flex flex-col gap-5">
-          <div class="flex gap-5">
-            <button
-              class="rounded-full bg-[#f9f9ff] w-[120px] h-[45px] font-font hover:bg-white hover:border hover:border-[#f9f9ff] hover:duration-500">Default</button>
-            <button
-              class="rounded-full bg-[#b68834] w-[120px] h-[45px] font-font text-white hover:bg-white hover:text-[#b68834] hover:border hover:border-[#b68834] hover:duration-500">Primary</button>
-            <button
-              class="rounded-full bg-[#4cd3e3] w-[120px] h-[45px] font-font text-white hover:bg-white hover:text-[#4cd3e3] hover:border hover:border-[#4cd3e3] hover:duration-500">Success</button>
-            <button
-              class="rounded-full bg-[#38a4ff] w-[100px] h-[45px] font-font text-white hover:bg-white hover:text-[#38a4ff] hover:border hover:border-[#38a4ff] hover:duration-500">info</button>
-            <button
-              class="rounded-full bg-[#f4e700] w-[120px] h-[45px] font-font text-white hover:bg-white hover:text-[#f4e700] hover:border hover:border-[#f4e700] hover:duration-500">Warning</button>
-            <button
-              class="rounded-full bg-[#f44a40] w-[120px] h-[45px] font-font text-white hover:bg-white hover:text-[#f44a40] hover:border hover:border-[#f44a40] hover:duration-500">Danger</button>
-            <button
-              class="rounded-full bg-[#f9f9ff] w-[120px] h-[45px] font-font hover:bg-white hover:border hover:border-[#f9f9ff] hover:duration-500"><u>Link</u></button>
-            <button
-              class="rounded-full bg-[#f9f9ff] w-[120px] h-[45px] font-font text-[#007bff] cursor-not-allowed">Disable</button>
-          </div>
-          <div class="flex gap-5">
-            <button
-              class="rounded-full bg-white text-[#38a4ff] w-[120px] h-[45px] border border-[#f9f9ff] hover:duration-500 hover:bg-[#f9f9ff] hover:text-black">Default</button>
-            <button
-              class="rounded-full w-[120px] h-[45px] font-font bg-white text-[#b68834] border border-[#b68834] hover:duration-500 hover:bg-[#b68834] hover:text-white">Primary</button>
-            <button
-              class="rounded-full w-[120px] h-[45px] font-font bg-white text-[#4cd3e3] border border-[#4cd3e3] hover:duration-500 hover:bg-[#4cd3e3] hover:text-white">Success</button>
-            <button
-              class="rounded-full w-[100px] h-[45px] font-font bg-white text-[#38a4ff] border border-[#38a4ff] hover:duration-500 hover:bg-[#38a4ff] hover:text-white">info</button>
-            <button
-              class="rounded-full w-[120px] h-[45px] font-font bg-white text-[#f4e700] border border-[#f4e700] hover:duration-500 hover:bg-[#f4e700] hover:text-white">Warning</button>
-            <button
-              class="rounded-full w-[120px] h-[45px] font-font bg-white text-[#f44a40] border border-[#f44a40] hover:duration-500 hover:bg-[#f44a40] hover:text-white">Danger</button>
-            <button
-              class="rounded-full bg-white border border-[#f9f9ff] w-[120px] h-[45px] font-font hover:duration-500 hover:bg-[#f9f9ff] hover:text-black"><u>Link</u></button>
-            <button
-              class="rounded-full bg-[#f9f9ff] w-[120px] h-[45px] font-font text-[#007bff] cursor-not-allowed">Disable</button>
+              class="rounded-md bg-[#f9f9ff] w-[120px] h-[45px] font-font text-[#007bff] cursor-not-allowed dark:bg-slate-900">Disable</button>
           </div>
         </div>
         <div class="flex flex-col gap-5">
           <div class="flex gap-5">
             <button
-              class="rounded-full bg-[#f9f9ff] w-[120px] h-[45px] font-font hover:bg-white hover:border hover:border-[#f9f9ff] hover:duration-500">Default</button>
+              class="rounded-full bg-[#f9f9ff] w-[120px] h-[45px] font-font hover:bg-white hover:border hover:border-[#f9f9ff] hover:duration-500 dark:bg-slate-900 dark:text-white dark:hover:bg-slate-800">Default</button>
             <button
-              class="rounded-full bg-[#b68834] w-[120px] h-[45px] font-font text-white hover:bg-white hover:text-[#b68834] hover:border hover:border-[#b68834] hover:duration-500">Primary</button>
+              class="rounded-full bg-[#b68834] w-[120px] h-[45px] font-font text-white hover:bg-white hover:text-[#b68834] hover:border hover:border-[#b68834] hover:duration-500 dark:hover:bg-slate-800">Primary</button>
             <button
-              class="rounded-full bg-[#4cd3e3] w-[120px] h-[45px] font-font text-white hover:bg-white hover:text-[#4cd3e3] hover:border hover:border-[#4cd3e3] hover:duration-500">Success</button>
+              class="rounded-full bg-[#4cd3e3] w-[120px] h-[45px] font-font text-white hover:bg-white hover:text-[#4cd3e3] hover:border hover:border-[#4cd3e3] hover:duration-500 dark:hover:bg-slate-800">Success</button>
             <button
-              class="rounded-full bg-[#38a4ff] w-[100px] h-[45px] font-font text-white hover:bg-white hover:text-[#38a4ff] hover:border hover:border-[#38a4ff] hover:duration-500">info</button>
+              class="rounded-full bg-[#38a4ff] w-[100px] h-[45px] font-font text-white hover:bg-white hover:text-[#38a4ff] hover:border hover:border-[#38a4ff] hover:duration-500 dark:hover:bg-slate-800">info</button>
             <button
-              class="rounded-full bg-[#f4e700] w-[120px] h-[45px] font-font text-white hover:bg-white hover:text-[#f4e700] hover:border hover:border-[#f4e700] hover:duration-500">Warning</button>
+              class="rounded-full bg-[#f4e700] w-[120px] h-[45px] font-font text-white hover:bg-white hover:text-[#f4e700] hover:border hover:border-[#f4e700] hover:duration-500 dark:hover:bg-slate-800">Warning</button>
             <button
-              class="rounded-full bg-[#f44a40] w-[120px] h-[45px] font-font text-white hover:bg-white hover:text-[#f44a40] hover:border hover:border-[#f44a40] hover:duration-500">Danger</button>
+              class="rounded-full bg-[#f44a40] w-[120px] h-[45px] font-font text-white hover:bg-white hover:text-[#f44a40] hover:border hover:border-[#f44a40] hover:duration-500 dark:hover:bg-slate-800">Danger</button>
+            <button
+              class="rounded-full bg-[#f9f9ff] w-[120px] h-[45px] font-font hover:bg-white hover:border hover:border-[#f9f9ff] hover:duration-500 dark:hover:bg-slate-800 dark:text-white dark:bg-slate-900"><u>Link</u></button>
+            <button
+              class="rounded-full bg-[#f9f9ff] w-[120px] h-[45px] font-font text-[#007bff] cursor-not-allowed dark:bg-slate-900">Disable</button>
           </div>
           <div class="flex gap-5">
             <button
-              class="rounded-full bg-white text-[#38a4ff] w-[120px] h-[45px] border border-[#f9f9ff] hover:duration-500 hover:bg-[#f9f9ff] hover:text-black">Default</button>
+              class="rounded-full bg-white text-[#38a4ff] w-[120px] h-[45px] border border-[#f9f9ff] hover:duration-500 hover:bg-[#f9f9ff] hover:text-black dark:bg-slate-800 dark:hover:text-white dark:hover:bg-slate-900 hover:border-none">Default</button>
             <button
-              class="rounded-full w-[120px] h-[45px] font-font bg-white text-[#b68834] border border-[#b68834] hover:duration-500 hover:bg-[#b68834] hover:text-white">Primary</button>
+              class="rounded-full w-[120px] h-[45px] font-font bg-white text-[#b68834] border border-[#b68834] hover:duration-500 hover:bg-[#b68834] hover:text-white dark:bg-slate-800 dark:hover:bg-[#b68834]">Primary</button>
             <button
-              class="rounded-full w-[120px] h-[45px] font-font bg-white text-[#4cd3e3] border border-[#4cd3e3] hover:duration-500 hover:bg-[#4cd3e3] hover:text-white">Success</button>
+              class="rounded-full w-[120px] h-[45px] font-font bg-white text-[#4cd3e3] border border-[#4cd3e3] hover:duration-500 hover:bg-[#4cd3e3] hover:text-white dark:bg-slate-800 dark:hover:bg-[#4cd3e3]">Success</button>
             <button
-              class="rounded-full w-[100px] h-[45px] font-font bg-white text-[#38a4ff] border border-[#38a4ff] hover:duration-500 hover:bg-[#38a4ff] hover:text-white">info</button>
+              class="rounded-full w-[100px] h-[45px] font-font bg-white text-[#38a4ff] border border-[#38a4ff] hover:duration-500 hover:bg-[#38a4ff] hover:text-white dark:bg-slate-800 dark:hover:bg-[#38a4ff]">info</button>
             <button
-              class="rounded-full w-[120px] h-[45px] font-font bg-white text-[#f4e700] border border-[#f4e700] hover:duration-500 hover:bg-[#f4e700] hover:text-white">Warning</button>
+              class="rounded-full w-[120px] h-[45px] font-font bg-white text-[#f4e700] border border-[#f4e700] hover:duration-500 hover:bg-[#f4e700] hover:text-white dark:bg-slate-800 dark:hover:bg-[#f4e700]">Warning</button>
             <button
-              class="rounded-full w-[120px] h-[45px] font-font bg-white text-[#f44a40] border border-[#f44a40] hover:duration-500 hover:bg-[#f44a40] hover:text-white">Danger</button>
+              class="rounded-full w-[120px] h-[45px] font-font bg-white text-[#f44a40] border border-[#f44a40] hover:duration-500 hover:bg-[#f44a40] hover:text-white dark:bg-slate-800 dark:hover:bg-[#f44a40]">Danger</button>
+            <button
+              class="rounded-full bg-white border border-[#f9f9ff] w-[120px] h-[45px] font-font hover:duration-500 hover:bg-[#f9f9ff] hover:text-black dark:bg-slate-800 dark:text-white dark:hover:bg-slate-900 dark:hover:border-none"><u>Link</u></button>
+            <button
+              class="rounded-full bg-[#f9f9ff] w-[120px] h-[45px] font-font text-[#007bff] cursor-not-allowed dark:bg-slate-900">Disable</button>
+          </div>
+        </div>
+        <div class="flex flex-col gap-5">
+          <div class="flex gap-5">
+            <button
+              class="rounded-full bg-[#f9f9ff] w-[150px] h-[45px] font-font hover:bg-white hover:border hover:border-[#f9f9ff] hover:duration-500 dark:bg-slate-900 dark:text-white dark:hover:bg-slate-800 flex flex-row items-center justify-center gap-3">Default <img width="25" height="50" src="https://img.icons8.com/ios/50/long-arrow-right--v1.png" alt="long-arrow-right--v1" class="dark:text-white text-white"/></button>
+            <button
+              class="rounded-full bg-[#b68834] w-[120px] h-[45px] font-font text-white hover:bg-white hover:text-[#b68834] hover:border hover:border-[#b68834] hover:duration-500 dark:hover:bg-slate-800">Primary <img src="https://icons8.com/icon/CI3crbooO4AF/smiling" alt=""></button>
+            <button
+              class="rounded-full bg-[#4cd3e3] w-[120px] h-[45px] font-font text-white hover:bg-white hover:text-[#4cd3e3] hover:border hover:border-[#4cd3e3] hover:duration-500 dark:hover:bg-slate-800">Success</button>
+            <button
+              class="rounded-full bg-[#38a4ff] w-[100px] h-[45px] font-font text-white hover:bg-white hover:text-[#38a4ff] hover:border hover:border-[#38a4ff] hover:duration-500 dark:hover:bg-slate-800">info</button>
+            <button
+              class="rounded-full bg-[#f4e700] w-[120px] h-[45px] font-font text-white hover:bg-white hover:text-[#f4e700] hover:border hover:border-[#f4e700] hover:duration-500 dark:hover:bg-slate-800">Warning</button>
+            <button
+              class="rounded-full bg-[#f44a40] w-[120px] h-[45px] font-font text-white hover:bg-white hover:text-[#f44a40] hover:border hover:border-[#f44a40] hover:duration-500 dark:hover:bg-slate-800">Danger</button>
+          </div>
+          <div class="flex gap-5">
+            <button
+              class="rounded-full bg-white text-[#38a4ff] w-[120px] h-[45px] border border-[#f9f9ff] hover:duration-500 hover:bg-[#f9f9ff] hover:text-black dark:bg-slate-800 dark:hover:text-white dark:hover:bg-slate-900 hover:border-none">Default</button>
+            <button
+              class="rounded-full w-[120px] h-[45px] font-font bg-white text-[#b68834] border border-[#b68834] hover:duration-500 hover:bg-[#b68834] hover:text-white dark:bg-slate-800 dark:hover:bg-[#b68834]">Primary</button>
+            <button
+              class="rounded-full w-[120px] h-[45px] font-font bg-white text-[#4cd3e3] border border-[#4cd3e3] hover:duration-500 hover:bg-[#4cd3e3] hover:text-white dark:bg-slate-800 dark:hover:bg-[#4cd3e3]">Success</button>
+            <button
+              class="rounded-full w-[100px] h-[45px] font-font bg-white text-[#38a4ff] border border-[#38a4ff] hover:duration-500 hover:bg-[#38a4ff] hover:text-white dark:bg-slate-800 dark:hover:bg-[#38a4ff]">info</button>
+            <button
+              class="rounded-full w-[120px] h-[45px] font-font bg-white text-[#f4e700] border border-[#f4e700] hover:duration-500 hover:bg-[#f4e700] hover:text-white dark:bg-slate-800 dark:hover:bg-[#f4e700]">Warning</button>
+            <button
+              class="rounded-full w-[120px] h-[45px] font-font bg-white text-[#f44a40] border border-[#f44a40] hover:duration-500 hover:bg-[#f44a40] hover:text-white dark:bg-slate-800 dark:hover:bg-[#f44a40]">Danger</button>
           </div>
         </div>
         <div class="flex flex-col gap-5">
           <div class="flex gap-4 items-center">
             <button
-              class="text-white bg-[#b68834] h-[60px] w-[200px] font-font hover:bg-white hover:text-[#b68834] hover:border hover:border-[#b68834] hover:duration-500">Extra
+              class="text-white bg-[#b68834] h-[60px] w-[200px] font-font hover:bg-white hover:text-[#b68834] hover:border hover:border-[#b68834] hover:duration-500 dark:hover:bg-slate-800">Extra
               Large</button>
             <button
-              class="text-white bg-[#4cd3e3] h-[53px] w-[100px] font-font hover:bg-white hover:text-[#4cd3e3] hover:border hover:border-[#4cd3e3] hover:duration-500">Large</button>
+              class="text-white bg-[#4cd3e3] h-[53px] w-[100px] font-font hover:bg-white hover:text-[#4cd3e3] hover:border hover:border-[#4cd3e3] hover:duration-500 dark:hover:bg-slate-800">Large</button>
             <button
-              class="text-white bg-[#b68834] h-[47px] w-[100px] font-font hover:bg-white hover:text-[#b68834] hover:border hover:border-[#b68834] hover:duration-500">Default</button>
+              class="text-white bg-[#b68834] h-[47px] w-[100px] font-font hover:bg-white hover:text-[#b68834] hover:border hover:border-[#b68834] hover:duration-500 dark:hover:bg-slate-800">Default</button>
             <button
-              class="text-white bg-[#4cd3e3] h-[37px] w-[150px] font-font hover:bg-white hover:text-[#4cd3e3] hover:border hover:border-[#4cd3e3] hover:duration-500">Medium</button>
+              class="text-white bg-[#4cd3e3] h-[37px] w-[150px] font-font hover:bg-white hover:text-[#4cd3e3] hover:border hover:border-[#4cd3e3] hover:duration-500 dark:hover:bg-slate-800">Medium</button>
             <button
-              class="text-white bg-[#b68834] h-[30px] w-[120px] font-font hover:bg-white hover:text-[#b68834] hover:border hover:border-[#b68834] hover:duration-500">Small</button>
+              class="text-white bg-[#b68834] h-[30px] w-[120px] font-font hover:bg-white hover:text-[#b68834] hover:border hover:border-[#b68834] hover:duration-500 dark:hover:bg-slate-800">Small</button>
           </div>
           <div class="flex gap-4 items-center">
             <button
-              class="h-[60px] w-[200px] font-font bg-white text-[#b68834] border border-[#b68834] hover:duration-500 hover:bg-[#b68834] hover:text-white">Extra
+              class="h-[60px] w-[200px] font-font bg-white text-[#b68834] border border-[#b68834] hover:duration-500 hover:bg-[#b68834] hover:text-white dark:bg-slate-800 dark:hover:bg-[#b68834]">Extra
               Large</button>
             <button
-              class="h-[53px] w-[100px] font-font bg-white text-[#4cd3e3] border border-[#4cd3e3] hover:duration-500 hover:bg-[#4cd3e3] hover:text-white">Large</button>
+              class="h-[53px] w-[100px] font-font bg-white text-[#4cd3e3] border border-[#4cd3e3] hover:duration-500 hover:bg-[#4cd3e3] hover:text-white dark:bg-slate-800 dark:hover:bg-[#4cd3e3]">Large</button>
             <button
-              class="h-[47px] w-[100px] font-font bg-white text-[#b68834] border border-[#b68834] hover:duration-500 hover:bg-[#b68834] hover:text-white">Default</button>
+              class="h-[47px] w-[100px] font-font bg-white text-[#b68834] border border-[#b68834] hover:duration-500 hover:bg-[#b68834] hover:text-white dark:bg-slate-800 dark:hover:bg-[#b68834]">Default</button>
             <button
-              class="h-[37px] w-[150px] font-font bg-white text-[#4cd3e3] border border-[#4cd3e3] hover:duration-500 hover:bg-[#4cd3e3] hover:text-white">Medium</button>
+              class="h-[37px] w-[150px] font-font bg-white text-[#4cd3e3] border border-[#4cd3e3] hover:duration-500 hover:bg-[#4cd3e3] hover:text-white dark:bg-slate-800 dark:hover:bg-[#4cd3e3]">Medium</button>
             <button
-              class="h-[30px] w-[120px] font-font bg-white text-[#b68834] border border-[#b68834] hover:duration-500 hover:bg-[#b68834] hover:text-white">Small</button>
+              class="h-[30px] w-[120px] font-font bg-white text-[#b68834] border border-[#b68834] hover:duration-500 hover:bg-[#b68834] hover:text-white dark:bg-slate-800 dark:hover:bg-[#b68834]">Small</button>
           </div>
         </div>
       </div>
@@ -355,15 +366,16 @@
   <hr class="mt-20">
   <section>
     <div class="flex flex-col gap-6 mt-20">
-      <div class="ml-28">
-        <h1 class="font-font font-semibold text-2xl">Left Aligned</h1>
+      <div class="ml-28" data-aos="fade-down">
+        <h1 class="text-black font-font font-semibold text-2xl dark:text-white">Left Aligned</h1>
       </div>
       <div class="flex justify-center gap-10 items-center">
-        <div>
+        <div data-aos="fade-right">
           <img src="https://preview.colorlib.com/theme/coffee/img/elements/d.jpg" alt="">
         </div>
-        <div>
-          <p class="font-font text-neutral-500">Recently, the US Federal government banned online casinos from operating
+        <div data-aos="fade-left">
+          <p class="font-font text-neutral-500 dark:text-white">Recently, the US Federal government banned online
+            casinos from operating
             in America by making it illegal to transfer<br> money to them through any US bank or payment system. As a
             result of this law, most of the popular online casino<br> networks such as Party Gaming and PlayTech left
             the United States. Overnight, online casino players found themselves<br> being chased by the Federal
@@ -381,22 +393,26 @@
   <section>
     <div class="flex flex-col gap-6 mt-20">
       <div class="flex justify-center gap-10 items-center">
-        <div class="flex flex-col gap-5">
-          <p class="font-font text-neutral-500 text-center">Over time, even the most sophisticated, memory packed
+        <div class="flex flex-col gap-5" data-aos="fade-right">
+          <p class="font-font text-neutral-500 text-center dark:text-white">Over time, even the most sophisticated,
+            memory packed
             computer can begin to run slow if we don’t do something to<br> prevent it. The reason why has less to do
             with how computers are made and how they age and more to do with the<br> way we use them. You see, all of
             the daily tasks that we do on our PC from running programs to downloading and<br> deleting software can make
             our computer sluggish. To keep this from happening, you need to understand the reasons<br> why your PC is
             getting slower and do something to keep your PC running at its best. You can do this through regular<br>
             maintenance and PC performance optimization programs</p>
-          <p class="font-font text-neutral-500 text-center flex">Before we discuss all of the things that could be
+          <p class="font-font text-neutral-500 text-center flex dark:text-white">Before we discuss all of the things
+            that could be
             affecting your PC’s performance, let’s talk a little about what<br>symptoms</p>
         </div>
         <div class="flex flex-col gap-6">
-          <div>
-            <h1 class="font-font font-semibold text-2xl">Left Aligned</h1>
+          <div data-aos="fade-down">
+            <h1 class="text-black font-font font-semibold text-2xl dark:text-white">Left Aligned</h1>
           </div>
-          <img src="https://preview.colorlib.com/theme/coffee/img/elements/d.jpg" alt="">
+          <div data-aos="fade-left">
+            <img src="https://preview.colorlib.com/theme/coffee/img/elements/d.jpg" alt="">
+          </div>
         </div>
       </div>
     </div>
@@ -404,25 +420,28 @@
   <hr class="mt-20">
   <section>
     <div class="flex flex-col gap-5 mt-20">
-      <div class="ml-[120px]">
-        <h1 class="font-font text-2xl font-semibold">Definition</h1>
+      <div class="ml-[120px]" data-aos="fade-down">
+        <h1 class="text-black font-font text-2xl font-semibold dark:text-white">Definition</h1>
       </div>
       <div class="flex justify-center gap-16 items-center">
-        <div class="flex flex-col gap-3">
-          <h1 class="font-font text-lg font-semibold">Definition 01</h1>
-          <p class="font-font text-neutral-500">Recently, the US Federal government banned<br> online casinos from
+        <div class="flex flex-col gap-3" data-aos="fade-right">
+          <h1 class="text-black font-font text-lg font-semibold dark:text-white">Definition 01</h1>
+          <p class="font-font text-neutral-500 dark:text-white">Recently, the US Federal government banned<br> online
+            casinos from
             operating in America by<br> making it illegal to transfer money to them<br> through any US bank or payment
             system. As a<br> result of this law, most of the popular online<br> casino networks</p>
         </div>
-        <div class="flex flex-col gap-3">
-          <h1 class="font-font text-lg font-semibold">Definition 02</h1>
-          <p class="font-font text-neutral-500">Recently, the US Federal government banned<br> online casinos from
+        <div class="flex flex-col gap-3" data-aos="fade-up">
+          <h1 class="text-black font-font text-lg font-semibold dark:text-white">Definition 02</h1>
+          <p class="font-font text-neutral-500 dark:text-white">Recently, the US Federal government banned<br> online
+            casinos from
             operating in America by<br> making it illegal to transfer money to them<br> through any US bank or payment
             system. As a<br> result of this law, most of the popular online<br> casino networks</p>
         </div>
-        <div class="flex flex-col gap-3">
-          <h1 class="font-font text-lg font-semibold">Definition 03</h1>
-          <p class="font-font text-neutral-500">Recently, the US Federal government banned<br> online casinos from
+        <div class="flex flex-col gap-3" data-aos="fade-left">
+          <h1 class="text-black font-font text-lg font-semibold dark:text-white">Definition 03</h1>
+          <p class="font-font text-neutral-500 dark:text-white">Recently, the US Federal government banned<br> online
+            casinos from
             operating in America by<br> making it illegal to transfer money to them<br> through any US bank or payment
             system. As a<br> result of this law, most of the popular online<br> casino networks</p>
         </div>
@@ -432,11 +451,14 @@
   <hr class="mt-20">
   <section>
     <div class="ml-20 mt-20 flex flex-col gap-8">
-      <div>
-        <h1 class="font-font text-2xl font-semibold">Block Quotes</h1>
+      <div data-aos="fade-down">
+        <h1 class="text-black font-font text-2xl font-semibold dark:text-white">Block Quotes</h1>
       </div>
-      <div class="bg-[#f9f9ff] w-[1250px] h-[200px] flex justify-center items-center border-l-2 border-[#b68834]">
-        <p class="font-font text-neutral-500">“Recently, the US Federal government banned online casinos from operating
+      <div
+        class="bg-[#f9f9ff] w-[1250px] h-[200px] flex justify-center items-center border-l-2 border-[#b68834] dark:bg-slate-900"
+        data-aos="fade-up">
+        <p class="font-font text-neutral-500 dark:text-white">“Recently, the US Federal government banned online casinos
+          from operating
           in America by making it illegal to transfer money to them through any<br> US bank or payment system. As a
           result of this law, most of the popular online casino networks such as Party Gaming and PlayTech left the
           United<br> States. Overnight, online casino players found themselves being chased by the Federal government.
@@ -451,18 +473,18 @@
   <hr class="mt-20">
   <section>
     <div class="flex flex-col gap-8 mt-20">
-      <div class="ml-36">
-        <h1 class="font-font text-2xl font-semibold">Table</h1>
+      <div class="ml-36" data-aos="fade-down">
+        <h1 class="text-black font-font text-2xl font-semibold dark:text-white">Table</h1>
       </div>
-      <div class="flex justify-center items-center">
-        <table style="width:80%" class="font-font bg-[#f9f9ff]">
+      <div class="flex justify-center items-center" data-aos="fade-up">
+        <table style="width:80%" class="font-font bg-[#f9f9ff] dark:bg-slate-900">
           <tr>
-            <th>#</th>
-            <th>COUNTRIES</th>
-            <th>VISITS</th>
-            <th>PERCENTAGES</th>
+            <th class="text-black dark:text-white">#</th>
+            <th class="text-black dark:text-white">COUNTRIES</th>
+            <th class="text-black dark:text-white">VISITS</th>
+            <th class="text-black dark:text-white">PERCENTAGES</th>
           </tr>
-          <tr class="text-neutral-500">
+          <tr class="text-neutral-500 dark:text-white">
             <td>01</td>
             <td class="flex gap-3">
               <img src="https://preview.colorlib.com/theme/coffee/img/elements/f1.jpg.webp" alt="">
@@ -473,7 +495,7 @@
               <div class="bg-[#6382e6] h-[5px] w-80"></div>
             </td>
           </tr>
-          <tr class="text-neutral-500">
+          <tr class="text-neutral-500 dark:text-white">
             <td>02</td>
             <td class="flex gap-3">
               <img src="https://preview.colorlib.com/theme/coffee/img/elements/f2.jpg.webp" alt="">
@@ -484,7 +506,7 @@
               <div class="bg-[#e66686] h-[5px] w-28"></div>
             </td>
           </tr>
-          <tr class="text-neutral-500">
+          <tr class="text-neutral-500 dark:text-white">
             <td>03</td>
             <td class="flex gap-3">
               <img src="https://preview.colorlib.com/theme/coffee/img/elements/f3.jpg.webp" alt="">
@@ -495,7 +517,7 @@
               <div class="bg-[#F09359] h-[5px] w-52"></div>
             </td>
           </tr>
-          <tr class="text-neutral-500">
+          <tr class="text-neutral-500 dark:text-white">
             <td>04</td>
             <td class="flex gap-3">
               <img src="https://preview.colorlib.com/theme/coffee/img/elements/f4.jpg.webp" alt="">
@@ -506,7 +528,7 @@
               <div class="bg-[#73FBAF] h-[5px] w-60"></div>
             </td>
           </tr>
-          <tr class="text-neutral-500">
+          <tr class="text-neutral-500 dark:text-white">
             <td>05</td>
             <td class="flex gap-3">
               <img src="https://preview.colorlib.com/theme/coffee/img/elements/f5.jpg.webp" alt="">
@@ -517,7 +539,7 @@
               <div class="bg-gray-500 h-[5px] w-40"></div>
             </td>
           </tr>
-          <tr class="text-neutral-500">
+          <tr class="text-neutral-500 dark:text-white">
             <td>06</td>
             <td class="flex gap-3">
               <img src="https://preview.colorlib.com/theme/coffee/img/elements/f6.jpg.webp" alt="">
@@ -528,7 +550,7 @@
               <div class="bg-yellow-300 h-[5px] w-72"></div>
             </td>
           </tr>
-          <tr class="text-neutral-500">
+          <tr class="text-neutral-500 dark:text-white">
             <td>07</td>
             <td class="flex gap-3">
               <img src="https://preview.colorlib.com/theme/coffee/img/elements/f7.jpg.webp" alt="">
@@ -539,7 +561,7 @@
               <div class="bg-[#A367E7] h-[5px] w-24"></div>
             </td>
           </tr>
-          <tr class="text-neutral-500">
+          <tr class="text-neutral-500 dark:text-white">
             <td>08</td>
             <td class="flex gap-3">
               <img src="https://preview.colorlib.com/theme/coffee/img/elements/f8.jpg.webp" alt="">
@@ -557,10 +579,10 @@
   <hr class="mt-20">
   <section>
     <div class="flex flex-col gap-5 mt-20">
-      <div class="ml-14">
-        <h1 class="font-font text-2xl font-semibold">Image Gallery</h1>
+      <div class="ml-14" data-aos="fade-down">
+        <h1 class="text-black font-font text-2xl font-semibold dark:text-white">Image Gallery</h1>
       </div>
-      <div class="flex flex-col justify-center items-center gap-5">
+      <div class="flex flex-col justify-center items-center gap-5" data-aos="fade-up">
         <div class="flex gap-5">
           <img src="./images/g1.jpg" alt="">
           <img src="./images/g2.jpg" alt="">
@@ -581,93 +603,69 @@
   <hr class="mt-20">
   <section>
     <div class="flex justify-center gap-[110px] items-center mt-20">
-      <div class="flex flex-col gap-5">
+      <div class="flex flex-col gap-5" data-aos="fade-right">
         <div>
-          <h1 class="font-font text-2xl font-semibold">Image Gallery</h1>
+          <h1 class="text-black font-font text-2xl font-semibold dark:text-white">Image Gallery</h1>
         </div>
         <div>
-          <h1 class="font-font text-neutral-500 text-4xl font-semibold">This is header 01</h1>
-          <h1 class="font-font text-neutral-500 text-3xl font-semibold">This is header 02</h1>
-          <h1 class="font-font text-neutral-500 text-2xl font-semibold">This is header 03</h1>
-          <h1 class="font-font text-neutral-500 text-xl font-semibold">This is header 04</h1>
-          <h1 class="font-font text-neutral-500 text-lg font-semibold">This is header 05</h1>
-          <h1 class="font-font text-neutral-500 text-sm font-semibold">This is header 06</h1>
+          <h1 class="font-font text-neutral-500 text-4xl font-semibold dark:text-white">This is header 01</h1>
+          <h1 class="font-font text-neutral-500 text-3xl font-semibold dark:text-white">This is header 02</h1>
+          <h1 class="font-font text-neutral-500 text-2xl font-semibold dark:text-white">This is header 03</h1>
+          <h1 class="font-font text-neutral-500 text-xl font-semibold dark:text-white">This is header 04</h1>
+          <h1 class="font-font text-neutral-500 text-lg font-semibold dark:text-white">This is header 05</h1>
+          <h1 class="font-font text-neutral-500 text-sm font-semibold dark:text-white">This is header 06</h1>
         </div>
       </div>
-      <div class="flex flex-col gap-5">
+      <div class="flex flex-col gap-5" data-aos="fade-up">
         <div>
-          <h1 class="font-font text-2xl font-semibold ml-12">Unordered List</h1>
+          <h1 class="text-black font-font text-2xl font-semibold ml-12 dark:text-white">Unordered List</h1>
         </div>
         <div class="flex flex-col">
           <div class="flex justify-center items-center gap-4 mr-[245px]">
             <div>
-              <img src="./images/g9.jpg" alt="">
-            </div>
-            <div>
-              <p class="font-font text-neutral-500">Fta Keys</p>
+              <p class="font-font text-neutral-500 dark:text-white">Fta Keys</p>
             </div>
           </div>
           <div class="flex justify-center items-center gap-4">
             <div>
-              <img src="./images/g9.jpg" alt="">
-            </div>
-            <div>
-              <p class="font-font text-neutral-500">For Women Only Your Computer Usage</p>
+              <p class="font-font text-neutral-500 dark:text-white">For Women Only Your Computer Usage</p>
             </div>
           </div>
           <div class="flex justify-center items-center gap-4 ml-6">
             <div>
-              <img src="./images/g9.jpg" alt="">
-            </div>
-            <div>
-              <p class="font-font text-neutral-500">Facts Why Inkjet Printing Is Very Appealing</p>
+              <p class="font-font text-neutral-500 dark:text-white">Facts Why Inkjet Printing Is Very Appealing</p>
             </div>
           </div>
           <div class="flex justify-center items-center gap-4 ml-10">
             <div>
-              <img src="./images/g9.jpg" alt="">
-            </div>
-            <div>
-              <p class="font-font text-neutral-500">Addiction When Gambling Becomes</p>
+              <p class="font-font text-neutral-500 dark:text-white">Addiction When Gambling Becomes</p>
             </div>
           </div>
           <div class="flex justify-center items-center gap-4 ml-11">
             <div>
-              <img src="./images/g9.jpg" alt="">
-            </div>
-            <div>
-              <p class="font-font text-neutral-500">Protective Preventative Maintenance</p>
+              <p class="font-font text-neutral-500 dark:text-white">Protective Preventative Maintenance</p>
             </div>
           </div>
           <div class="flex justify-center items-center gap-4 ml-11">
             <div>
-              <img src="./images/g9.jpg" alt="">
-            </div>
-            <div>
-              <p class="font-font text-neutral-500">Dealing With Technical Support 10 Useful Tips</p>
+              <p class="font-font text-neutral-500 dark:text-white">Dealing With Technical Support 10 Useful Tips</p>
             </div>
           </div>
           <div class="flex justify-center items-center gap-4 ml-4">
             <div>
-              <img src="./images/g9.jpg" alt="">
-            </div>
-            <div>
-              <p class="font-font text-neutral-500">Make Myspace Your Best Designed Space</p>
+              <p class="font-font text-neutral-500 dark:text-white">Make Myspace Your Best Designed Space</p>
             </div>
           </div>
           <div class="flex justify-center items-center gap-4 ml-3">
             <div>
-              <img src="./images/g9.jpg" alt="">
-            </div>
-            <div>
-              <p class="font-font text-neutral-500">Cleaning And Organizing Your Computer</p>
+              <p class="font-font text-neutral-500 dark:text-white">Cleaning And Organizing Your Computer</p>
             </div>
           </div>
         </div>
       </div>
-      <div class="flex flex-col gap-5">
+      <div class="flex flex-col gap-5" data-aos="fade-left">
         <div>
-          <h1 class="font-font text-2xl font-semibold ml-10">Ordered List</h1>
+          <h1 class="text-black font-font text-2xl font-semibold ml-10 dark:text-white">Ordered List</h1>
         </div>
         <div class="flex flex-col">
           <div class="flex justify-center items-center gap-1 mr-[245px]">
@@ -675,7 +673,7 @@
               <p class="text-[#b68834] font-font">01.</p>
             </div>
             <div>
-              <p class="font-font text-neutral-500">Fta Keys</p>
+              <p class="font-font text-neutral-500 dark:text-white">Fta Keys</p>
             </div>
           </div>
           <div class="flex justify-center items-center gap-1">
@@ -683,7 +681,7 @@
               <p class="text-[#b68834] font-font">02.</p>
             </div>
             <div>
-              <p class="font-font text-neutral-500">For Women Only Your Computer Usage</p>
+              <p class="font-font text-neutral-500 dark:text-white">For Women Only Your Computer Usage</p>
             </div>
           </div>
           <div class="flex justify-center items-center gap-1 ml-6">
@@ -691,7 +689,7 @@
               <p class="text-[#b68834] font-font">03.</p>
             </div>
             <div>
-              <p class="font-font text-neutral-500">Facts Why Inkjet Printing Is Very Appealing</p>
+              <p class="font-font text-neutral-500 dark:text-white">Facts Why Inkjet Printing Is Very Appealing</p>
             </div>
           </div>
           <div class="flex justify-center items-center gap-1 ml-10">
@@ -699,7 +697,7 @@
               <p class="text-[#b68834] font-font">a.</p>
             </div>
             <div>
-              <p class="font-font text-neutral-500">Addiction When Gambling Becomes</p>
+              <p class="font-font text-neutral-500 dark:text-white">Addiction When Gambling Becomes</p>
             </div>
           </div>
           <div class="flex justify-center items-center gap-1 ml-28">
@@ -707,7 +705,7 @@
               <p class="text-[#b68834] font-font">i.</p>
             </div>
             <div>
-              <p class="font-font text-neutral-500">Protective Preventative Maintenance</p>
+              <p class="font-font text-neutral-500 dark:text-white">Protective Preventative Maintenance</p>
             </div>
           </div>
           <div class="flex justify-center items-center gap-1 ml-11">
@@ -715,7 +713,7 @@
               <p class="text-[#b68834] font-font">04.</p>
             </div>
             <div>
-              <p class="font-font text-neutral-500">Dealing With Technical Support 10 Useful Tips</p>
+              <p class="font-font text-neutral-500 dark:text-white">Dealing With Technical Support 10 Useful Tips</p>
             </div>
           </div>
           <div class="flex justify-center items-center gap-1 ml-4">
@@ -723,7 +721,7 @@
               <p class="text-[#b68834] font-font">05.</p>
             </div>
             <div>
-              <p class="font-font text-neutral-500">Make Myspace Your Best Designed Space</p>
+              <p class="font-font text-neutral-500 dark:text-white">Make Myspace Your Best Designed Space</p>
             </div>
           </div>
           <div class="flex justify-center items-center gap-1 ml-3">
@@ -731,7 +729,7 @@
               <p class="text-[#b68834] font-font">06.</p>
             </div>
             <div>
-              <p class="font-font text-neutral-500">Cleaning And Organizing Your Computer</p>
+              <p class="font-font text-neutral-500 dark:text-white">Cleaning And Organizing Your Computer</p>
             </div>
           </div>
         </div>
@@ -740,29 +738,31 @@
   </section>
   <section>
     <div class="flex justify-center gap-10 items-center mt-10">
-      <div class="flex flex-col gap-8">
+      <div class="flex flex-col gap-8" data-aos="fade-right">
         <div class="ml-14">
-          <h1 class="font-font text-2xl font-semibold">Form Element</h1>
+          <h1 class="text-black font-font text-2xl font-semibold dark:text-white">Form Element</h1>
         </div>
         <div class="flex flex-col gap-3 ml-14">
           <input type="text" name="" id="" placeholder="First Name"
-            class="text-neutral-500 font-font bg-[#f9f9ff] py-2 w-[700px] px-7">
+            class="text-neutral-500 font-font bg-[#f9f9ff] py-2 w-[700px] px-7 dark:text-white dark:bg-slate-900">
           <input type="text" name="" id="" placeholder="Last Name"
-            class="text-neutral-500 font-font bg-[#f9f9ff] py-2 w-[700px] px-7">
+            class="text-neutral-500 font-font bg-[#f9f9ff] py-2 w-[700px] px-7 dark:text-white dark:bg-slate-900">
           <input type="text" name="" id="" placeholder="Last Name"
-            class="text-neutral-500 font-font bg-[#f9f9ff] py-2 w-[700px] px-7">
+            class="text-neutral-500 font-font bg-[#f9f9ff] py-2 w-[700px] px-7 dark:text-white dark:bg-slate-900">
           <input type="text" name="" id="" placeholder="Email address"
-            class="text-neutral-500 font-font bg-[#f9f9ff] py-2 w-[700px] px-7">
+            class="text-neutral-500 font-font bg-[#f9f9ff] py-2 w-[700px] px-7 dark:text-white dark:bg-slate-900">
           <input type="text" name="" id="" placeholder="Address"
-            class="text-neutral-500 font-font bg-[#f9f9ff] py-2 w-[700px] px-7">
-          <select name="" id="" class="bg-[#f9f9ff] py-2 w-[700px] px-7 text-neutral-400 font-font">
+            class="text-neutral-500 font-font bg-[#f9f9ff] py-2 w-[700px] px-7 dark:text-white dark:bg-slate-900">
+          <select name="" id=""
+            class="bg-[#f9f9ff] py-2 w-[700px] px-7 text-neutral-400 font-font dark:text-white dark:bg-slate-900">
             <option selected class="text-neutral-500 font-font bg-[#f9f9ff]">City</option>
             <option value="" class="text-neutral-500 font-font bg-[#f9f9ff]">Dhaka</option>
             <option value="" class="text-neutral-500 font-font bg-[#f9f9ff]">Dilli</option>
             <option value="" class="text-neutral-500 font-font bg-[#f9f9ff]">Newyork</option>
             <option value="" class="text-neutral-500 font-font bg-[#f9f9ff]">Islamabad</option>
           </select>
-          <select name="" id="" class="bg-[#f9f9ff] py-2 w-[700px] px-7 text-neutral-400 font-font">
+          <select name="" id=""
+            class="bg-[#f9f9ff] py-2 w-[700px] px-7 text-neutral-400 font-font dark:text-white dark:bg-slate-900">
             <option selected class="text-neutral-500 font-font bg-[#f9f9ff]">Country</option>
             <option value="" class="text-neutral-500 font-font bg-[#f9f9ff]">Bangladesh</option>
             <option value="" class="text-neutral-500 font-font bg-[#f9f9ff]">India</option>
@@ -770,61 +770,52 @@
             <option value="" class="text-neutral-500 font-font bg-[#f9f9ff]">Srilanka</option>
           </select>
           <input type="text" name="" id="" placeholder="Message"
-            class="text-neutral-500 font-font bg-[#f9f9ff] py-10 w-[700px] px-7">
+            class="text-neutral-500 font-font bg-[#f9f9ff] py-10 w-[700px] px-7 dark:text-white dark:bg-slate-900">
           <input type="text" name="" id="" placeholder="Primary color"
-            class="text-neutral-500 font-font bg-[#f9f9ff] py-2 w-[700px] px-7">
+            class="text-neutral-500 font-font bg-[#f9f9ff] py-2 w-[700px] px-7 dark:text-white dark:bg-slate-900">
           <input type="text" name="" id="" placeholder="Accent color"
-            class="text-neutral-500 font-font bg-[#f9f9ff] py-2 w-[700px] px-7">
+            class="text-neutral-500 font-font bg-[#f9f9ff] py-2 w-[700px] px-7 dark:text-white dark:bg-slate-900">
           <input type="text" name="" id="" placeholder="Secondary color"
-            class="text-neutral-500 font-font bg-[#f9f9ff] py-2 w-[700px] px-7">
+            class="text-neutral-500 font-font bg-[#f9f9ff] py-2 w-[700px] px-7 dark:text-white dark:bg-slate-900">
         </div>
       </div>
-      <div class="flex flex-col gap-10">
+      <div class="flex flex-col gap-10" data-aos="fade-left">
         <div class="flex flex-col gap-3">
           <div>
-            <h1 class="font-font text-2xl font-semibold">Switches</h1>
+            <h1 class="text-black font-font text-2xl font-semibold dark:text-white">Switches</h1>
           </div>
           <div>
             <div class="flex flex-col gap-1">
               <div class="flex gap-[90px]">
                 <div>
-                  <p class="text-neutral-500 font-font">01. Sample Switch</p>
+                  <p class="text-neutral-500 font-font dark:text-white">01. Sample Switch</p>
                 </div>
                 <div>
-                  <label
-                    class="relative block aspect-[2/0.75] w-16 h-6 rounded-full bg-gradient-to-br bg-[#f9f9ff] shadow-2xltransition-all duration-300">
-                    <input class="peer/input hidden" type="checkbox">
-                    <div
-                      class="bg-white absolute left-[3%] top-1/2 aspect-square h-[90%] -translate-y-1/2 rotate-180 rounded-full bg-gradient-to-t transition-all duration-500 peer-checked/input:left-[63%] peer-checked/input:-rotate-6">
-                    </div>
+                  <label class="cl-switch">
+                    <input type="checkbox">
+                    <span></span>
                   </label>
                 </div>
               </div>
               <div class="flex gap-10">
                 <div>
-                  <p class="text-neutral-500 font-font">02. Primary Color Switch</p>
+                  <p class="text-neutral-500 font-font dark:text-white">02. Primary Color Switch</p>
                 </div>
                 <div>
-                  <label
-                    class="relative block aspect-[2/0.75] w-16 h-6 rounded-full bg-gradient-to-br bg-[#f9f9ff] shadow-2xl transition-all duration-300">
-                    <input class="peer/input hidden" type="checkbox">
-                    <div
-                      class="bg-white absolute left-[3%] top-1/2 aspect-square h-[90%] -translate-y-1/2 rotate-180 rounded-full bg-gradient-to-t transition-all duration-500 peer-checked/input:left-[63%] peer-checked/input:-rotate-6">
-                    </div>
+                  <label class="cl-switch">
+                    <input type="checkbox">
+                    <span></span>
                   </label>
                 </div>
               </div>
               <div class="flex gap-9">
                 <div>
-                  <p class="text-neutral-500 font-font">03. Confirm Color Switch</p>
+                  <p class="text-neutral-500 font-font dark:text-white">03. Confirm Color Switch</p>
                 </div>
                 <div>
-                  <label
-                    class="relative block aspect-[2/0.75] w-16 h-6 rounded-full bg-gradient-to-br bg-[#f9f9ff] shadow-2xltransition-all duration-300">
-                    <input class="peer/input hidden" type="checkbox">
-                    <div
-                      class="bg-white absolute left-[3%] top-1/2 aspect-square h-[90%] -translate-y-1/2 rotate-180 rounded-full bg-gradient-to-t transition-all duration-500 peer-checked/input:left-[63%] peer-checked/input:-rotate-6">
-                    </div>
+                  <label class="cl-switch">
+                    <input type="checkbox">
+                    <span></span>
                   </label>
                 </div>
               </div>
@@ -833,10 +824,11 @@
         </div>
         <div class="flex flex-col gap-3">
           <div>
-            <h1 class="font-font text-2xl font-semibold">Selectboxes</h1>
+            <h1 class="text-black font-font text-2xl font-semibold dark:text-white">Selectboxes</h1>
           </div>
           <div>
-            <select name="" id="" class="bg-[#f9f9ff] py-2 w-[170px] px-7 text-neutral-500 font-font">
+            <select name="" id=""
+              class="bg-[#f9f9ff] py-2 w-[170px] px-7 text-neutral-500 font-font dark:bg-slate-900 dark:text-white">
               <option selected class="text-neutral-500 font-font bg-[#f9f9ff]">English</option>
               <option value="" class="text-neutral-500 font-font bg-[#f9f9ff]">Spanish</option>
               <option value="" class="text-neutral-500 font-font bg-[#f9f9ff]">Arabic</option>
@@ -847,48 +839,63 @@
         </div>
         <div class="flex flex-col gap-3">
           <div>
-            <h1 class="font-font text-2xl font-semibold">Checkboxes</h1>
+            <h1 class="text-black font-font text-2xl font-semibold dark:text-white">Checkboxes</h1>
           </div>
           <div>
             <div class="flex flex-col gap-1">
               <div class="flex gap-[150px]">
                 <div>
-                  <p class="text-neutral-500 font-font">01. Sample Switch</p>
+                  <p class="text-neutral-500 font-font dark:text-white">01. Sample Switch</p>
                 </div>
                 <div>
-                  <input type="checkbox" class="ui-checkbox">
+                  <label class="custom-checkbox">
+                    <input name="dummy" type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
                 </div>
               </div>
               <div class="flex gap-[99px]">
                 <div>
-                  <p class="text-neutral-500 font-font">02. Primary Color Switch</p>
+                  <p class="text-neutral-500 font-font dark:text-white">02. Primary Color Switch</p>
                 </div>
                 <div>
-                  <input type="checkbox" class="ui-checkbox">
+                  <label class="custom-checkbox">
+                    <input name="dummy" type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
                 </div>
               </div>
               <div class="flex gap-[69px]">
                 <div>
-                  <p class="text-neutral-500 font-font">03. Confirm Color Checkbox</p>
+                  <p class="text-neutral-500 font-font dark:text-white">03. Confirm Color Checkbox</p>
                 </div>
                 <div>
-                  <input type="checkbox" class="ui-checkbox">
+                  <label class="custom-checkbox">
+                    <input name="dummy" type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
                 </div>
               </div>
               <div class="flex gap-[110px]">
                 <div>
-                  <p class="text-neutral-500 font-font">04. Disabled Checkbox</p>
+                  <p class="text-neutral-500 font-font dark:text-white">04. Disabled Checkbox</p>
                 </div>
                 <div>
-                  <input type="checkbox" class="ui-checkbox">
+                  <label class="custom-checkbox">
+                    <input name="dummy" type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
                 </div>
               </div>
               <div class="flex gap-14">
                 <div>
-                  <p class="text-neutral-500 font-font">05. Disabled Checkbox active</p>
+                  <p class="text-neutral-500 font-font dark:text-white">05. Disabled Checkbox active</p>
                 </div>
                 <div>
-                  <input type="checkbox" class="ui-checkbox">
+                  <label class="custom-checkbox">
+                    <input name="dummy" type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
                 </div>
               </div>
             </div>
@@ -896,48 +903,88 @@
         </div>
         <div class="flex flex-col gap-3">
           <div>
-            <h1 class="font-font text-2xl font-semibold">Checkboxes</h1>
+            <h1 class="font-font text-2xl font-semibold dark:text-white">Radio</h1>
           </div>
           <div>
             <div class="flex flex-col gap-1">
               <div class="flex gap-[124px]">
                 <div>
-                  <p class="text-neutral-500 font-font">01. Sample radio</p>
+                  <p class="text-neutral-500 font-font dark:text-white">01. Sample radio</p>
                 </div>
                 <div>
-                  <input type="radio" class="ui-checkbox">
+                  <input type="checkbox" id="cbx2" style="display: none;">
+                  <label for="cbx2" class="check">
+                    <svg width="18px" height="18px" viewBox="0 0 18 18">
+                      <path
+                        d="M 1 9 L 1 9 c 0 -5 3 -8 8 -8 L 9 1 C 14 1 17 5 17 9 L 17 9 c 0 4 -4 8 -8 8 L 9 17 C 5 17 1 14 1 9 L 1 9 Z">
+                      </path>
+                      <polyline points="1 9 7 14 15 4"></polyline>
+                    </svg>
+                  </label>
                 </div>
               </div>
               <div class="flex gap-[73px]">
                 <div>
-                  <p class="text-neutral-500 font-font">02. Primary Color radio</p>
+                  <p class="text-neutral-500 font-font dark:text-white">02. Primary Color radio</p>
                 </div>
                 <div>
-                  <input type="radio" class="ui-checkbox">
+                  <input type="checkbox" id="cbx2" style="display: none;">
+                  <label for="cbx2" class="check">
+                    <svg width="18px" height="18px" viewBox="0 0 18 18">
+                      <path
+                        d="M 1 9 L 1 9 c 0 -5 3 -8 8 -8 L 9 1 C 14 1 17 5 17 9 L 17 9 c 0 4 -4 8 -8 8 L 9 17 C 5 17 1 14 1 9 L 1 9 Z">
+                      </path>
+                      <polyline points="1 9 7 14 15 4"></polyline>
+                    </svg>
+                  </label>
                 </div>
               </div>
               <div class="flex gap-[69px]">
                 <div>
-                  <p class="text-neutral-500 font-font">03. Confirm Color radio</p>
+                  <p class="text-neutral-500 font-font dark:text-white">03. Confirm Color radio</p>
                 </div>
                 <div>
-                  <input type="radio" class="ui-checkbox">
+                  <input type="checkbox" id="cbx2" style="display: none;">
+                  <label for="cbx2" class="check">
+                    <svg width="18px" height="18px" viewBox="0 0 18 18">
+                      <path
+                        d="M 1 9 L 1 9 c 0 -5 3 -8 8 -8 L 9 1 C 14 1 17 5 17 9 L 17 9 c 0 4 -4 8 -8 8 L 9 17 C 5 17 1 14 1 9 L 1 9 Z">
+                      </path>
+                      <polyline points="1 9 7 14 15 4"></polyline>
+                    </svg>
+                  </label>
                 </div>
               </div>
               <div class="flex gap-[110px]">
                 <div>
-                  <p class="text-neutral-500 font-font">04. Disabled radio</p>
+                  <p class="text-neutral-500 font-font dark:text-white">04. Disabled radio</p>
                 </div>
                 <div>
-                  <input type="radio" class="ui-checkbox">
+                  <input type="checkbox" id="cbx2" style="display: none;">
+                  <label for="cbx2" class="check">
+                    <svg width="18px" height="18px" viewBox="0 0 18 18">
+                      <path
+                        d="M 1 9 L 1 9 c 0 -5 3 -8 8 -8 L 9 1 C 14 1 17 5 17 9 L 17 9 c 0 4 -4 8 -8 8 L 9 17 C 5 17 1 14 1 9 L 1 9 Z">
+                      </path>
+                      <polyline points="1 9 7 14 15 4"></polyline>
+                    </svg>
+                  </label>
                 </div>
               </div>
               <div class="flex gap-14">
                 <div>
-                  <p class="text-neutral-500 font-font">05. Disabled radio active</p>
+                  <p class="text-neutral-500 font-font dark:text-white">05. Disabled radio active</p>
                 </div>
                 <div>
-                  <input type="radio" class="ui-checkbox">
+                  <input type="checkbox" id="cbx2" style="display: none;">
+                  <label for="cbx2" class="check">
+                    <svg width="18px" height="18px" viewBox="0 0 18 18">
+                      <path
+                        d="M 1 9 L 1 9 c 0 -5 3 -8 8 -8 L 9 1 C 14 1 17 5 17 9 L 17 9 c 0 4 -4 8 -8 8 L 9 17 C 5 17 1 14 1 9 L 1 9 Z">
+                      </path>
+                      <polyline points="1 9 7 14 15 4"></polyline>
+                    </svg>
+                  </label>
                 </div>
               </div>
             </div>
@@ -970,29 +1017,29 @@
           </div>
           <div class="flex flex-col gap-3">
             <p>Stay update with our latest</p>
-            <div class="relative rounded-md overflow-hidden bg-white shadow-xl w-75 text-black">
-              <input type="email" name="text" placeholder="Enter Email"
-                class="input bg-transparent outline-none border-none pl-6 pr-10 py-2 w-full font-sans text-lg font-semibold" />
-              <div class="absolute right-2 top-0.5">
-                <button
-                  class="w-10 h-10 rounded-full bg-violet-500 group shadow-xl flex items-center justify-center relative overflow-hidden">
-                  <svg width="50" height="50" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"
-                    class="relative z-10">
-                    <path d="M63.6689 29.0491L34.6198 63.6685L0.00043872 34.6194L29.0496 1.67708e-05L63.6689 29.0491Z"
-                      fill="white" fill-opacity="0.01"></path>
-                    <path d="M42.8496 18.7067L21.0628 44.6712" stroke="white" stroke-width="3.76603"
-                      stroke-linecap="round" stroke-linejoin="round"></path>
-                    <path d="M26.9329 20.0992L42.85 18.7067L44.2426 34.6238" stroke="white" stroke-width="3.76603"
-                      stroke-linecap="round" stroke-linejoin="round"></path>
+            <div class="messageBox">
+              <div class="fileUploadWrapper">
+                <label for="file">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 337 337">
+                    <circle stroke-width="20" stroke="#6c6c6c" fill="none" r="158.5" cy="168.5" cx="168.5"></circle>
+                    <path stroke-linecap="round" stroke-width="25" stroke="#6c6c6c" d="M167.759 79V259"></path>
+                    <path stroke-linecap="round" stroke-width="25" stroke="#6c6c6c" d="M79 167.138H259"></path>
                   </svg>
-                  <div
-                    class="w-full h-full rotate-45 absolute left-[32%] top-[32%] bg-black group-hover:-left-[100%] group-hover:-top-[100%] duration-1000">
-                  </div>
-                  <div
-                    class="w-full h-full -rotate-45 absolute -left-[32%] -top-[32%] group-hover:left-[100%] group-hover:top-[100%] bg-black duration-1000">
-                  </div>
-                </button>
+                  <span class="tooltip">Add an image</span>
+                </label>
+                <input type="file" id="file" name="file" />
               </div>
+              <input required="" placeholder="Message..." type="text" id="messageInput" />
+              <button id="sendButton">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 664 663">
+                  <path fill="none"
+                    d="M646.293 331.888L17.7538 17.6187L155.245 331.888M646.293 331.888L17.753 646.157L155.245 331.888M646.293 331.888L318.735 330.228L155.245 331.888">
+                  </path>
+                  <path stroke-linejoin="round" stroke-linecap="round" stroke-width="33.67" stroke="#6c6c6c"
+                    d="M646.293 331.888L17.7538 17.6187L155.245 331.888M646.293 331.888L17.753 646.157L155.245 331.888M646.293 331.888L318.735 330.228L155.245 331.888">
+                  </path>
+                </svg>
+              </button>
             </div>
           </div>
         </div>
@@ -1059,6 +1106,60 @@
     </div>
   </footer>
   <script src="./counterup.js"></script>
+  <script>
+    // iconlar chaqirilvoti
+    var themeToggleDarkIcon = document.getElementById(
+      "theme-toggle-dark-icon"
+    );
+    var themeToggleLightIcon = document.getElementById(
+      "theme-toggle-light-icon"
+    );
+
+    // localstorage ni o'zgartirish layt yoki dark?
+    if (
+      localStorage.getItem("color-theme") === "dark" ||
+      (!("color-theme" in localStorage) &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches)
+    ) {
+      themeToggleLightIcon.classList.remove("hidden");
+    } else {
+      themeToggleDarkIcon.classList.remove("hidden");
+    }
+
+    //iconlar o'zgarisi
+
+    var themeToggleBtn = document.getElementById("theme-toggle");
+
+    themeToggleBtn.addEventListener("click", function () {
+      themeToggleDarkIcon.classList.toggle("hidden");
+      themeToggleLightIcon.classList.toggle("hidden");
+
+      // agar localstorage qanaqa busa shunaqa dark yoki layt buladi
+      if (localStorage.getItem("color-theme")) {
+        if (localStorage.getItem("color-theme") === "light") {
+          document.documentElement.classList.add("dark");
+          localStorage.setItem("color-theme", "dark");
+        } else {
+          document.documentElement.classList.remove("dark");
+          localStorage.setItem("color-theme", "light");
+        }
+
+        // class yozib dark: diyib nimadir busin diyilsa shunaqa saytda buladi
+      } else {
+        if (document.documentElement.classList.contains("dark")) {
+          document.documentElement.classList.remove("dark");
+          localStorage.setItem("color-theme", "light");
+        } else {
+          document.documentElement.classList.add("dark");
+          localStorage.setItem("color-theme", "dark");
+        }
+      }
+    });
+    AOS.init({
+      duration: 1300,
+      once: true,
+    });
+  </script>
 </body>
 
 </html>
